@@ -1,0 +1,81 @@
+import { View, Text, Button, StyleSheet } from 'react-native'
+import React from 'react'
+import CustomButton from '../../components/CustomButton';
+import * as Animateble from 'react-native-animatable';
+import SignInScreen from '../SignInScreen'
+
+const WelcomeScreen = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Your One-Stop Digital Marketing Solution</Text>
+      </View>
+      <Animateble.View style={styles.footer} animation="fadeInUpBig">
+        <Text style={styles.text}>Let's get started</Text>
+        <CustomButton text="Create an account" onPress={()=> navigation.navigate('SignInScreen')} type="WHITE"/>
+        <Text style={styles.grey}>Have an account? Sign in</Text>
+      </Animateble.View>
+      
+    </View>
+    
+  )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+
+    },
+    header: {
+        flex: 2,
+        backgroundColor: '#ffffff',
+        
+        paddingHorizontal: 20,
+    },
+    footer: {
+        flex: 1,
+        backgroundColor: '#7F2F99',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        paddingVertical: 50,
+        paddingHorizontal: 20
+    },
+    title: {
+       color: '#650585',
+       fontSize: 30,
+       paddingVertical: 50,
+       fontWeight: 'bold', 
+    },
+    text: {
+        color: '#FFFFFF',
+        marginTop: 5,
+        fontSize: 24,
+        marginBottom: 40,
+    },
+    grey: {
+        color: '#BDBDBD',
+        marginTop: 5,
+        alignItems:'center',
+        textAlign: 'center',
+        marginBottom: 40,
+    },
+    button: {
+        alignItems: 'flex-end',
+        marginTop: 30,
+    },
+    signIn: {
+        width: 150,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 50,
+        flexDirection: 'row'
+    },
+    textSign: {
+        color: 'white',
+        fontWeight: 'bold',
+    }
+})
+
+export default WelcomeScreen;
