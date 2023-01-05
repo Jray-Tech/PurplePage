@@ -34,7 +34,7 @@ const SignInScreen = ({navigation}) => {
           />
         </View>
         <View style={styles.header}>
-          <Image source={Logo} style={[styles.logo, ]} resizeMode="contain" />
+          <Image source={Logo} style={[styles.logo]} resizeMode="contain" />
         </View>
         <View style={styles.footer}>
           <Text style={styles.text_header}>Sign In</Text>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingVertical: 10,
+    marginTop: 10,
   },
   text_header: {
     color: '#231F20',
