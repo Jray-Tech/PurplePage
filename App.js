@@ -13,7 +13,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Logo from './assets/images/image.png'
 const Stack = createStackNavigator();
 import WelcomeScreen from './src/screens/WelcomeScreen';
-import AccountCreatedSuccessScreen from './src/screens/VerifyScreen';
+import {AccountCreatedSuccessScreen, VerificationScreen } from './src/screens/VerifyScreen';
+
 
 function SplashScreen({navigation}) {
   setTimeout(() => {
@@ -46,7 +47,9 @@ export default function App() {
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen}/>
         <Stack.Screen name="SignInScreen" component={SignInScreen}/>
+        <Stack.Screen name="VerificationScreen" component={VerificationScreen}/>
         <Stack.Screen name="AccountCreatedSuccessScreen" component={AccountCreatedSuccessScreen}/>
+        
         
       </Stack.Navigator>
     </NavigationContainer>

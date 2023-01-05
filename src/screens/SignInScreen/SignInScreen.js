@@ -45,7 +45,7 @@ const SignInScreen = ({navigation}) => {
           <CustomInput placeholder="password" value={password} setValue={setPassword} secureTextEntry={true}/>
           <CustomButton text="Forgot Password?" onPress={forgotPasswordPressed} type="TERTIARY"/>
           
-          <CustomButton text="Log In" onPress={()=>navigation.navigate('AccountCreatedSuccessScreen')} type="PRIMARY"/>
+          <CustomButton text="Log In" onPress={()=>navigation.navigate('VerificationScreen')} type="PRIMARY"/>
         <View style={styles.action}>
           <Image source={Rectangle_1} style={[styles.logo, ]} resizeMode="contain" />
           <Text style={styles.action_text}>Or Sign in with</Text>
