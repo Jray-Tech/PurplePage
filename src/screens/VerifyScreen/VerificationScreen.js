@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, StatusBar, TextInput, Touchable, TouchableOpaci
 import React, {useRef, useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, Font} from "../../constants"
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const VerificationScreen = ({navigation}) => {
   const firstInput = useRef()
@@ -18,12 +19,13 @@ const VerificationScreen = ({navigation}) => {
         backgroundColor={Colors.DEFAULT_WHITE}
         translucent
       />
-      <View style={styles.headerContent}>
-        <Ionicons
-          name="chevron-back-outline"
-          size={30}
-          onPress={() => navigation.goBack()}
-        />
+      <View style={styles.nav}>
+        <FontAwesome
+            onPress={()=> navigation.navigate('WelcomeScreen')}
+            name='chevron-left'
+            color='#000000'
+            size={20}
+          />
         <Text style={styles.title}>Verification</Text>
         <Text style={styles.content}>We sent a 6-digit code to <Text style={styles.phoneNumberText}>080***789</Text> and <Text style={styles.phoneNumberText}>purple***@gmail.com </Text></Text>
       </View>
@@ -122,34 +124,42 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   headerTitle: {
-    fontSize: 20,
-    fontFamily: Font.POPPINS_MEDIUM,
+    fontSize: 30,
+    fontFamily: Font.AVENIR_BOLD,
     lineHeight: 20 * 1.4,
     //width: Display.setWidth(80),
     textAlign: 'center',
+  },
+  nav: {
+    
+    justifyContent:'flex-end',
+    paddingHorizontal: 20,
+    paddingBottom: 10,
+    paddingTop: 48,
   },
   countDown: {
     color: Colors.DASH_PINK,
   },
   title: {
     fontSize: 24,
-    fontFamily: Font.POPPINS_MEDIUM,
+    justifyContent:'flex-end',
+    fontFamily: Font.AVENIR_BOLD,
     color: Colors.HEADER_BLACK,
     fontWeight: 'bold',
     marginTop: 50,
     marginBottom: 10,
-    marginHorizontal: 20,
+    
   },
   content: {
     fontSize: 16,
-    fontFamily: Font.POPPINS_MEDIUM,
+    fontFamily: Font.AVENIR_MEDIUM,
     marginTop: 10,
     marginBottom: 20,
-    marginHorizontal: 20,
+    
   },
   contentFooter: {
     fontSize: 16,
-    fontFamily: Font.POPPINS_MEDIUM,
+    fontFamily: Font.AVENIR_MEDIUM,
     textAlign: 'center',
     justifyContent: 'center',
     marginTop: 10,
@@ -159,7 +169,7 @@ const styles = StyleSheet.create({
   phoneNumberText: {
     fontSize: 16,
     fontWeight: 'bold',
-    fontFamily: Font.POPPINS_REGULAR,
+    fontFamily: Font.AVENIR_REGULAR,
     lineHeight: 18 * 1.4,
     color: Colors.BOLD_BLACK,
   },
@@ -203,7 +213,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 18 * 1.4,
     color: Colors.DEFAULT_WHITE,
-    fontFamily: Font.POPPINS_MEDIUM,
+    fontFamily: Font.AVENIR_MEDIUM,
   },
 });
 
