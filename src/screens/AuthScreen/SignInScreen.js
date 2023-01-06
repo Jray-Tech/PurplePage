@@ -14,6 +14,7 @@ import CustomButton from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 
 const SignInScreen = ({navigation}) => {
+  const [isPasswordShow, setIsPasswordShow] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -28,7 +29,7 @@ const SignInScreen = ({navigation}) => {
       <View style={styles.container}>
         <View style={styles.nav}>
           <FontAwesome
-            onPress={()=> navigation.navigate('WelcomeScreen')}
+            onPress={()=> navigation.goBack()}
             name='chevron-left'
             color='#000000'
             size={20}
@@ -41,12 +42,44 @@ const SignInScreen = ({navigation}) => {
           <Text style={styles.text_header}>Sign In</Text>
           <Text style={styles.text_footer}>Enter your login details or continue with your social account</Text>
           <Text style={styles.username}>Email</Text>
-          <CustomInput placeholder="email" value={email} setValue={setEmail}/>
+          <View style={styles.inputContainer}>
+            <View style={styles.inputSubContainer}>
+              
+              <TextInput 
+                placeholder="Email"
+                placeholderTextColor={Colors.DEFAULT_GREY}
+                selectionColor={Colors.DEFAULT_GREY}
+                style={styles.inputText}
+                
+              />
+              
+            </View>
+          </View>
           <Text style={styles.username}>Password</Text>
-          <CustomInput placeholder="password" value={password} setValue={setPassword} secureTextEntry={true}/>
-          <CustomButton text="Forgot Password?" onPress={forgotPasswordPressed} type="TERTIARY"/>
-          
-          <CustomButton text="Log In" onPress={()=>navigation.navigate('VerificationScreen')} type="PRIMARY"/>
+          <View style={styles.inputContainer}>
+            <View style={styles.inputSubContainer}>
+              
+              <TextInput 
+                secureTextEntry={isPasswordShow ? false : true}
+                placeholder="Password"
+                placeholderTextColor={Colors.DEFAULT_GREY}
+                selectionColor={Colors.DEFAULT_GREY}
+                style={styles.inputText}
+                onChangeText={text => setPassword(text)}
+              />
+              <Feather 
+                name={isPasswordShow ? 'eye' : 'eye-off'}
+                size={22}
+                color={Colors.DEFAULT_GREY}
+                style={{marginRight: 10}}
+                onPress={() => setIsPasswordShow(!isPasswordShow)}
+              />
+            </View>
+          </View>
+          <View style={styles.forgotPasswordContainer}>
+          <Text style={styles.forgotPassword} onPress={()=>navigation.navigate('ForgotPasswordScreen')}>Forgot Password?</Text>
+          </View>
+          <CustomButton text="Log In" onPress={()=>navigation.navigate('SignInVerifyScreen')} type="PRIMARY"/>
         <View style={styles.action}>
           <Image source={Rectangle_1} style={[styles.logo, ]} resizeMode="contain" />
           <Text style={styles.action_text}>Or Sign in with</Text>
@@ -101,9 +134,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 5,
+   marginTop: 15,
    color: Colors.SECONDARY_GREY,
    fontFamily: Font.AVENIR_MEDIUM,
+   paddingBottom: 10,
   },
   action: {
     flexDirection: 'row',
@@ -113,6 +147,16 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     marginHorizontal: 5,
     
+  },
+  forgotPassword: {
+    fontFamily: Font.AVENIR_BLACK,
+    fontWeight: 'bold',
+    color: Colors.BOLD_BLACK,
+    paddingTop: 16,
+    paddingBottom: 40,
+  },
+  forgotPasswordContainer: {
+    alignItems: 'flex-end',
   },
   icons: {
     flexDirection: 'row',
@@ -143,6 +187,18 @@ const styles = StyleSheet.create({
   textSign: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  inputContainer: {
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#cccccc',
+    justifyContent: 'center',
+  },
+  inputSubContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
 });
 

@@ -5,7 +5,7 @@ import CustomButton from '../../components/CustomButton';
 import {Colors, Font} from "../../constants";
 
 
-const AccountCreatedSuccessScreen = ({navigation}) => {
+const ResetSuccessScreen = ({navigation}) => {
   return (
     <View style={{
         backgroundColor: 'white',
@@ -16,7 +16,7 @@ const AccountCreatedSuccessScreen = ({navigation}) => {
     <View style={styles.imageContainer}>
         <Image 
             source={Confirmation} style={[styles.logo, ]} resizeMode="contain" />
-        <Text style={styles.verifyText}>Your purple pages account has been successfully created</Text>
+        <Text style={styles.verifyText}>Your password has been successfully reset</Text>
     </View>
       
     <View style={styles.textContainer}>
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default AccountCreatedSuccessScreen;
+export default ResetSuccessScreen;

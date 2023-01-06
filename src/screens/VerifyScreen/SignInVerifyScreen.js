@@ -4,7 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, Font} from "../../constants";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const VerificationScreen = ({navigation}) => {
+const SignInVerifyScreen = ({navigation}) => {
   const firstInput = useRef()
   const secondInput = useRef()
   const thirdInput = useRef()
@@ -104,7 +104,7 @@ const VerificationScreen = ({navigation}) => {
               setOtp({...otp, 6: text})
               !text && fifthInput.current.focus();
             }}
-            onSelectionChange={()=> navigation.navigate('AccountCreatedSuccessScreen')}
+            onSelectionChange={()=> navigation.navigate('HomeScreen')}
           />
         </View>
       </View>
@@ -218,4 +218,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VerificationScreen;
+export default SignInVerifyScreen;

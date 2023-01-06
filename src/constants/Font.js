@@ -4,4 +4,5 @@ export default  {
   AVENIR_LIGHT: 'AvenirLT-Light',
   AVENIR_MEDIUM: 'AvenirLT-Medium',
   AVENIR_REGULAR: 'AvenirLTStd',
+  AVENIR_HEAVY: 'AvenirLTStd-Black',
 };

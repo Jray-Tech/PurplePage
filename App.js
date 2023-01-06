@@ -1,20 +1,14 @@
 import React from 'react';
-import SignInScreen from './src/screens/SignInScreen';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  useColorScheme,
-} from 'react-native';
+import {SignInScreen, ForgotPasswordScreen, SignUpScreen, SetNewPasswordScreen} from './src/screens/AuthScreen';
+import {SafeAreaView, StyleSheet, Text, View, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; 
 import Logo from './assets/images/image.png'
 const Stack = createStackNavigator();
 import WelcomeScreen from './src/screens/WelcomeScreen';
-import {AccountCreatedSuccessScreen, VerificationScreen } from './src/screens/VerifyScreen';
-
+import {AccountCreatedSuccessScreen, VerificationScreen, VerifyForgotPasswordScreen, ResetSuccessScreen, SignInVerifyScreen } from './src/screens/VerifyScreen';
+import {Colors, Font} from "./src/constants"
+import { HomeScreen } from './src/screens/HomeScreen';
 
 function SplashScreen({navigation}) {
   setTimeout(() => {
@@ -47,9 +41,15 @@ export default function App() {
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen}/>
         <Stack.Screen name="SignInScreen" component={SignInScreen}/>
+        <Stack.Screen name="SignInVerifyScreen" component={SignInVerifyScreen}/>
+        <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
+        <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen}/>
+        <Stack.Screen name="VerifyForgotPasswordScreen" component={VerifyForgotPasswordScreen}/>
+        <Stack.Screen name="SetNewPasswordScreen" component={SetNewPasswordScreen}/>
+        <Stack.Screen name="ResetSuccessScreen" component={ResetSuccessScreen}/>
         <Stack.Screen name="VerificationScreen" component={VerificationScreen}/>
         <Stack.Screen name="AccountCreatedSuccessScreen" component={AccountCreatedSuccessScreen}/>
-        
+        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         
       </Stack.Navigator>
     </NavigationContainer>
@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   text: {
+    fontFamily: Font.AVENIR_MEDIUM,
+    color: Colors.HEADER_BLACK,
   },
   root: {
     flex: 1,
