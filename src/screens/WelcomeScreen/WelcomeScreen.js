@@ -3,6 +3,7 @@ import React from 'react'
 import CustomButton from '../../components/CustomButton';
 import * as Animateble from 'react-native-animatable';
 import SignInScreen from '../SignInScreen'
+import {Colors, Font} from "../../constants"
 
 const WelcomeScreen = ({navigation}) => {
   return (
@@ -30,7 +31,6 @@ const styles = StyleSheet.create({
     header: {
         flex: 2,
         backgroundColor: '#ffffff',
-        
         paddingHorizontal: 20,
     },
     footer: {
@@ -42,23 +42,26 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     title: {
-       color: '#650585',
+       color: Colors.BUTTON_PURPLE,
+       fontFamily: Font.AVENIR_BOLD,
        fontSize: 30,
        paddingVertical: 50,
        fontWeight: 'bold', 
     },
     text: {
-        color: '#FFFFFF',
+        color: Colors.DEFAULT_WHITE,
         marginTop: 5,
         fontSize: 24,
         marginBottom: 40,
+        fontFamily: Font.AVENIR_BOLD,
     },
     grey: {
-        color: '#BDBDBD',
+        color: Colors.DEFAULT_GREY,
         marginTop: 5,
         alignItems:'center',
         textAlign: 'center',
         marginBottom: 40,
+        fontFamily: Font.AVENIR_MEDIUM,
     },
     button: {
         alignItems: 'flex-end',

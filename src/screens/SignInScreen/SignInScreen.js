@@ -11,6 +11,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import {Colors, Font} from "../../constants"
 
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -89,18 +90,20 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   text_header: {
-    color: '#231F20',
-    fontWeight: 'bold',
+    color: Colors.BOLD_BLACK,
     fontSize: 24,
+    fontFamily: Font.AVENIR_BOLD,
   },
   text_footer: {
-    color: '#333333',
+    color: Colors.SECONDARY_GREY,
     fontSize: 17,
     paddingBottom: 16,
+    fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
    marginTop: 5,
-   color: '#000'
+   color: Colors.SECONDARY_GREY,
+   fontFamily: Font.AVENIR_MEDIUM,
   },
   action: {
     flexDirection: 'row',
@@ -109,6 +112,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 5,
     marginHorizontal: 5,
+    
   },
   icons: {
     flexDirection: 'row',
@@ -122,6 +126,7 @@ const styles = StyleSheet.create({
   action_text:{
     paddingLeft: 5,
     paddingRight: 5,
+    fontFamily: Font.AVENIR_MEDIUM,
   },
   
   button: {

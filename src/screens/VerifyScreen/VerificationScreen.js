@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     justifyContent:'flex-end',
     fontFamily: Font.AVENIR_BOLD,
     color: Colors.HEADER_BLACK,
-    fontWeight: 'bold',
+    
     marginTop: 50,
     marginBottom: 10,
     

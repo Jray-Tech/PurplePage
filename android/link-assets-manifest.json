@@ -1,0 +1,57 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AvenirLT-Black.ttf",
+      "sha1": "921099e76ddd0d23b36f4d0dc9c002af6c7e95fa"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-BlackOblique.ttf",
+      "sha1": "4570efe18c22e577e4b559a507c1c9f1f79f4c4a"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-Book.ttf",
+      "sha1": "d2e1936c83a981f3da734c11fb39453e91473bac"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-BookOblique.ttf",
+      "sha1": "19717626221a72be35383b8f3d2e537f893f9536"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-Heavy.ttf",
+      "sha1": "0bc97c9209d2391af565aeff6737da243ebfab31"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-HeavyOblique.ttf",
+      "sha1": "14bb21f3e4bb6c184e518f3a01805f54e037686b"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-Light.ttf",
+      "sha1": "01d670277c5127fd83fbd2e64e6c75ea6a3ba7af"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-LightOblique.ttf",
+      "sha1": "8c73f9368401b97a6356e1a142a37085b39e9520"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-Medium.ttf",
+      "sha1": "643ee8946e56fb876de905f9de5a7fd335527702"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-MediumOblique.ttf",
+      "sha1": "dbe7002c4ec1f9062486a98afb7bcde308384770"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-Oblique.ttf",
+      "sha1": "ad4940fbbcbe7188f80dfb581f9133b89ded9f53"
+    },
+    {
+      "path": "assets/fonts/AvenirLT-Roman.ttf",
+      "sha1": "94166f14ce9a070051299443e948659bfbb7ff05"
+    },
+    {
+      "path": "assets/fonts/AvenirLTStd.ttf",
+      "sha1": "e9f7be691a445864b9541bc7f37320e5db8080a7"
+    }
+  ]
+}
