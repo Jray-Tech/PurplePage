@@ -13,6 +13,34 @@ import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 import CheckBox from '@react-native-community/checkbox';
+import * as yup from 'yup';
+import { Formik } from 'formik';
+
+const registrationSchema = yup.object().shape({
+  username: yup
+    .string()
+    .required('Username is required'),
+  phone: yup
+    .string()
+    .matches(/(01)(\d){8}\b/, 'Enter a valid phone number')
+    .required('Phone number is required'),
+  email: yup
+    .string()
+    .email('Please Enter Valid Email')
+    .required('email is required'),
+  password: yup
+    .string()
+    .matches(/\w*[a-z]\w*/,  "Password must have a small letter")
+    .matches(/\w*[A-Z]\w*/,  "Password must have a capital letter")
+    .matches(/\d/, "Password must have a number")
+    .matches(/[!@#$%^&*()\-_"=+{}; :,<.>]/, "Password must have a special character")
+    .min(8, ({ min }) => `Password must be at least ${min} characters`)
+    .required('Password is required'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('password')], 'Passwords do not match')
+    .required('Confirm password is required'),
+})
 
 const SignUpScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -28,6 +56,19 @@ const SignUpScreen = ({navigation}) => {
     console.warn("Forgot Password")
   }
     return (
+      <Formik
+        initialValues={{ 
+          username: '', 
+          email: '', 
+          phone: '', 
+          password: '', 
+          confirmPassword: ''
+        }}
+        validateOnMount={true}
+        onSubmit={values => console.log(values)}
+        validationSchema={registrationSchema}
+        >
+          {({handleChange, handleBlur, handleSubmit, values, errors, touched, isValid}) => (
       <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
       <View >
@@ -46,9 +87,20 @@ const SignUpScreen = ({navigation}) => {
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
+                onChangeText={handleChange('username')}
+                onBlur={handleBlur('username')}
+                value={values.username}
               />
             </View>
           </View>
+          {(errors.username && touched.username) && 
+              <Text style={styles.errors}><Feather 
+                name={'alert-circle'}
+                size={14}
+                color={Colors.DEFAULT_RED}
+                style={{marginRight: 10}}
+                onPress={() => setIsPasswordShow(!isPasswordShow)} /> {errors.username}</Text>
+            }
 
           <Text style={styles.username}>Phone Number</Text>
           <View style={styles.inputContainer}>
@@ -58,9 +110,20 @@ const SignUpScreen = ({navigation}) => {
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
+                onChangeText={handleChange('phone')}
+                onBlur={handleBlur('phone')}
+                value={values.phone}
               />
             </View>
           </View> 
+          {(errors.phone && touched.phone) && 
+              <Text style={styles.errors}><Feather 
+                name={'alert-circle'}
+                size={14}
+                color={Colors.DEFAULT_RED}
+                style={{marginRight: 10}}
+                onPress={() => setIsPasswordShow(!isPasswordShow)}/> {errors.phone}</Text>
+            }
           <Text style={styles.username}>Email</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
@@ -70,11 +133,21 @@ const SignUpScreen = ({navigation}) => {
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
-                
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
               />
               
-            </View>
+            </View> 
           </View>
+          {(errors.email && touched.email) && 
+              <Text style={styles.errors}><Feather 
+                name={'alert-circle'}
+                size={14}
+                color={Colors.DEFAULT_RED}
+                style={{marginRight: 10}}
+                onPress={() => setIsPasswordShow(!isPasswordShow)}/> {errors.email}</Text>
+            }
           <Text style={styles.username}>Password</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
@@ -85,7 +158,10 @@ const SignUpScreen = ({navigation}) => {
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
-                onChangeText={text => setPassword(text)}
+                //onChangeText={text => setPassword(text)}
+                onChangeText={handleChange('password')}
+                onBlur={handleBlur('password')}
+                value={values.password}
               />
               <Feather 
                 name={isPasswordShow ? 'eye' : 'eye-off'}
@@ -96,6 +172,15 @@ const SignUpScreen = ({navigation}) => {
               />
             </View>
           </View>
+          {(errors.password && touched.password) && 
+              <Text style={styles.errors}><Feather 
+                name={'alert-circle'}
+                size={14}
+                color={Colors.DEFAULT_RED}
+                style={{marginRight: 10}}
+                onPress={() => setIsPasswordShow(!isPasswordShow)}
+              /> {errors.password}</Text>
+            }
           <Text style={styles.username}>Confirm Password</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
@@ -106,7 +191,10 @@ const SignUpScreen = ({navigation}) => {
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
-                onChangeText={text => setPassword(text)}
+                //onChangeText={text => setPassword(text)}
+                onChangeText={handleChange('confirmPassword')}
+                onBlur={handleBlur('confirmPassword')}
+                value={values.confirmPassword}
               />
               <Feather 
                 name={isPasswordShow ? 'eye' : 'eye-off'}
@@ -117,6 +205,14 @@ const SignUpScreen = ({navigation}) => {
               />
             </View>
           </View>
+          {(errors.confirmPassword && touched.confirmPassword) && 
+              <Text style={styles.errors}><Feather 
+                name={'alert-circle'}
+                size={14}
+                color={Colors.DEFAULT_RED}
+                style={{marginRight: 10}}
+                onPress={() => setIsPasswordShow(!isPasswordShow)} /> {errors.confirmPassword}</Text>
+            }
           <View style={styles.forgotPasswordContainer}>
             <CheckBox
                 style={styles.forgotPassword}
@@ -143,6 +239,8 @@ const SignUpScreen = ({navigation}) => {
       </View>
       </ScrollView>
       </SafeAreaView>
+      )}
+      </Formik>
     )
 }
 
@@ -187,6 +285,10 @@ const styles = StyleSheet.create({
    color: Colors.SECONDARY_GREY,
    fontFamily: Font.AVENIR_MEDIUM,
    paddingBottom: 10,
+  },
+  errors: {
+    color: Colors.DEFAULT_RED,
+    paddingTop: 5,
   },
   action: {
     flexDirection: 'row',
