@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 
 const ForgotPasswordScreen = ({navigation}) => {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     justifyContent:'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 10,
-    paddingTop: 48,
+    paddingTop: 18,
   },
   containerBottom: {
     justifyContent: 'center',

@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 import CheckBox from '@react-native-community/checkbox';
 import * as yup from 'yup';

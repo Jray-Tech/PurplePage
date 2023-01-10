@@ -11,7 +11,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 
 const SetNewPasswordScreen = ({navigation}) => {

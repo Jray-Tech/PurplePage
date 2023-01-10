@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 
 const SignInScreen = ({navigation}) => {
@@ -101,26 +101,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingHorizontal: 20,
   },
   nav: {
     
     justifyContent:'flex-end',
-    paddingHorizontal: 20,
     paddingBottom: 10,
-    paddingTop: 48,
+    paddingTop: 18,
   },
   header: {
     flex: 1,
-    paddingTop: 28,
+    paddingTop: 18,
     alignItems: 'center',
-    paddingHorizontal: 20,
+
   },
   footer: {
     flex: 10,
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
     paddingVertical: 10,
-    marginTop: 10,
+    marginTop: 5,
   },
   text_header: {
     color: Colors.BOLD_BLACK,
@@ -134,7 +133,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
+   marginTop: 10,
    color: Colors.SECONDARY_GREY,
    fontFamily: Font.AVENIR_MEDIUM,
    paddingBottom: 10,

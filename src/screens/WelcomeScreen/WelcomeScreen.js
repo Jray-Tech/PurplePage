@@ -1,6 +1,6 @@
 import { View, Text, Button, StyleSheet } from 'react-native'
 import React from 'react'
-import CustomButton from '../../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import * as Animateble from 'react-native-animatable';
 import SignInScreen from '../AuthScreen'
 import {Colors, Font} from "../../constants";
