@@ -3,8 +3,6 @@ import React, {useState} from 'react';
 import tab from '../../../assets/images/tab.png';
 import profile from '../../../assets/images/profile1.png';
 import notify from '../../../assets/images/notify.png';
-import Rectangle_1 from '../../../assets/images/Rectangle_1.png';
-import Rectangle_2 from '../../../assets/images/Rectangle_2.png';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import Vector from '../../../assets/images/Vector.png';
 import Vector2 from '../../../assets/images/Vector2.png';
@@ -14,11 +12,8 @@ import Vector5 from '../../../assets/images/Vector5.png';
 import Vector6 from '../../../assets/images/Vector6.png';
 import Group12 from '../../../assets/images/Group12.png';
 import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
-import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import CustomInput from '../../components/CustomInput';
-import {CustomButton} from '../../components/CustomButton';
 import {Colors, Font} from "../../constants"
 
 const HomeScreen = ({navigation}) => {
@@ -61,7 +56,7 @@ const HomeScreen = ({navigation}) => {
                 size={22}
                 color={Colors.HEADER_BLACK}
                 style={{marginRight: 10}}
-                onPress={()=>navigation.navigate('SearchResultScreen')}
+                onPress={()=>navigation.navigate('FilterScreen')}
               />
             
               <TextInput 

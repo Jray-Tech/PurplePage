@@ -60,7 +60,7 @@ const SearchResultScreen = ({navigation}) => {
                 size={22}
                 color={Colors.DEFAULT_GREY}
                 style={{marginRight: 10, }}
-                onPress={() => navigation.navigate('HomeScreen')}
+                onPress={() => navigation.navigate('FilterScreen')}
               />
             </View>
               
@@ -78,7 +78,9 @@ const SearchResultScreen = ({navigation}) => {
 
             <View style={styles.body}>
             <Image source={PurpleCloset} style={styles.images} />
+            <TouchableOpacity onPress={()=>navigation.navigate('BusinessInfoScreen')}>
             <Text style={styles.bussinessName}>Purple Closet</Text>
+            </TouchableOpacity>
             <Text style={styles.bussinessCategory}>Fashion</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>

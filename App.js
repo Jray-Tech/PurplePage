@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import {AccountCreatedSuccessScreen, VerificationScreen, VerifyForgotPasswordScreen, ResetSuccessScreen, SignInVerifyScreen } from './src/screens/VerifyScreen';
 import {Colors, Font} from "./src/constants"
-import { HomeScreen, NotifyScreen, SearchResultScreen } from './src/screens/HomeScreen';
+import { HomeScreen, NotifyScreen, SearchResultScreen, FilterScreen, BusinessInfoScreen, ReviewScreen, BusinessProduct} from './src/screens/HomeScreen';
 
 function SplashScreen({navigation}) {
   setTimeout(() => {
@@ -52,7 +52,10 @@ export default function App() {
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         <Stack.Screen name="NotifyScreen" component={NotifyScreen}/>
         <Stack.Screen name="SearchResultScreen" component={SearchResultScreen}/>
-        
+        <Stack.Screen name="FilterScreen" component={FilterScreen}/>
+        <Stack.Screen name="BusinessInfoScreen" component={BusinessInfoScreen}/>
+        <Stack.Screen name="ReviewScreen" component={ReviewScreen}/>
+        <Stack.Screen name="BusinessProduct" component={BusinessProduct}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

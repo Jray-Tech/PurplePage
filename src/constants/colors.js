@@ -15,6 +15,7 @@ export default  {
     DASH_GREEN: '#009932',
     PINK: '#C42AF7',
     SEARCH_GREY: '#E0E0E080',
+    PROGRESS_GREY: '#E0E0E0',
     BORDER_COLOR: '#cccccc',
     CATEGORY_PURPLE: '#831CA5',
     CATEGORY_GREY: '#828282;',
