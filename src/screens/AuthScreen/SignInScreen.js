@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
-import {CustomButton} from '../../components/CustomButton';
+import {CustomButton, Nav} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants"
 
 const SignInScreen = ({navigation}) => {
@@ -27,14 +27,7 @@ const SignInScreen = ({navigation}) => {
   }
     return (
       <View style={styles.container}>
-        <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
-        </View>
+        <Nav onPress={()=> navigation.goBack()}/>
         <View style={styles.header}>
           <Image source={Logo} style={[styles.logo]} resizeMode="contain" />
         </View>
@@ -103,12 +96,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
   },
-  nav: {
-    
-    justifyContent:'flex-end',
-    paddingBottom: 10,
-    paddingTop: 18,
-  },
+  
   header: {
     flex: 1,
     paddingTop: 18,

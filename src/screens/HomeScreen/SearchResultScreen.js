@@ -10,6 +10,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons  from 'react-native-vector-icons/MaterialIcons';
 import {Colors, Font} from "../../constants"
 import { color } from 'react-native-reanimated';
+import { Nav } from '../../components/CustomComponents';
 
 const SearchResultScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -25,16 +26,8 @@ const SearchResultScreen = ({navigation}) => {
   }
     return (
       <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
-          
-        </View>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <Nav onPress={()=> navigation.goBack()}/>
         <View style={styles.header}>
 
           <View style={styles.searchContainer}>
@@ -317,6 +310,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingHorizontal: 20,
   },
   rank: {
     flexDirection: 'row',
@@ -333,7 +327,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.DEFAULT_WHITE,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
     marginTop: 10,
     shadowColor: Colors.DASH_GREEN,
     shadowOpacity: 1,
@@ -368,7 +361,6 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
     paddingVertical: 10,
     marginTop: 10,
   },

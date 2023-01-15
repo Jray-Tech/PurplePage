@@ -16,6 +16,7 @@ import profile from '../../../assets/images/profile1.png';
 import Ellipse3 from '../../../assets/images/Ellipse3.png';
 import Ellipse4 from '../../../assets/images/Ellipse4.png';
 import Ellipse5 from '../../../assets/images/Ellipse5.png';
+import { Nav } from '../../components/CustomComponents';
 
 const BusinessProduct = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -31,17 +32,8 @@ const BusinessProduct = ({navigation}) => {
   }
     return (
       <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
-        
-          
-        </View>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <Nav onPress={()=> navigation.goBack()}/>
         
         
         <View style={styles.header}>
@@ -195,23 +187,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingHorizontal: 20,
   },
   rank: {
     flexDirection: 'row',
   },
-  nav: {
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    paddingTop: 48,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
+  
   footer: {
     backgroundColor: Colors.DEFAULT_WHITE,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
     marginTop: 10,
     shadowColor: Colors.DASH_GREEN,
     shadowOpacity: 1,
@@ -252,7 +237,6 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
     marginTop: 10,
   },
   text_header: {

@@ -3,7 +3,7 @@ import React from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {Colors, Font} from "../../constants";
-import {CustomButton, CustomBorder} from '../CustomButton';
+import {CustomButton, CustomBorder} from '.';
 import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';

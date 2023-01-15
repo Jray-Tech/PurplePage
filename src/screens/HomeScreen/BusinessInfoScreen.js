@@ -3,23 +3,19 @@ import React, {useState} from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomBottomTab} from '../../components/CustomButton';
+import {CustomButton, CustomBottomTab, Nav} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants"
 import Subscribed from '../../../assets/images/Subcribed.png';
 
 
 const BusinessInfoScreen = ({navigation}) => {
+  const [isSubscribed, setIsSubscribed] = useState(true);
   
     return (
       <View style={styles.container}>
       
         <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
+          <Nav onPress={()=> navigation.goBack()}/>
         </View>
         <View style={styles.header}>
 
@@ -36,6 +32,7 @@ const BusinessInfoScreen = ({navigation}) => {
               paddingHorizontal: 10,
               borderRadius: 5,
             }}>
+
               <Text style={{
                 color:Colors.DEFAULT_WHITE,
                 paddingHorizontal: 5,
@@ -43,7 +40,6 @@ const BusinessInfoScreen = ({navigation}) => {
                 }}>Subscribe</Text>
               
                   <Image source={Subscribed} resizeMode="contain" />
-                
             </View>    
           
             
@@ -105,12 +101,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   nav: {
-    justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingBottom: 10,
-    paddingTop: 48,
-    flexDirection: 'row',
-    alignItems: 'center',
   },
   footer: {
     backgroundColor: Colors.DEFAULT_WHITE,

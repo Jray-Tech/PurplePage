@@ -1,17 +1,9 @@
 import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, FlatList, SafeAreaView, ScrollView} from 'react-native'
 import React, {useState} from 'react';
-import Logo from '../../../assets/images/Logo.png';
-import Rectangle_1 from '../../../assets/images/Rectangle_1.png';
-import Rectangle_2 from '../../../assets/images/Rectangle_2.png';
-import Google from '../../../assets/images/google.png';
-import Facebook from '../../../assets/images/facebook.png';
-import Twitter from '../../../assets/images/twitter.png';
-import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import CustomInput from '../../components/CustomInput';
-import {CustomButton} from '../../components/CustomButton';
+import {CustomButton, HomeNav} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants"
 
 const FilterScreen = ({navigation}) => {
@@ -58,19 +50,7 @@ const onLocationSearch=(txt)=>{
     return (
       <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        <View style={styles.nav}>
-        <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-        />
-       
-    
-        <View style={styles.navText}>
-        <Text style={styles.navText}>Filter Results</Text>
-        </View>
-     </View>
+        <HomeNav text="Filter Results" onPress={()=> navigation.goBack()}/>
 
      <View style={styles.Notifications}>
         <Text style={styles.ClearNotification}>Clear all</Text>
@@ -324,7 +304,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
+    
   },
   ratingTitle: {
     fontFamily: Font.AVENIR_BLACK,
@@ -348,6 +328,7 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     marginBottom: 40,
+    paddingHorizontal: 20,
   },
   ratingbody: {
     flexDirection: 'row',
@@ -357,6 +338,7 @@ const styles = StyleSheet.create({
   ratingText: {
     marginHorizontal: 5,
     fontFamily: Font.AVENIR_MEDIUM,
+    
   },
   dropdownArea: {
     width: '98%',
@@ -385,10 +367,12 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.DEFAULT_GREY,
     alignSelf: 'center',
     justifyContent: 'center',
+
   },
   categoryList: {
     paddingHorizontal: 15,
     fontFamily: Font.AVENIR_MEDIUM,
+
   },
   nav: {
     flexDirection: 'row',
@@ -416,6 +400,7 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: 18,
     alignItems: 'center',
+    paddingHorizontal: 20,
 
   },
   footer: {
@@ -423,6 +408,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingVertical: 10,
     marginTop: 5,
+    paddingHorizontal: 20,
   },
   text_header: {
     color: Colors.BOLD_BLACK,

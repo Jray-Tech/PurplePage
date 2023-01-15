@@ -1,4 +1,4 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView } from 'react-native'
+import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
 import React, {useState} from 'react';
 import tab from '../../../assets/images/tab.png';
 import profile from '../../../assets/images/profile1.png';
@@ -80,8 +80,12 @@ const HomeScreen = ({navigation}) => {
             </View>
           </View>
           <View style={styles.body}>
+            <Pressable onPress={()=>navigation.navigate('BusinessInfoScreen')}>
             <Image source={PurpleCloset} style={styles.images} />
+            </Pressable>
+            <Pressable onPress={()=>navigation.navigate('BusinessInfoScreen')}>
             <Text style={styles.bussinessName}>Purple Closet</Text>
+            </Pressable>
             <Text style={styles.bussinessCategory}>Fashion</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>

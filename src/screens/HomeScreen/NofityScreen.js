@@ -5,7 +5,7 @@ import {Colors, Font} from "../../constants";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import NotifyIcon from '../../../assets/images/notifyIcon.png';
-import {CustomButton, CustomBorder} from '../../components/CustomButton';
+import {CustomButton, CustomBorder, HomeNav} from '../../components/CustomComponents';
 
 
 const NotifyScreen = ({navigation}) => {
@@ -13,20 +13,9 @@ const [isNotification, setIsNotification] = useState(false);
 if (isNotification) {
   return (
     <View style={styles.container}>
-        <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
-    
-          <View style={styles.navText}>
-          <Text style={styles.navText}>Notifications</Text>
-          </View>
-          </View>
-          
-        <View style={styles.imageContainer}>
+        
+        <HomeNav style={{paddingHorizontal: 20}} text="Notifications" onPress={()=> navigation.goBack()}/>  
+        <View >
         <Image 
             source={Notification} style={[styles.logo, ]} resizeMode="contain" />
         <Text style={styles.verifyText}>No new notifications!</Text>
@@ -40,19 +29,7 @@ if (isNotification) {
 } return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        <View style={styles.nav}>
-        <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-        />
-       
-    
-        <View style={styles.navText}>
-        <Text style={styles.navText}>Notifications</Text>
-        </View>
-     </View>
+        <HomeNav text="Notifications" onPress={()=> navigation.goBack()}/>   
     
 
     <View style={styles.Notifications}>
@@ -214,20 +191,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingBottom: 30,
   },
-  nav: {
-    flexDirection: 'row',
-    paddingBottom: 10,
-    paddingTop: 48,
-    paddingHorizontal: 20,
-
-  },
-  navText: {
-    flex: 1,
-    alignItems: 'center',
-    fontFamily: Font.AVENIR_MEDIUM,
-    fontSize: 14,
-    lineHeight: 19
-  },
+  
   text: {
     fontFamily: Font.AVENIR_MEDIUM,
     fontSize: 16,

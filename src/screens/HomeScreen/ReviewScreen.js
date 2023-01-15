@@ -5,7 +5,7 @@ import {Colors, Font} from "../../constants";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import NotifyIcon from '../../../assets/images/notifyIcon.png';
-import {CustomButton, CustomBorder} from '../../components/CustomButton';
+import {CustomButton, CustomBorder} from '../../components/CustomComponents';
 
 
 const ReviewScreen = ({navigation}) => {
