@@ -1,19 +1,21 @@
-import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native'
+import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, TextInput } from 'react-native'
 import React, {useState} from 'react';
 import Notification from '../../../assets/images/notification.png';
 import {Colors, Font} from "../../constants";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
-import NotifyIcon from '../../../assets/images/notifyIcon.png';
+import Upload from '../../../assets/images/upload.png';
 import {CustomButton, CustomBorder} from '../../components/CustomComponents';
 
 
 const ReviewScreen = ({navigation}) => {
+const [isRate, setIsRate] = useState(false);
 const [isNotification, setIsNotification] = useState(false);
+const [review, setReview] = useState('');
 if (isNotification) {
 } return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+    <ScrollView style={styles.scrollView}>
         <View style={styles.nav}>
         <FontAwesome
             onPress={()=> navigation.goBack()}
@@ -21,12 +23,11 @@ if (isNotification) {
             color='#000000'
             size={20}
         />
-       
     
         <View style={styles.navText}>
         <Text style={styles.navText}>Rate & Review</Text>
         </View>
-     </View>
+    </View>
     
 
     <View style={styles.Notifications}>
@@ -69,6 +70,28 @@ if (isNotification) {
               </View>
     <View style={styles.notificationsHead}>
         <Text style={styles.notificationsTitle}>Describe your experience</Text>
+
+    <View style={styles.notificationsParagraph}>
+        <TextInput
+            style={styles.textArea}
+            multiline={true}
+            numberOfLines={4}
+            placeholder="(optional)"
+            onChangeText={text => setReview(text)}
+            value={review}
+            textAlignVertical='top'
+          />
+        </View>
+    
+
+    
+        <Text style={styles.notificationsTitle}>Upload photos/videos<Text style={{color:Colors.DEFAULT_GREY, fontFamily:Font.AVENIR_MEDIUM}}>(optional)</Text></Text>
+
+    <View style={styles.notificationsParagraph}>
+        <View style={{borderRadius: 5, borderWidth: 1, height: 100, width: '100%', borderColor: Colors.DEFAULT_GREY, justifyContent: 'center', alignContent: 'center'}} >
+                <Image source={Upload} style={{width: 50, height: 50, alignSelf: "center"}} resizeMode="contain"/>
+        </View>
+    </View>
     </View>
 
 
@@ -76,6 +99,9 @@ if (isNotification) {
    
 
     </ScrollView>
+    <View style={styles.buttonView}>
+        <CustomButton text="Submit Review" onPress={()=>navigation.navigate('ReviewScreen')} type="PRIMARY"/>
+        </View>
     </SafeAreaView>
 )
 }
@@ -98,7 +124,6 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   notificationsHead: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -106,8 +131,13 @@ const styles = StyleSheet.create({
   notificationsTitle: {
     fontSize: 16,
     fontFamily: Font.AVENIR_BLACK,
-    paddingVertical: 10,
+    paddingTop: 10,
     
+  },
+  buttonView: {
+    alignSelf:'center',
+    width: 200,
+    paddingTop: 20,
   },
   notificationsRead: {
     fontFamily: Font.AVENIR_BLACK,
@@ -115,11 +145,20 @@ const styles = StyleSheet.create({
   },
   notificationsParagraph: {
     flexDirection: 'row',
-    paddingVertical: 10,
+    paddingVertical: 5,
     
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
     
+    
+  },
+  textArea: {
+    paddingHorizontal: 10,
+    fontSize: 14,
+    fontFamily: Font.AVENIR_REGULAR,
+    borderWidth: 1,
+    borderColor: Colors.DEFAULT_GREY,
+    borderRadius: 5,
+    width: '100%',
   },
 
   ClearNotification: {
@@ -179,7 +218,14 @@ const styles = StyleSheet.create({
   date: {
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 12,
-  }
+  },
+  optionalText: {
+    fontFamily: Font.AVENIR_REGULAR,
+    color: Colors.DEFAULT_GREY,
+    fontSize: 14,
+    marginTop: 8,
+    marginLeft: 20,
+  },
 
   
 });

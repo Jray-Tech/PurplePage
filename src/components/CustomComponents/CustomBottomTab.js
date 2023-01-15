@@ -141,7 +141,7 @@ const CustomBottomTab = ({navigation}) => {
                     backgroundColor: Colors.DEFAULT_WHITE,
                     flexWrap: 'wrap',
                     flexDirection: 'row',
-                    paddingVertical: 15,
+                    paddingTop: 15,
                     justifyContent: 'space-between',
                 }}
                 >
@@ -418,9 +418,35 @@ const CustomBottomTab = ({navigation}) => {
         }
         })}
     >
-        <Tab.Screen name="About" component={About} />
-        <Tab.Screen name="Product" component={Product} />
-        <Tab.Screen name="Reviews" component={Reviews} />
+        <Tab.Screen 
+    name="About Us" 
+    component={About} 
+    options={{ 
+        tabBarLabel: ({ focused, color }) => (
+        <Text style={{ color: focused ? Colors.PINK : Colors.DEFAULT_GREY, textTransform:'capitalize'}}>
+            About Us
+        </Text>
+        ),
+    }}
+/>
+        <Tab.Screen name="Product & Service" component={Product} 
+        options={{
+            tabBarLabel: ({ focused, color }) => (
+                <Text style={{ color: focused ? Colors.PINK : Colors.DEFAULT_GREY, textTransform:'capitalize'}}>
+           Product & Service
+        </Text>
+            )
+        }}
+        />
+        <Tab.Screen name="Reviews" component={Reviews} 
+            options={{
+            tabBarLabel: ({ focused, color }) => (
+                <Text style={{ color: focused ? Colors.PINK : Colors.DEFAULT_GREY, textTransform:'capitalize'}}>
+           Reviews
+        </Text>
+            )
+        }}
+        />
     </Tab.Navigator>
   )
 }

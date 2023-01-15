@@ -25,7 +25,7 @@ const BusinessInfoScreen = ({navigation}) => {
             <View style={styles.action}>
             <Text style={styles.bussinessName}>Purple Closet</Text>
             <View style={{
-              backgroundColor: Colors.DEFAULT_PURPLE,
+              backgroundColor: isSubscribed ? Colors.DEFAULT_PURPLE : Colors.DEFAULT_GREY,
               flexDirection:'row',
               alignItems: 'center',
               paddingVertical: 5,
@@ -33,13 +33,12 @@ const BusinessInfoScreen = ({navigation}) => {
               borderRadius: 5,
             }}>
 
-              <Text style={{
-                color:Colors.DEFAULT_WHITE,
-                paddingHorizontal: 5,
-                fontFamily: Font.AVENIR_MEDIUM,
-                }}>Subscribe</Text>
-              
-                  <Image source={Subscribed} resizeMode="contain" />
+            <Text style={{
+              color:isSubscribed ? Colors.DEFAULT_WHITE : Colors.BOLD_BLACK,
+              paddingHorizontal: 5,
+              fontFamily: Font.AVENIR_MEDIUM,
+            }}>{isSubscribed ? 'Subscribe' : 'Subscribed'}</Text>
+          <Image source={isSubscribed ? Subscribed : ''} resizeMode="contain" />
             </View>    
           
             
