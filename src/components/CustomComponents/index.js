@@ -3,6 +3,10 @@ import CustomButton from "./CustomButton";
 import CustomBottomTab from "./CustomBottomTab";
 import Nav from "./Nav";
 import HomeNav from "./HomeNav";
+import CustomVerify from "./CustomVerify";
+import CustomBusinessTab from "./CustomBusinessTab";
+import Spacer from "./Spacer";
+
 
 
 export  {
@@ -11,4 +15,7 @@ export  {
     CustomBottomTab,
     Nav,
     HomeNav,
+    CustomVerify,
+    CustomBusinessTab,
+    Spacer,
 }

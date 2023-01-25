@@ -86,7 +86,9 @@ const HomeScreen = ({navigation}) => {
             <Pressable onPress={()=>navigation.navigate('BusinessInfoScreen')}>
             <Text style={styles.bussinessName}>Purple Closet</Text>
             </Pressable>
+            <Pressable onPress={()=>navigation.navigate('ListBusinessScreen')}>
             <Text style={styles.bussinessCategory}>Fashion</Text>
+            </Pressable>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
             <View style={styles.rank}>

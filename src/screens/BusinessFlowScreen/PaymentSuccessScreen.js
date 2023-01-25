@@ -5,12 +5,12 @@ import {CustomButton, CustomVerify} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants";
 
 
-const AccountCreatedSuccessScreen = ({navigation}) => {
+const PaymentSuccessScreen = ({navigation}) => {
   setTimeout(() => {
-    navigation.replace('ChooseInterestScreen')
+    navigation.replace('BusinessProfile')
   }, 3000);
   return (
-    <CustomVerify text="Your purple pages account has been successfully created"/>
+    <CustomVerify text="Payment Successful!"/>
     
   )
 }
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default AccountCreatedSuccessScreen;
+export default PaymentSuccessScreen;

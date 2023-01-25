@@ -5,69 +5,84 @@ import {Colors, Font} from "../../constants";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Upload from '../../../assets/images/upload.png';
-import {CustomButton, CustomBorder} from '../../components/CustomComponents';
+import {CustomButton, CustomBorder, HomeNav} from '../../components/CustomComponents';
 
 
 const ReviewScreen = ({navigation}) => {
-const [isRate, setIsRate] = useState(false);
+const [isRate, setIsRate] = useState([false,false,false,false,false]);
 const [isNotification, setIsNotification] = useState(false);
+const [starStates, setStarStates] = useState([false, false, false, false, false])
 const [review, setReview] = useState('');
 if (isNotification) {
 } return (
     <SafeAreaView style={styles.container}>
     <ScrollView style={styles.scrollView}>
-        <View style={styles.nav}>
-        <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-        />
+        <HomeNav text="Rate & Review" onPress={()=> navigation.goBack()} />
     
-        <View style={styles.navText}>
-        <Text style={styles.navText}>Rate & Review</Text>
-        </View>
-    </View>
     
 
     <View style={styles.Notifications}>
         <Text style={styles.ClearNotification}>Tell us what you think</Text>
     </View>
     <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
+        <View style={styles.rank}>
+            <FontAwesome
                 name={'star'}
                 size={20}
-                color={Colors.DEFAULT_GREY}
+                color={starStates[0] ? Colors.RANK : Colors.DEFAULT_GREY}
                 style={{marginRight: 8}}
-              />
-              <FontAwesome
+                onPress={() => {
+                    let newStarStates = [...starStates];
+                    newStarStates[0] = !newStarStates[0];
+                    setStarStates(newStarStates);
+                }}
+            />
+            <FontAwesome
                 name={'star'}
                 size={20}
-                color={Colors.DEFAULT_GREY}
+                color={starStates[1] ? Colors.RANK : Colors.DEFAULT_GREY}
                 style={{marginRight: 8}}
-              />
-              <FontAwesome
+                onPress={() => {
+                    let newStarStates = [...starStates];
+                    newStarStates[1] = !newStarStates[1];
+                    setStarStates(newStarStates);
+                }}
+            />
+            <FontAwesome
                 name={'star'}
                 size={20}
-                color={Colors.DEFAULT_GREY}
+                color={starStates[2] ? Colors.RANK : Colors.DEFAULT_GREY}
                 style={{marginRight: 8}}
-              />
-              <FontAwesome
+                onPress={() => {
+                    let newStarStates = [...starStates];
+                    newStarStates[2] = !newStarStates[2];
+                    setStarStates(newStarStates);
+                }}
+            />
+            <FontAwesome
                 name={'star'}
                 size={20}
-                color={Colors.DEFAULT_GREY}
+                color={starStates[3] ? Colors.RANK : Colors.DEFAULT_GREY}
                 style={{marginRight: 8}}
-              />
-              <FontAwesome
+                onPress={() => {
+                    let newStarStates = [...starStates];
+                    newStarStates[3] = !newStarStates[3];
+                    setStarStates(newStarStates);
+                }}
+            />
+            <FontAwesome
                 name={'star'}
                 size={20}
-                color={Colors.DEFAULT_GREY}
-                
-              />
-              
-              </View>
-              </View>
+                color={starStates[4] ? Colors.RANK : Colors.DEFAULT_GREY}
+                style={{marginRight: 8}}
+                onPress={() => {
+                    let newStarStates = [...starStates];
+                    newStarStates[4] = !newStarStates[4];
+                    setStarStates(newStarStates);
+                }}
+            />
+            </View>
+        </View>
     <View style={styles.notificationsHead}>
         <Text style={styles.notificationsTitle}>Describe your experience</Text>
 
