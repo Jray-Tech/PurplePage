@@ -1,8 +1,7 @@
 import { View, Text, StyleSheet, StatusBar, TextInput, Touchable, TouchableOpacity } from 'react-native'
 import React, {useRef, useState} from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, Font} from "../../constants";
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { Nav } from '../../components/CustomComponents';
 
 const VerifyForgotPasswordScreen = ({navigation}) => {
   const firstInput = useRef()
@@ -19,16 +18,11 @@ const VerifyForgotPasswordScreen = ({navigation}) => {
         backgroundColor={Colors.DEFAULT_WHITE}
         translucent
       />
-      <View style={styles.nav}>
-        <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
+      
+        <Nav onPress={()=> navigation.goBack()}/>
         <Text style={styles.title}>Verification</Text>
         <Text style={styles.content}>We sent a 6-digit code to <Text style={styles.phoneNumberText}>080***789</Text> and <Text style={styles.phoneNumberText}>purple***@gmail.com </Text></Text>
-      </View>
+      
       <View style={styles.otpSubContainer}>
         <Text>Enter OTP</Text>
         <Text style={styles.countDown}>00:20secs</Text>
@@ -116,13 +110,13 @@ const VerifyForgotPasswordScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 20,
     backgroundColor: Colors.DEFAULT_WHITE,
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 20,
   },
   headerTitle: {
     fontSize: 30,
@@ -130,13 +124,6 @@ const styles = StyleSheet.create({
     lineHeight: 20 * 1.4,
     //width: Display.setWidth(80),
     textAlign: 'center',
-  },
-  nav: {
-    
-    justifyContent:'flex-end',
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    paddingTop: 48,
   },
   countDown: {
     color: Colors.DASH_PINK,
@@ -165,7 +152,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 10,
     marginBottom: 20,
-    marginHorizontal: 20,
   },
   phoneNumberText: {
     fontSize: 16,
@@ -175,14 +161,13 @@ const styles = StyleSheet.create({
     color: Colors.BOLD_BLACK,
   },
   otpContainer: {
-    marginHorizontal: 20,
     marginBottom: 20,
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
   },
   otpSubContainer: {
-    marginHorizontal: 25,
+    
     marginBottom: 10,
     justifyContent: 'space-between',
     

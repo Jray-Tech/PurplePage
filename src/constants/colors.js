@@ -13,4 +13,17 @@ export default  {
     BOLD_BLACK: '#14011B',
     DASH_PINK: '#C7005C',
     DASH_GREEN: '#009932',
+    PINK: '#C42AF7',
+    SEARCH_GREY: '#E0E0E080',
+    PROGRESS_GREY: '#E0E0E0',
+    SHEET_OPEN: '#0E0E0E',
+    BORDER_COLOR: '#cccccc',
+    CATEGORY_PURPLE: '#831CA5',
+    CATEGORY_GREY: '#828282;',
+    RANK: '#FFBF00',
+    DASH_GREY: '#848484',
+    LIGHT_MODE_GREY: '#4F4F4F',
+    THUMB_GREY: '#F2F2F2',
+    ACTIVE_PINK: '#CCACD6',
+  
 }

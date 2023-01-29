@@ -1,39 +1,22 @@
 import { View, Text, Button, StyleSheet, Image } from 'react-native'
 import React from 'react';
 import Confirmation from '../../../assets/images/Confirmation.png';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton, CustomVerify} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants";
 
 
 const AccountCreatedSuccessScreen = ({navigation}) => {
+  setTimeout(() => {
+    navigation.replace('ChooseInterestScreen')
+  }, 3000);
   return (
-    <View style={{
-        backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1,
-    }}>
-    <View style={styles.imageContainer}>
-        <Image 
-            source={Confirmation} style={[styles.logo, ]} resizeMode="contain" />
-        <Text style={styles.verifyText}>Your purple pages account has been successfully created</Text>
-    </View>
-      
-    <View style={styles.textContainer}>
-        <CustomButton text="Go home" onPress={()=> navigation.navigate('HomeScreen')} type="PRIMARY"/>
-    </View>
-    </View>
+    <CustomVerify text="Your purple pages account has been successfully created"/>
     
   )
 }
 
 const styles = StyleSheet.create({
   
-  container: {
-    flex: 1,
-    backgroundColor: Colors.DEFAULT_WHITE,
-    alignItems: 'center',
-  },
   verifyText: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -46,16 +29,13 @@ const styles = StyleSheet.create({
   imageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
     height: 201,
-    paddingTop: 200,
   },
   image: {
     width: 158,
     height: 201,
   },
   textContainer: {
-    flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
     padding: 10,

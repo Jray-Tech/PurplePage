@@ -1,8 +1,7 @@
 import { View, Text, StyleSheet, StatusBar, TextInput, Touchable, TouchableOpacity } from 'react-native'
 import React, {useRef, useState} from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, Font} from "../../constants";
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { Nav } from '../../components/CustomComponents';
 
 const VerificationScreen = ({navigation}) => {
   const firstInput = useRef()
@@ -19,13 +18,8 @@ const VerificationScreen = ({navigation}) => {
         backgroundColor={Colors.DEFAULT_WHITE}
         translucent
       />
-      <View style={styles.nav}>
-        <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
+      <View style={styles.verify}>
+        <Nav onPress={()=> navigation.goBack()}/>
         <Text style={styles.title}>Verification</Text>
         <Text style={styles.content}>We sent a 6-digit code to <Text style={styles.phoneNumberText}>080***789</Text> and <Text style={styles.phoneNumberText}>purple***@gmail.com </Text></Text>
       </View>
@@ -131,12 +125,11 @@ const styles = StyleSheet.create({
     //width: Display.setWidth(80),
     textAlign: 'center',
   },
-  nav: {
+  verify: {
     
     justifyContent:'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 10,
-    paddingTop: 48,
   },
   countDown: {
     color: Colors.DASH_PINK,

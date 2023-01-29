@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton, Nav} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants"
 
 const ForgotPasswordScreen = ({navigation}) => {
@@ -27,14 +27,7 @@ const ForgotPasswordScreen = ({navigation}) => {
   }
     return (
       <View style={styles.container}>
-        <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
-        </View>
+        <Nav onPress={()=> navigation.goBack()}/>
         <View style={styles.header}>
           
           <Text style={styles.text_header}>Forgot Password?</Text>
@@ -77,12 +70,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingHorizontal: 20,
   },
   nav: {
     justifyContent:'flex-end',
-    paddingHorizontal: 20,
     paddingBottom: 10,
-    paddingTop: 48,
+    paddingTop: 18,
   },
   containerBottom: {
     justifyContent: 'center',
@@ -100,7 +93,6 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     backgroundColor: Colors.DEFAULT_WHITE,
-    paddingHorizontal: 20,
     paddingVertical: 10,
     marginTop: 10,
   },

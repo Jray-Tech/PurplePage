@@ -11,7 +11,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import {CustomButton, Nav} from '../../components/CustomComponents';
 import {Colors, Font} from "../../constants"
 
 const SetNewPasswordScreen = ({navigation}) => {
@@ -28,14 +28,7 @@ const SetNewPasswordScreen = ({navigation}) => {
   }
     return (
       <View style={styles.container}>
-        <View style={styles.nav}>
-          <FontAwesome
-            onPress={()=> navigation.goBack()}
-            name='chevron-left'
-            color='#000000'
-            size={20}
-          />
-        </View>
+        <Nav onPress={()=> navigation.goBack()}/>
         <View style={styles.header}>
           <Text style={styles.text_header}>Reset your Password?</Text>
           <Text style={styles.text_footer}>Enter a new password</Text>
