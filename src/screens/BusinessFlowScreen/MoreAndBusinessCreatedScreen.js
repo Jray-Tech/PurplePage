@@ -27,10 +27,11 @@ import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import BottomSheet from '@gorhom/bottom-sheet';
 
-const MoreAndBusinnessCreatedScreen = ({navigation}) => {
+export const MoreAndBusinnessCreatedScreen = ({navigation}) => {
   const BottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
@@ -493,5 +494,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default MoreAndBusinnessCreatedScreen;

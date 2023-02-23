@@ -14,7 +14,8 @@ import {
 } from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import {
   CustomButton,
   CustomBottomTab,
@@ -24,7 +25,7 @@ import {
   Spacer,
 } from '../../components/CustomComponents';
 
-const InAppNotificationScreen = ({navigation}) => {
+export const InAppNotificationScreen = ({navigation}) => {
   const [isEnabled, setIsEnabled] = useState(true);
   const [text, setText] = useState('Press the Switch:');
 
@@ -388,5 +389,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default InAppNotificationScreen;

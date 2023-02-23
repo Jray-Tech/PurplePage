@@ -25,7 +25,8 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Visa from '../../../assets/images/visa.png';
 import Mastercard from '../../../assets/images/mastercard.png';
@@ -33,7 +34,7 @@ import Flutterwave from '../../../assets/images/flutterwave.png';
 import Paystack from '../../../assets/images/paystack.png';
 import Verve from '../../../assets/images/verve.png';
 
-const PaymentBankTransferScreen = ({navigation}) => {
+export const PaymentBankTransferScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -318,5 +319,3 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
-
-export default PaymentBankTransferScreen;

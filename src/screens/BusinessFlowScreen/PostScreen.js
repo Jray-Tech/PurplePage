@@ -20,17 +20,12 @@ import {
   CustomBusinessTab,
   Spacer,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import Calendar from '../../../assets/images/Calendar.png';
 import Profile from '../../../assets/images/notifyIcon.png';
-import Edit from '../../../assets/images/edit.png';
-import Comment from '../../../assets/images/Comment.png';
-import Like from '../../../assets/images/Like.png';
-import Bookmark from '../../../assets/images/Bookmark.png';
-import Share from '../../../assets/images/Share.png';
-import Insights from '../../../assets/images/Insights.png';
 
-const PostScreen = ({navigation}) => {
+export const PostScreen = ({navigation}) => {
   const [review, setReview] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(true);
 
@@ -358,5 +353,3 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
 });
-
-export default PostScreen;

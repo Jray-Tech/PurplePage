@@ -3,8 +3,6 @@ import {
   View,
   Button,
   StyleSheet,
-  TouchableOpacity,
-  Platform,
   Image,
   TextInput,
   SafeAreaView,
@@ -12,9 +10,6 @@ import {
   Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
-import PurpleCloset from '../../../assets/images/purplecloset.png';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
 import {
   CustomButton,
   CustomBottomTab,
@@ -23,16 +18,14 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
-import Subscribed from '../../../assets/images/Subcribed.png';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import Comment from '../../../assets/images/Comment.png';
 import Like from '../../../assets/images/Like.png';
 import Bookmark from '../../../assets/images/Bookmark.png';
-import Share from '../../../assets/images/Share.png';
-import Insights from '../../../assets/images/Insights.png';
 import Profile from '../../../assets/images/businessProfile.png';
 
-const BlogInsightScreen = ({navigation}) => {
+export const BlogInsightScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
 
   return (
@@ -328,5 +321,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default BlogInsightScreen;

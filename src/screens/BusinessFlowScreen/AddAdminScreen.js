@@ -27,11 +27,11 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
-
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import BottomSheet from '@gorhom/bottom-sheet';
 
-const AddAdminScreen = ({navigation}) => {
+export const AddAdminScreen = ({navigation}) => {
   const BottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
@@ -427,5 +427,3 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
-
-export default AddAdminScreen;

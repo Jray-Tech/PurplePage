@@ -11,25 +11,16 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-
-import PurpleCloset from '../../../assets/images/purplecloset.png';
-import Vector from '../../../assets/images/Vector.png';
-import Vector2 from '../../../assets/images/Vector2.png';
-import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
 import Shoe from '../../../assets/images/shoe.png';
 import Bag from '../../../assets/images/bag.png';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {Colors, Font} from '../../constants';
-import {color} from 'react-native-reanimated';
 import profile from '../../../assets/images/profile1.png';
 import Ellipse3 from '../../../assets/images/Ellipse3.png';
 import Ellipse4 from '../../../assets/images/Ellipse4.png';
 import Ellipse5 from '../../../assets/images/Ellipse5.png';
 import {Nav, Spacer} from '../../components/CustomComponents';
 
-const BusinessProductScreen = ({navigation}) => {
+export const BusinessProductScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -323,5 +314,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default BusinessProductScreen;

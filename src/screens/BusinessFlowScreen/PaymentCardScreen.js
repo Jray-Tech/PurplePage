@@ -25,10 +25,11 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const PaymentCardScreen = ({navigation}) => {
+export const PaymentCardScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -300,5 +301,3 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
-
-export default PaymentCardScreen;

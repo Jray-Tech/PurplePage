@@ -13,7 +13,8 @@ import {
 } from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import {
   CustomButton,
   CustomBottomTab,
@@ -23,7 +24,7 @@ import {
   Spacer,
 } from '../../components/CustomComponents';
 
-const NotificationSettingScreen = ({navigation}) => {
+export const NotificationSettingScreen = ({navigation}) => {
   const BottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
@@ -308,5 +309,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default NotificationSettingScreen;

@@ -22,9 +22,8 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
-import Basic from '../../../assets/images/Basic.png';
-import Premium from '../../../assets/images/Premium.png';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const listTab = [
@@ -103,7 +102,7 @@ const data = [
     textColor: Colors.SECONDARY_GREY,
   },
 ];
-const PricingScreen = ({navigation}) => {
+export const PricingScreen = ({navigation}) => {
   const [status, setStatus] = useState('Daily');
   const [datalist, setDatalist] = useState(
     data.filter(e => e.status === 'Daily'),
@@ -278,8 +277,6 @@ const PricingScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
-export default PricingScreen;
 
 const styles = StyleSheet.create({
   container: {

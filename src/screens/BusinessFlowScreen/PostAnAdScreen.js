@@ -22,9 +22,9 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
-import Basic from '../../../assets/images/Basic.png';
-import Premium from '../../../assets/images/Premium.png';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
+
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const listTab = [
@@ -103,7 +103,7 @@ const data = [
     textColor: Colors.SECONDARY_GREY,
   },
 ];
-const PostAnAdScreen = ({navigation}) => {
+export const PostAnAdScreen = ({navigation}) => {
   const [status, setStatus] = useState('Daily');
   const [datalist, setDatalist] = useState(
     data.filter(e => e.status === 'Daily'),
@@ -278,8 +278,6 @@ const PostAnAdScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
-export default PostAnAdScreen;
 
 const styles = StyleSheet.create({
   container: {

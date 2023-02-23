@@ -1,19 +1,8 @@
-import {
-  Text,
-  View,
-  Button,
-  StyleSheet,
-  TouchableOpacity,
-  Platform,
-  Image,
-  TextInput,
-  SafeAreaView,
-  ScrollView,
-  Pressable,
-} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import {
   CustomButton,
   CustomBottomTab,
@@ -23,7 +12,7 @@ import {
   Spacer,
 } from '../../components/CustomComponents';
 
-const ConnectToSocialScreen = ({navigation}) => {
+export const ConnectToSocialScreen = ({navigation}) => {
   const [isConnected, setIsConnected] = useState(false);
 
   return (
@@ -361,5 +350,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default ConnectToSocialScreen;

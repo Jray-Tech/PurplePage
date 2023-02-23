@@ -1,30 +1,13 @@
-import {
-  Text,
-  View,
-  Button,
-  StyleSheet,
-  TouchableOpacity,
-  Platform,
-  Image,
-  TextInput,
-  SafeAreaView,
-  ScrollView,
-  Pressable,
-} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {Colors, Font} from '../../constants';
-import {
-  CustomButton,
-  CustomBottomTab,
-  Nav,
-  HomeNav,
-  CustomBorder,
-  Spacer,
-} from '../../components/CustomComponents';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
+import {HomeNav, Spacer} from '../../components/CustomComponents';
 import Profile from '../../../assets/images/notifyIcon.png';
-const AdminScreen = ({navigation}) => {
+
+export const AdminScreen = ({navigation}) => {
   const BottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
@@ -328,5 +311,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default AdminScreen;

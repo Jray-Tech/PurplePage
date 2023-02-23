@@ -16,9 +16,10 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CustomButton, HomeNav} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
-const ListBusinessScreen = ({navigation}) => {
+export const ListBusinessScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isLocationClicked, setIsLocationClicked] = useState(false);
@@ -349,5 +350,3 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
-
-export default ListBusinessScreen;

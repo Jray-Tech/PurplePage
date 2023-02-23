@@ -2,9 +2,10 @@ import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Confirmation from '../../../assets/images/Confirmation.png';
 import {CustomButton, CustomVerify} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
-const PaymentSuccessScreen = ({navigation}) => {
+export const PaymentSuccessScreen = ({navigation}) => {
   setTimeout(() => {
     navigation.replace('BusinessProfile');
   }, 3000);
@@ -38,5 +39,3 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
 });
-
-export default PaymentSuccessScreen;

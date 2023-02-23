@@ -20,10 +20,11 @@ import {
   Nav,
   CustomBusinessTab,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
 import Edit from '../../../assets/images/edit.png';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
-const BusinessProfile = ({navigation}) => {
+export const BusinessProfile = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
 
   return (
@@ -278,5 +279,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default BusinessProfile;

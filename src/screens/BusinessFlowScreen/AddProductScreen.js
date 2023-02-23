@@ -12,14 +12,13 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CustomButton, HomeNav, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 import Clip from '../../../assets/images/clip.png';
 
-const AddProductScreen = ({navigation}) => {
+export const AddProductScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const category = [{category: 'Yellow'}, {category: 'Red'}];
@@ -326,5 +325,3 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
-
-export default AddProductScreen;
