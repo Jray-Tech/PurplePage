@@ -1,34 +1,41 @@
-import { View, Text, Button, StyleSheet, Image } from 'react-native'
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Confirmation from '../../../assets/images/Confirmation.png';
 import {CustomButton} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants";
-
+import {Colors, Font} from '../../constants';
 
 const ResetSuccessScreen = ({navigation}) => {
   return (
-    <View style={{
+    <View
+      style={{
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-    }}>
-    <View style={styles.imageContainer}>
-        <Image 
-            source={Confirmation} style={[styles.logo, ]} resizeMode="contain" />
-        <Text style={styles.verifyText}>Your password has been successfully reset</Text>
+      }}>
+      <View style={styles.imageContainer}>
+        <Image
+          source={Confirmation}
+          style={[styles.logo]}
+          resizeMode="contain"
+        />
+        <Text style={styles.verifyText}>
+          Your password has been successfully reset
+        </Text>
+      </View>
+
+      <View style={styles.textContainer}>
+        <CustomButton
+          text="Go home"
+          onPress={() => navigation.navigate('HomeScreen')}
+          type="PRIMARY"
+        />
+      </View>
     </View>
-      
-    <View style={styles.textContainer}>
-        <CustomButton text="Go home" onPress={()=> navigation.navigate('HomeScreen')} type="PRIMARY"/>
-    </View>
-    </View>
-    
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
     backgroundColor: Colors.DEFAULT_WHITE,
@@ -62,8 +69,6 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingBottom: 30,
   },
-  
 });
-
 
 export default ResetSuccessScreen;

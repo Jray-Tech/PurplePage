@@ -1,4 +1,15 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import React, {useState} from 'react';
 
 import PurpleCloset from '../../../assets/images/purplecloset.png';
@@ -9,14 +20,14 @@ import Shoe from '../../../assets/images/shoe.png';
 import Bag from '../../../assets/images/bag.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import MaterialIcons  from 'react-native-vector-icons/MaterialIcons';
-import {Colors, Font} from "../../constants"
-import { color } from 'react-native-reanimated';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {Colors, Font} from '../../constants';
+import {color} from 'react-native-reanimated';
 import profile from '../../../assets/images/profile1.png';
 import Ellipse3 from '../../../assets/images/Ellipse3.png';
 import Ellipse4 from '../../../assets/images/Ellipse4.png';
 import Ellipse5 from '../../../assets/images/Ellipse5.png';
-import { Nav, Spacer } from '../../components/CustomComponents';
+import {Nav, Spacer} from '../../components/CustomComponents';
 
 const BusinessProductScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -24,100 +35,126 @@ const BusinessProductScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () => {
-    console.warn("Log in")
-  }
+    console.warn('Log in');
+  };
 
   const forgotPasswordPressed = () => {
-    console.warn("Forgot Password")
-  }
-    return (
-      <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        <Nav onPress={()=> navigation.goBack()}/>
-        
-        
+    console.warn('Forgot Password');
+  };
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}>
+        <Nav onPress={() => navigation.goBack()} />
+
         <View style={styles.header}>
-            <View style={styles.profileHead}>
-                <View style={styles.profileStyle}>
-          <Image source={profile} style={[styles.profile]} resizeMode="contain" />
-          <Text style={styles.profileText}> Charlies Bagel Garden</Text>
-          </View>
-          <TouchableOpacity onPress={()=>navigation.navigate('NotifyScreen')}>
-          <Feather
+          <View style={styles.profileHead}>
+            <View style={styles.profileStyle}>
+              <Image
+                source={profile}
+                style={[styles.profile]}
+                resizeMode="contain"
+              />
+              <Text style={styles.profileText}> Charlies Bagel Garden</Text>
+            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('NotifyScreen')}>
+              <Feather
                 name={'more-vertical'}
                 size={22}
                 color={Colors.LIGHT_MODE_GREY}
                 style={{marginRight: 2}}
-            />
-          </TouchableOpacity>
-            </View>
-        
+              />
+            </TouchableOpacity>
+          </View>
 
-            <View style={styles.body}>
+          <View style={styles.body}>
             <Image source={Shoe} style={styles.images} />
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <Text style={styles.bussinessLocation}>Strappy Sandals with mini purse</Text>
-              
-            </View>
-              
-              
+              <View style={styles.rank}>
+                <Text style={styles.bussinessLocation}>
+                  Strappy Sandals with mini purse
+                </Text>
               </View>
-              <Text style={styles.bussinessCategory}>₦8000.00</Text>
-              <View style={{ flexDirection:"row"}}>
-                <Image source={Ellipse3} style={{width:16}} resizeMode="contain" />
-                <Image source={Ellipse4} style={{width:16}} resizeMode="contain" />
-                <Image source={Ellipse5} style={{width:16}} resizeMode="contain" />
             </View>
+            <Text style={styles.bussinessCategory}>₦8000.00</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={Ellipse3}
+                style={{width: 16}}
+                resizeMode="contain"
+              />
+              <Image
+                source={Ellipse4}
+                style={{width: 16}}
+                resizeMode="contain"
+              />
+              <Image
+                source={Ellipse5}
+                style={{width: 16}}
+                resizeMode="contain"
+              />
             </View>
+          </View>
         </View>
 
         <View style={styles.header}>
-            <View style={styles.profileHead}>
-                <View style={styles.profileStyle}>
-          <Image source={profile} style={[styles.profile]} resizeMode="contain" />
-          <Text style={styles.profileText}> Charlies Bagel Garden</Text>
-          </View>
-          <TouchableOpacity onPress={()=>navigation.navigate('NotifyScreen')}>
-          <Feather
+          <View style={styles.profileHead}>
+            <View style={styles.profileStyle}>
+              <Image
+                source={profile}
+                style={[styles.profile]}
+                resizeMode="contain"
+              />
+              <Text style={styles.profileText}> Charlies Bagel Garden</Text>
+            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('NotifyScreen')}>
+              <Feather
                 name={'more-vertical'}
                 size={22}
                 color={Colors.LIGHT_MODE_GREY}
                 style={{marginRight: 2}}
-            />
-          </TouchableOpacity>
-            </View>
-        
+              />
+            </TouchableOpacity>
+          </View>
 
-            <View style={styles.body}>
+          <View style={styles.body}>
             <Image source={Bag} style={styles.images} />
-            
-            
-            
+
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <Text style={styles.bussinessLocation}>Strappy Sandals with mini purse</Text>
-              
+              <View style={styles.rank}>
+                <Text style={styles.bussinessLocation}>
+                  Strappy Sandals with mini purse
+                </Text>
               </View>
-              
-              
-              </View>
-              <Text style={styles.bussinessCategory}>₦18000.00</Text>
-              <View style={{ flexDirection:"row"}}>
-                <Image source={Ellipse3} style={{width:16}} resizeMode="contain" />
-                <Image source={Ellipse4} style={{width:16}} resizeMode="contain" />
-                <Image source={Ellipse5} style={{width:16}} resizeMode="contain" />
             </View>
+            <Text style={styles.bussinessCategory}>₦18000.00</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={Ellipse3}
+                style={{width: 16}}
+                resizeMode="contain"
+              />
+              <Image
+                source={Ellipse4}
+                style={{width: 16}}
+                resizeMode="contain"
+              />
+              <Image
+                source={Ellipse5}
+                style={{width: 16}}
+                resizeMode="contain"
+              />
             </View>
+          </View>
         </View>
         <Spacer size={60} />
-        
-        
       </ScrollView>
-      
-      </SafeAreaView>
-    )
-}
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -128,7 +165,7 @@ const styles = StyleSheet.create({
   rank: {
     flexDirection: 'row',
   },
-  
+
   footer: {
     backgroundColor: Colors.DEFAULT_WHITE,
     flexDirection: 'row',
@@ -145,7 +182,7 @@ const styles = StyleSheet.create({
     height: 32,
   },
   profileHead: {
-    flexDirection: "row",
+    flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 10,
   },
@@ -188,10 +225,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
@@ -212,7 +249,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
   },
@@ -226,7 +262,6 @@ const styles = StyleSheet.create({
     color: Colors.CATEGORY_GREY,
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 14,
-
   },
   filterContainer: {
     alignItems: 'flex-end',
@@ -235,17 +270,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
   },
-  
+
   icons: {
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

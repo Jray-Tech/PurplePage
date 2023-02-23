@@ -1,4 +1,13 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+} from 'react-native';
 import React, {useState} from 'react';
 import Logo from '../../../assets/images/Logo.png';
 import Rectangle_1 from '../../../assets/images/Rectangle_1.png';
@@ -11,7 +20,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
 import {CustomButton, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {Colors, Font} from '../../constants';
 
 const ForgotPasswordScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -19,52 +28,55 @@ const ForgotPasswordScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () => {
-    console.warn("Log in")
-  }
+    console.warn('Log in');
+  };
 
   const forgotPasswordPressed = () => {
-    console.warn("Forgot Password")
-  }
-    return (
-      <View style={styles.container}>
-        <Nav onPress={()=> navigation.goBack()}/>
-        <View style={styles.header}>
-          
-          <Text style={styles.text_header}>Forgot Password?</Text>
-          <Text style={styles.text_footer}>Enter the email associated with your purple pages account</Text>
-          
-          
-          <Text style={styles.username}>Email</Text>
-          <View style={styles.inputContainer}>
-            <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                placeholder="Placeholder text"
-                placeholderTextColor={Colors.DEFAULT_GREY}
-                selectionColor={Colors.DEFAULT_GREY}
-                style={styles.inputText}
-                onChangeText={text => setPassword(text)}
-                
-              />
-              <Feather 
-                name='check-circle'
-                size={22}
-                color={Colors.DASH_GREEN}
-                style={{marginRight: 10}}
-                onPress={()=>navigation.navigate('VerifyForgotPasswordScreen')}
-              />
-            </View>
+    console.warn('Forgot Password');
+  };
+  return (
+    <View style={styles.container}>
+      <Nav onPress={() => navigation.goBack()} />
+      <View style={styles.header}>
+        <Text style={styles.text_header}>Forgot Password?</Text>
+        <Text style={styles.text_footer}>
+          Enter the email associated with your purple pages account
+        </Text>
+
+        <Text style={styles.username}>Email</Text>
+        <View style={styles.inputContainer}>
+          <View style={styles.inputSubContainer}>
+            <TextInput
+              placeholder="Placeholder text"
+              placeholderTextColor={Colors.DEFAULT_GREY}
+              selectionColor={Colors.DEFAULT_GREY}
+              style={styles.inputText}
+              onChangeText={text => setPassword(text)}
+            />
+            <Feather
+              name="check-circle"
+              size={22}
+              color={Colors.DASH_GREEN}
+              style={{marginRight: 10}}
+              onPress={() => navigation.navigate('VerifyForgotPasswordScreen')}
+            />
           </View>
-          <View style={styles.containerBottom}>
-            <Text style={styles.bottomText}>Remember your password? <Text onPress={()=>navigation.navigate('SignInScreen')} style={styles.bottomTextLogin}>Log in</Text> now</Text>
-          </View>
-         
         </View>
-        
-        
+        <View style={styles.containerBottom}>
+          <Text style={styles.bottomText}>
+            Remember your password?{' '}
+            <Text
+              onPress={() => navigation.navigate('SignInScreen')}
+              style={styles.bottomTextLogin}>
+              Log in
+            </Text>{' '}
+            now
+          </Text>
+        </View>
       </View>
-    )
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -73,7 +85,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   nav: {
-    justifyContent:'flex-end',
+    justifyContent: 'flex-end',
     paddingBottom: 10,
     paddingTop: 18,
   },
@@ -81,7 +93,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 24,
-    
   },
   bottomText: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -96,7 +107,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     marginTop: 10,
   },
-  
+
   text_header: {
     color: Colors.BOLD_BLACK,
     fontSize: 24,
@@ -109,10 +120,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   action: {
     flexDirection: 'row',
@@ -121,7 +132,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 5,
     marginHorizontal: 5,
-    
   },
   icons: {
     flexDirection: 'row',
@@ -129,15 +139,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,
   },
-  
+
   button: {
     alignItem: 'center',
     marginTop: 50,
@@ -163,7 +171,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

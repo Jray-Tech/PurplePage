@@ -1,15 +1,32 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, FlatList, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  FlatList,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState} from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomBottomTab, Nav, HomeNav, CustomBorder, Spacer} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  HomeNav,
+  CustomBorder,
+  Spacer,
+} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
-
-
 
 const PaymentCardScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
@@ -20,66 +37,56 @@ const PaymentCardScreen = ({navigation}) => {
     {location: 'Jumia', image: '0ne'},
     {location: 'Shopify', image: 't0ne'},
   ];
-  const [myData, setMyData]=useState(location)
+  const [myData, setMyData] = useState(location);
   const [password, setPassword] = useState('');
-  const [selectedLocation, setSelectedLocation] = useState('Lagos')
-    return (
-      <View style={styles.container}>
-      
-        
-          <HomeNav text="Payment" onPress={()=> navigation.goBack()}/>
-        
-        <View style={styles.header}>
-            <View style={styles.body}>
-            <Text style={styles.duration}>
-                Please enter your card details carefully below
-            </Text>
-            
-            </View>
-           
-            <View style={{paddingHorizontal: 20}}>
-                <Text style={styles.username}>Card Number</Text>
+  const [selectedLocation, setSelectedLocation] = useState('Lagos');
+  return (
+    <View style={styles.container}>
+      <HomeNav text="Payment" onPress={() => navigation.goBack()} />
+
+      <View style={styles.header}>
+        <View style={styles.body}>
+          <Text style={styles.duration}>
+            Please enter your card details carefully below
+          </Text>
+        </View>
+
+        <View style={{paddingHorizontal: 20}}>
+          <Text style={styles.username}>Card Number</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                
+              <TextInput
                 placeholder="Enter digits"
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
                 onChangeText={text => setPassword(text)}
               />
-              
             </View>
-          </View><Text style={styles.username}>CVV</Text>
+          </View>
+          <Text style={styles.username}>CVV</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                
+              <TextInput
                 placeholder="Enter the 3-digits "
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
                 onChangeText={text => setPassword(text)}
               />
-              
             </View>
           </View>
-            <Text style={styles.username}>Expiration Date</Text>
+          <Text style={styles.username}>Expiration Date</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                
+              <TextInput
                 placeholder=""
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
                 onChangeText={text => setPassword(text)}
               />
-              <MaterialCommunityIcons 
+              <MaterialCommunityIcons
                 name={'calendar-range-outline'}
                 size={22}
                 color={Colors.DEFAULT_PINK}
@@ -88,22 +95,23 @@ const PaymentCardScreen = ({navigation}) => {
               />
             </View>
           </View>
-           
         </View>
-        
-    </View>
-    <View style={styles.buttonView}>
-      <CustomButton text="Pay ₦14,000.00" onPress={()=>navigation.navigate('PaymentSuccessScreen')} type="PRIMARY"/>
+      </View>
+      <View style={styles.buttonView}>
+        <CustomButton
+          text="Pay ₦14,000.00"
+          onPress={() => navigation.navigate('PaymentSuccessScreen')}
+          type="PRIMARY"
+        />
       </View>
     </View>
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.DEFAULT_WHITE,
-    
   },
   headerBlogText: {
     color: Colors.HEADER_BLACK,
@@ -114,7 +122,7 @@ const styles = StyleSheet.create({
   },
   pubDate: {
     paddingRight: 20,
-    paddingTop: 20
+    paddingTop: 20,
   },
   buttonView: {
     marginBottom: 40,
@@ -124,19 +132,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   InsightsHeader: {
-    flexDirection: 'row', 
-    paddingHorizontal: 20, 
+    flexDirection: 'row',
+    paddingHorizontal: 20,
     justifyContent: 'space-between',
   },
   InsightsBody: {
-    color: Colors.LIGHT_MODE_GREY, 
-    fontFamily: Font.AVENIR_REGULAR, 
+    color: Colors.LIGHT_MODE_GREY,
+    fontFamily: Font.AVENIR_REGULAR,
     lineHeight: 19.6,
   },
   InsightsResult: {
-    color: Colors.LIGHT_MODE_GREY, 
-    fontFamily: Font.AVENIR_MEDIUM, 
-    lineHeight: 19.6
+    color: Colors.LIGHT_MODE_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    lineHeight: 19.6,
   },
   nav: {
     paddingHorizontal: 20,
@@ -153,7 +161,7 @@ const styles = StyleSheet.create({
   },
   dropdownArea: {
     width: '98%',
-    
+
     height: 80,
     borderRadius: 10,
     marginTop: 10,
@@ -162,8 +170,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   body: {
-   paddingHorizontal: 20,
-   flexDirection: 'row',
+    paddingHorizontal: 20,
+    flexDirection: 'row',
   },
   duration: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -195,30 +203,29 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
     height: 4,
   },
-  
+
   action: {
     flexDirection: 'row',
     //marginTop: 10,
     justifyContent: 'space-between',
     marginTop: 5,
   },
-  
+
   result: {
     color: Colors.DEFAULT_PURPLE,
     fontFamily: Font.AVENIR_BLACK,
     fontSize: 14,
-    position: 'absolute', 
+    position: 'absolute',
     marginHorizontal: 103,
-
   },
   filterContainer: {
     alignItems: 'flex-end',
@@ -227,17 +234,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
   },
-  
+
   icons: {
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,
@@ -292,7 +297,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

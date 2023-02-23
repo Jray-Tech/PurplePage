@@ -1,15 +1,23 @@
-import { View, Text, StyleSheet, StatusBar, TextInput, Touchable, TouchableOpacity } from 'react-native'
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  TextInput,
+  Touchable,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useRef, useState} from 'react';
-import {Colors, Font} from "../../constants";
-import { Nav } from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
+import {Nav} from '../../components/CustomComponents';
 
 const VerificationScreen = ({navigation}) => {
-  const firstInput = useRef()
-  const secondInput = useRef()
-  const thirdInput = useRef()
-  const fourthInput = useRef()
-  const fifthInput = useRef()
-  const sixthInput = useRef()
+  const firstInput = useRef();
+  const secondInput = useRef();
+  const thirdInput = useRef();
+  const fourthInput = useRef();
+  const fifthInput = useRef();
+  const sixthInput = useRef();
   const [otp, setOtp] = useState({1: '', 2: '', 3: '', 4: '', 5: '', 6: ''});
   return (
     <View style={styles.container}>
@@ -19,9 +27,13 @@ const VerificationScreen = ({navigation}) => {
         translucent
       />
       <View style={styles.verify}>
-        <Nav onPress={()=> navigation.goBack()}/>
+        <Nav onPress={() => navigation.goBack()} />
         <Text style={styles.title}>Verification</Text>
-        <Text style={styles.content}>We sent a 6-digit code to <Text style={styles.phoneNumberText}>080***789</Text> and <Text style={styles.phoneNumberText}>purple***@gmail.com </Text></Text>
+        <Text style={styles.content}>
+          We sent a 6-digit code to{' '}
+          <Text style={styles.phoneNumberText}>080***789</Text> and{' '}
+          <Text style={styles.phoneNumberText}>purple***@gmail.com </Text>
+        </Text>
       </View>
       <View style={styles.otpSubContainer}>
         <Text>Enter OTP</Text>
@@ -29,83 +41,88 @@ const VerificationScreen = ({navigation}) => {
       </View>
       <View style={styles.otpContainer}>
         <View style={styles.otpBox}>
-          <TextInput 
-            style={styles.otpText} 
-            keyboardType="number-pad" 
+          <TextInput
+            style={styles.otpText}
+            keyboardType="number-pad"
             maxLength={1}
             ref={firstInput}
             onChangeText={text => {
-              setOtp({...otp, 1: text})
+              setOtp({...otp, 1: text});
               text && secondInput.current.focus();
             }}
           />
         </View>
         <View style={styles.otpBox}>
-          <TextInput 
-            style={styles.otpText} 
-            keyboardType="number-pad" 
+          <TextInput
+            style={styles.otpText}
+            keyboardType="number-pad"
             maxLength={1}
             ref={secondInput}
             onChangeText={text => {
-              setOtp({...otp, 2: text})
+              setOtp({...otp, 2: text});
               text ? thirdInput.current.focus() : firstInput.current.focus();
             }}
           />
         </View>
         <View style={styles.otpBox}>
-          <TextInput 
-            style={styles.otpText} 
+          <TextInput
+            style={styles.otpText}
             keyboardType="number-pad"
             maxLength={1}
             ref={thirdInput}
             onChangeText={text => {
-              setOtp({...otp, 3: text})
+              setOtp({...otp, 3: text});
               text ? fourthInput.current.focus() : secondInput.current.focus();
             }}
           />
         </View>
         <View style={styles.otpBox}>
-          <TextInput 
-            style={styles.otpText} 
-            keyboardType="number-pad" 
+          <TextInput
+            style={styles.otpText}
+            keyboardType="number-pad"
             maxLength={1}
             ref={fourthInput}
             onChangeText={text => {
-              setOtp({...otp, 4: text})
+              setOtp({...otp, 4: text});
               text ? fifthInput.current.focus() : thirdInput.current.focus();
             }}
           />
         </View>
         <View style={styles.otpBox}>
-          <TextInput 
-            style={styles.otpText} 
-            keyboardType="number-pad" 
+          <TextInput
+            style={styles.otpText}
+            keyboardType="number-pad"
             maxLength={1}
             ref={fifthInput}
             onChangeText={text => {
-              setOtp({...otp, 5: text})
-              text ? sixthInput.current.focus() : fourthInput.current.focus()
+              setOtp({...otp, 5: text});
+              text ? sixthInput.current.focus() : fourthInput.current.focus();
             }}
           />
         </View>
         <View style={styles.otpBox}>
-          <TextInput 
-            style={styles.otpText} 
-            keyboardType="number-pad" 
+          <TextInput
+            style={styles.otpText}
+            keyboardType="number-pad"
             maxLength={1}
             ref={sixthInput}
             onChangeText={text => {
-              setOtp({...otp, 6: text})
+              setOtp({...otp, 6: text});
               !text && fifthInput.current.focus();
             }}
-            onSelectionChange={()=> navigation.navigate('AccountCreatedSuccessScreen')}
+            onSelectionChange={() =>
+              navigation.navigate('AccountCreatedSuccessScreen')
+            }
           />
         </View>
       </View>
-      <Text style={styles.contentFooter}>Didn’t get the code? <Text style={styles.phoneNumberText}>Request for a new one</Text></Text>
+      <Text style={styles.contentFooter}>
+        Didn’t get the code?{' '}
+        <Text style={styles.phoneNumberText}>Request for a new one</Text>
+      </Text>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -126,8 +143,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   verify: {
-    
-    justifyContent:'flex-end',
+    justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 10,
   },
@@ -136,20 +152,18 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    justifyContent:'flex-end',
+    justifyContent: 'flex-end',
     fontFamily: Font.AVENIR_BOLD,
     color: Colors.HEADER_BLACK,
-    
+
     marginTop: 50,
     marginBottom: 10,
-    
   },
   content: {
     fontSize: 16,
     fontFamily: Font.AVENIR_MEDIUM,
     marginTop: 10,
     marginBottom: 20,
-    
   },
   contentFooter: {
     fontSize: 16,
@@ -178,7 +192,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 25,
     marginBottom: 10,
     justifyContent: 'space-between',
-    
+
     flexDirection: 'row',
   },
   otpBox: {

@@ -1,80 +1,87 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {Colors, Font} from "../../constants";
-import {CustomButton, CustomBottomTab, Nav, HomeNav, CustomBorder, Spacer} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  HomeNav,
+  CustomBorder,
+  Spacer,
+} from '../../components/CustomComponents';
 
 const AdsAndPromotionScreen = ({navigation}) => {
-
-    const BottomSheetRef = useRef(null);
-    const [showBottomSheet, setShowBottomSheet] = useState(false);
+  const BottomSheetRef = useRef(null);
+  const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
 
   // callbacks
-  const handleSheetChange = useCallback((index) => {
-    console.log(index)
-  }, [])
+  const handleSheetChange = useCallback(index => {
+    console.log(index);
+  }, []);
 
-    
-    return (
-      <View style={styles.container}>
-        
-      
-        
-      
-        <HomeNav text="Ads & Promotions" onPress={()=> navigation.goBack()}/>
-        <View style={{ paddingHorizontal: 20, paddingTop: 50}}>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Post an ad</Text>
-              <Feather 
-                name={'chevron-right'}
-                size={25}
-                color={Colors.HEADER_BLACK}
-                style={{marginLeft: 17, marginTop: 2}}
-                onPress={()=>navigation.navigate('ConnectToSocialScreen')}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Promote your business</Text>
-              <Feather 
-                name={'chevron-right'}
-                size={25}
-                color={Colors.HEADER_BLACK}
-                style={{marginLeft: 17, marginTop: 2}}
-                onPress={()=>navigation.navigate('NotificationSettingScreen')}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>My advert history</Text>
-              <Feather 
-                name={'chevron-right'}
-                size={25}
-                color={Colors.HEADER_BLACK}
-                style={{marginLeft: 17, marginTop: 2}}
-                onPress={()=>navigation.navigate('NotificationSettingScreen')}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>My promotions history</Text>
-              <Feather 
-                name={'chevron-right'}
-                size={25}
-                color={Colors.HEADER_BLACK}
-                style={{marginLeft: 17, marginTop: 2}}
-                onPress={()=>navigation.navigate('NotificationSettingScreen')}
-              />
-            </View>
-            
-            
-            
+  return (
+    <View style={styles.container}>
+      <HomeNav text="Ads & Promotions" onPress={() => navigation.goBack()} />
+      <View style={{paddingHorizontal: 20, paddingTop: 50}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Post an ad</Text>
+          <Feather
+            name={'chevron-right'}
+            size={25}
+            color={Colors.HEADER_BLACK}
+            style={{marginLeft: 17, marginTop: 2}}
+            onPress={() => navigation.navigate('ConnectToSocialScreen')}
+          />
         </View>
-        <Spacer size={280}/>
-     
-      
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Promote your business</Text>
+          <Feather
+            name={'chevron-right'}
+            size={25}
+            color={Colors.HEADER_BLACK}
+            style={{marginLeft: 17, marginTop: 2}}
+            onPress={() => navigation.navigate('NotificationSettingScreen')}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>My advert history</Text>
+          <Feather
+            name={'chevron-right'}
+            size={25}
+            color={Colors.HEADER_BLACK}
+            style={{marginLeft: 17, marginTop: 2}}
+            onPress={() => navigation.navigate('NotificationSettingScreen')}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>My promotions history</Text>
+          <Feather
+            name={'chevron-right'}
+            size={25}
+            color={Colors.HEADER_BLACK}
+            style={{marginLeft: 17, marginTop: 2}}
+            onPress={() => navigation.navigate('NotificationSettingScreen')}
+          />
+        </View>
+      </View>
+      <Spacer size={280} />
     </View>
-    
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -107,7 +114,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
     paddingLeft: 2,
   },
-  customButtonProfile : {
+  customButtonProfile: {
     width: 36,
     height: 36,
   },
@@ -117,7 +124,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 30,
     flexDirection: 'row',
-    
   },
   links: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -125,7 +131,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 24,
     paddingBottom: 24,
-
   },
   delete: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -133,7 +138,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 24,
     paddingBottom: 24,
-
   },
   footer: {
     backgroundColor: Colors.DEFAULT_WHITE,
@@ -147,7 +151,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 80,
     height: 80,
@@ -164,7 +168,6 @@ const styles = StyleSheet.create({
   profileStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    
   },
   profileImageContainer: {
     width: 80,
@@ -222,10 +225,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
@@ -241,17 +244,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   vector: {
-
     width: 18,
     paddingTop: 10,
     paddingBottom: 40,
-
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
-    
   },
 
   filter: {
@@ -259,13 +258,12 @@ const styles = StyleSheet.create({
     color: Colors.BOLD_BLACK,
     fontSize: 15,
     paddingTop: 16,
-    
   },
   filterContainer: {
     alignItems: 'flex-end',
   },
   filterSubContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   icons: {
     flexDirection: 'row',
@@ -273,10 +271,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

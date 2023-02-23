@@ -1,4 +1,13 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+} from 'react-native';
 import React, {useState} from 'react';
 import Logo from '../../../assets/images/Logo.png';
 import Rectangle_1 from '../../../assets/images/Rectangle_1.png';
@@ -12,7 +21,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import CustomInput from '../../components/CustomInput';
 import {CustomButton, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {Colors, Font} from '../../constants';
 
 const SetNewPasswordScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -20,46 +29,44 @@ const SetNewPasswordScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () => {
-    console.warn("Log in")
-  }
+    console.warn('Log in');
+  };
 
   const forgotPasswordPressed = () => {
-    console.warn("Forgot Password")
-  }
-    return (
-      <View style={styles.container}>
-        <Nav onPress={()=> navigation.goBack()}/>
-        <View style={styles.header}>
-          <Text style={styles.text_header}>Reset your Password?</Text>
-          <Text style={styles.text_footer}>Enter a new password</Text>
-          
-          <Text style={styles.username}>Password</Text>
-          <View style={styles.inputContainer}>
-            <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                secureTextEntry={isPasswordShow ? false : true}
-                placeholder="Password"
-                placeholderTextColor={Colors.DEFAULT_GREY}
-                selectionColor={Colors.DEFAULT_GREY}
-                style={styles.inputText}
-                onChangeText={text => setPassword(text)}
-              />
-              <Feather 
-                name={isPasswordShow ? 'eye' : 'eye-off'}
-                size={22}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
-            </View>
+    console.warn('Forgot Password');
+  };
+  return (
+    <View style={styles.container}>
+      <Nav onPress={() => navigation.goBack()} />
+      <View style={styles.header}>
+        <Text style={styles.text_header}>Reset your Password?</Text>
+        <Text style={styles.text_footer}>Enter a new password</Text>
+
+        <Text style={styles.username}>Password</Text>
+        <View style={styles.inputContainer}>
+          <View style={styles.inputSubContainer}>
+            <TextInput
+              secureTextEntry={isPasswordShow ? false : true}
+              placeholder="Password"
+              placeholderTextColor={Colors.DEFAULT_GREY}
+              selectionColor={Colors.DEFAULT_GREY}
+              style={styles.inputText}
+              onChangeText={text => setPassword(text)}
+            />
+            <Feather
+              name={isPasswordShow ? 'eye' : 'eye-off'}
+              size={22}
+              color={Colors.DEFAULT_GREY}
+              style={{marginRight: 10}}
+              onPress={() => setIsPasswordShow(!isPasswordShow)}
+            />
           </View>
-          <View style={styles.space}>
+        </View>
+        <View style={styles.space}>
           <Text style={styles.username}>Confirm Password</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
+              <TextInput
                 secureTextEntry={isPasswordShow ? false : true}
                 placeholder="Password"
                 placeholderTextColor={Colors.DEFAULT_GREY}
@@ -67,7 +74,7 @@ const SetNewPasswordScreen = ({navigation}) => {
                 style={styles.inputText}
                 onChangeText={text => setPassword(text)}
               />
-              <Feather 
+              <Feather
                 name={isPasswordShow ? 'eye' : 'eye-off'}
                 size={22}
                 color={Colors.DEFAULT_GREY}
@@ -76,68 +83,70 @@ const SetNewPasswordScreen = ({navigation}) => {
               />
             </View>
           </View>
-          </View>
-          <View style={styles.requireContainer}>
-            <AntDesign 
-                name='checkcircle'
-                size={14}
-                color={Colors.DASH_GREEN}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
+        </View>
+        <View style={styles.requireContainer}>
+          <AntDesign
+            name="checkcircle"
+            size={14}
+            color={Colors.DASH_GREEN}
+            style={{marginRight: 10}}
+            onPress={() => setIsPasswordShow(!isPasswordShow)}
+          />
           <Text style={styles.require}>At least 8 characters</Text>
-          </View>
-          <View style={styles.requireContainer}>
-            <AntDesign 
-                name='checkcircle'
-                size={14}
-                color={Colors.DASH_GREEN}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
+        </View>
+        <View style={styles.requireContainer}>
+          <AntDesign
+            name="checkcircle"
+            size={14}
+            color={Colors.DASH_GREEN}
+            style={{marginRight: 10}}
+            onPress={() => setIsPasswordShow(!isPasswordShow)}
+          />
           <Text style={styles.require}>Lower case letters (a-z)</Text>
-          </View>
-          <View style={styles.requireContainerB}>
-            <Feather 
-                name='circle'
-                size={14}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
+        </View>
+        <View style={styles.requireContainerB}>
+          <Feather
+            name="circle"
+            size={14}
+            color={Colors.DEFAULT_GREY}
+            style={{marginRight: 10}}
+            onPress={() => setIsPasswordShow(!isPasswordShow)}
+          />
           <Text style={styles.requireB}>Upper case letters (A-Z)</Text>
-          </View>
+        </View>
 
-          <View style={styles.requireContainerB}>
-            <Feather 
-                name='circle'
-                size={14}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
+        <View style={styles.requireContainerB}>
+          <Feather
+            name="circle"
+            size={14}
+            color={Colors.DEFAULT_GREY}
+            style={{marginRight: 10}}
+            onPress={() => setIsPasswordShow(!isPasswordShow)}
+          />
           <Text style={styles.requireB}>Numbers (0-9)</Text>
-          </View>
+        </View>
 
-          <View style={styles.requireContainerB}>
-            <Feather 
-                name='circle'
-                size={14}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
+        <View style={styles.requireContainerB}>
+          <Feather
+            name="circle"
+            size={14}
+            color={Colors.DEFAULT_GREY}
+            style={{marginRight: 10}}
+            onPress={() => setIsPasswordShow(!isPasswordShow)}
+          />
           <Text style={styles.requireB}>Special Character (!,#...*)</Text>
-          </View>
+        </View>
         <View style={styles.button}>
-          <CustomButton text="Continue" onPress={()=>navigation.navigate('ResetSuccessScreen')} type="PRIMARY"/>
+          <CustomButton
+            text="Continue"
+            onPress={() => navigation.navigate('ResetSuccessScreen')}
+            type="PRIMARY"
+          />
         </View>
-        </View>
-        
-        
       </View>
-    )
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -145,8 +154,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.DEFAULT_WHITE,
   },
   nav: {
-    
-    justifyContent:'flex-end',
+    justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 10,
     paddingTop: 48,
@@ -173,10 +181,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   require: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -220,7 +228,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

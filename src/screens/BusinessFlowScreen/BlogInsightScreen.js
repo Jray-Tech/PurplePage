@@ -1,10 +1,29 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState} from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomBottomTab, Nav, HomeNav, CustomBorder, Spacer} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  HomeNav,
+  CustomBorder,
+  Spacer,
+} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
 import Subscribed from '../../../assets/images/Subcribed.png';
 import Comment from '../../../assets/images/Comment.png';
 import Like from '../../../assets/images/Like.png';
@@ -13,111 +32,116 @@ import Share from '../../../assets/images/Share.png';
 import Insights from '../../../assets/images/Insights.png';
 import Profile from '../../../assets/images/businessProfile.png';
 
-
-
 const BlogInsightScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
-  
-    return (
-      <View style={styles.container}>
-      
-        
-          <HomeNav text="Blog Insight" onPress={()=> navigation.goBack()}/>
-        
-        <View style={styles.header}>
 
-            
-            <View style={styles.headerContainer}>
-                    <View style={{ flexDirection: 'row', }}>
-                        <View style={{paddingLeft: 20}}>
-                        <Image source={Profile} style={{ marginTop: 20}} resizeMode="contain" />
-                        </View>
-                        <View style={{flex:1, paddingTop: 20}}>
-                        <Pressable onPress={() => navigation.navigate('PostScreen')}>
-                            <Text style={styles.headerBlogText}>Lorem ipsum dolor sit amet consectetur. Cursus quisque.</Text>
-                        </Pressable>
-                        </View>
-                        
-                        <Text style={styles.pubDate}>5h</Text>
-                    </View>
-                    <View style={{paddingLeft: 70,
-                        paddingBottom: 10,
-                        paddingRight: 20,}}>
-                    <Text style={{
-                        fontFamily: Font.AVENIR_MEDIUM,
-                        fontSize: 14,
-                        
-                        }}>
-                            Lorem ipsum dolor sit amet consectetur Mi commodo enim.Lorem ipsum...</Text>
-                        <View style={{flexDirection:"row", paddingTop: 13.33, }}>
-                        <View style={{flexDirection:"row", paddingRight: 32}}>
-                        <Image source={Comment} resizeMode="contain" />
-                        <Text style={{
-                        fontFamily: Font.AVENIR_MEDIUM,
-                        fontSize: 14,
-                        paddingLeft: 10,
-                        }}>12</Text>
-                        </View>
-                        <View style={{flexDirection:"row", paddingRight: 32}}>
-                        <Image source={Like} resizeMode="contain" />
-                        <Text style={{
-                        fontFamily: Font.AVENIR_MEDIUM,
-                        fontSize: 14,
-                        paddingLeft: 10,
-                        }}>24</Text>
-                        </View>
-                        <View style={{flexDirection:"row"}}>
-                        <Image source={Bookmark} resizeMode="contain" />
-                        <Text style={{
-                        fontFamily: Font.AVENIR_MEDIUM,
-                        fontSize: 14,
-                        paddingLeft: 10,
-                        }}>24</Text>
-                        </View>
-                        
-                        
-                        </View>
-                    </View>
-                </View>
-                <CustomBorder />
-                <Spacer size={35} />
-                <View style={styles.InsightsHeader}>
-                    <Text style={styles.InsightsBody}>Users Reached</Text>
-                    <Text style={styles.InsightsResult}>35</Text>
-                </View>
-                <Spacer size={12} />
-                <View style={styles.InsightsHeader}>
-                    <Text style={styles.InsightsBody}>Post Shares</Text>
-                    <Text style={styles.InsightsResult}>24</Text>
-                </View>
-                <Spacer size={12} />
-                <View style={styles.InsightsHeader}>
-                    <Text style={styles.InsightsBody}>Profile visits</Text>
-                    <Text style={styles.InsightsResult}>213</Text>
-                </View>
-                <Spacer size={12} />
-                <View style={styles.InsightsHeader}>
-                    <Text style={styles.InsightsBody}>Engagements</Text>
-                    <Text style={styles.InsightsResult}>65</Text>
-                </View>
-                
-            
+  return (
+    <View style={styles.container}>
+      <HomeNav text="Blog Insight" onPress={() => navigation.goBack()} />
+
+      <View style={styles.header}>
+        <View style={styles.headerContainer}>
+          <View style={{flexDirection: 'row'}}>
+            <View style={{paddingLeft: 20}}>
+              <Image
+                source={Profile}
+                style={{marginTop: 20}}
+                resizeMode="contain"
+              />
             </View>
-            <View style={{paddingHorizontal: 20, paddingBottom: 80}}>
-            <CustomButton text="Promote this Post" onPress={()=>navigation.navigate('PricingScreen')} type="PRIMARY"/>
+            <View style={{flex: 1, paddingTop: 20}}>
+              <Pressable onPress={() => navigation.navigate('PostScreen')}>
+                <Text style={styles.headerBlogText}>
+                  Lorem ipsum dolor sit amet consectetur. Cursus quisque.
+                </Text>
+              </Pressable>
             </View>
-        
+
+            <Text style={styles.pubDate}>5h</Text>
+          </View>
+          <View style={{paddingLeft: 70, paddingBottom: 10, paddingRight: 20}}>
+            <Text
+              style={{
+                fontFamily: Font.AVENIR_MEDIUM,
+                fontSize: 14,
+              }}>
+              Lorem ipsum dolor sit amet consectetur Mi commodo enim.Lorem
+              ipsum...
+            </Text>
+            <View style={{flexDirection: 'row', paddingTop: 13.33}}>
+              <View style={{flexDirection: 'row', paddingRight: 32}}>
+                <Image source={Comment} resizeMode="contain" />
+                <Text
+                  style={{
+                    fontFamily: Font.AVENIR_MEDIUM,
+                    fontSize: 14,
+                    paddingLeft: 10,
+                  }}>
+                  12
+                </Text>
+              </View>
+              <View style={{flexDirection: 'row', paddingRight: 32}}>
+                <Image source={Like} resizeMode="contain" />
+                <Text
+                  style={{
+                    fontFamily: Font.AVENIR_MEDIUM,
+                    fontSize: 14,
+                    paddingLeft: 10,
+                  }}>
+                  24
+                </Text>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image source={Bookmark} resizeMode="contain" />
+                <Text
+                  style={{
+                    fontFamily: Font.AVENIR_MEDIUM,
+                    fontSize: 14,
+                    paddingLeft: 10,
+                  }}>
+                  24
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
-        
-    
-    )
-}
+        <CustomBorder />
+        <Spacer size={35} />
+        <View style={styles.InsightsHeader}>
+          <Text style={styles.InsightsBody}>Users Reached</Text>
+          <Text style={styles.InsightsResult}>35</Text>
+        </View>
+        <Spacer size={12} />
+        <View style={styles.InsightsHeader}>
+          <Text style={styles.InsightsBody}>Post Shares</Text>
+          <Text style={styles.InsightsResult}>24</Text>
+        </View>
+        <Spacer size={12} />
+        <View style={styles.InsightsHeader}>
+          <Text style={styles.InsightsBody}>Profile visits</Text>
+          <Text style={styles.InsightsResult}>213</Text>
+        </View>
+        <Spacer size={12} />
+        <View style={styles.InsightsHeader}>
+          <Text style={styles.InsightsBody}>Engagements</Text>
+          <Text style={styles.InsightsResult}>65</Text>
+        </View>
+      </View>
+      <View style={{paddingHorizontal: 20, paddingBottom: 80}}>
+        <CustomButton
+          text="Promote this Post"
+          onPress={() => navigation.navigate('PricingScreen')}
+          type="PRIMARY"
+        />
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.DEFAULT_WHITE,
-    
   },
   headerBlogText: {
     color: Colors.HEADER_BLACK,
@@ -128,25 +152,25 @@ const styles = StyleSheet.create({
   },
   pubDate: {
     paddingRight: 20,
-    paddingTop: 20
+    paddingTop: 20,
   },
   rank: {
     flexDirection: 'row',
   },
   InsightsHeader: {
-    flexDirection: 'row', 
-    paddingHorizontal: 20, 
+    flexDirection: 'row',
+    paddingHorizontal: 20,
     justifyContent: 'space-between',
   },
   InsightsBody: {
-    color: Colors.LIGHT_MODE_GREY, 
-    fontFamily: Font.AVENIR_REGULAR, 
+    color: Colors.LIGHT_MODE_GREY,
+    fontFamily: Font.AVENIR_REGULAR,
     lineHeight: 19.6,
   },
   InsightsResult: {
-    color: Colors.LIGHT_MODE_GREY, 
-    fontFamily: Font.AVENIR_MEDIUM, 
-    lineHeight: 19.6
+    color: Colors.LIGHT_MODE_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    lineHeight: 19.6,
   },
   nav: {
     paddingHorizontal: 20,
@@ -163,7 +187,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 32,
     height: 32,
@@ -180,10 +204,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_BOLD,
     color: Colors.HEADER_BLACK,
   },
-  body: {
-   
-    
-  },
+  body: {},
   images: {
     width: '100%',
     borderRadius: 10,
@@ -207,16 +228,16 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
     height: 4,
   },
-  
+
   action: {
     flexDirection: 'row',
     //marginTop: 10,
@@ -233,7 +254,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
   },
@@ -247,7 +267,6 @@ const styles = StyleSheet.create({
     color: Colors.CATEGORY_GREY,
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 14,
-
   },
   filterContainer: {
     alignItems: 'flex-end',
@@ -256,17 +275,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
   },
-  
+
   icons: {
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

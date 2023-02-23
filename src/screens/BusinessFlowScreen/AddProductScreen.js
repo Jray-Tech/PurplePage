@@ -1,154 +1,169 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, FlatList, SafeAreaView, ScrollView} from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import React, {useState} from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CustomButton, HomeNav, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {Colors, Font} from '../../constants';
 import Clip from '../../../assets/images/clip.png';
 
 const AddProductScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const category = [
-    {category: 'Yellow'},
-    {category: 'Red'},
-  ];
+  const category = [{category: 'Yellow'}, {category: 'Red'}];
 
-  
-  const [data, setData]=useState(category)
-  const onSearch=(txt)=>{
-    if(txt !== ''){
-    let tempData=data.filter(item=>{
-      return item.category.toLowerCase().indexOf(txt.toLowerCase()) > - 1;
-    });
-    setData(tempData);
-  } else {
-    setData(category)
-  }
-}
+  const [data, setData] = useState(category);
+  const onSearch = txt => {
+    if (txt !== '') {
+      let tempData = data.filter(item => {
+        return item.category.toLowerCase().indexOf(txt.toLowerCase()) > -1;
+      });
+      setData(tempData);
+    } else {
+      setData(category);
+    }
+  };
 
-
-
-  const [selectedCategory, setSelectedCategory] = useState('If Applicable')
-    return (
-      <SafeAreaView style={styles.container}>
+  const [selectedCategory, setSelectedCategory] = useState('If Applicable');
+  return (
+    <SafeAreaView style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollView}>
-        <Nav  onPress={()=> navigation.goBack()}/>
+        <Nav onPress={() => navigation.goBack()} />
 
-     
-        
         <View style={styles.footer}>
           <Text style={styles.username}>Upload your photo(s)/video</Text>
-          <View style={{height:70, width:70, borderColor:Colors.DASH_GREY, borderWidth: 2, borderRadius: 1, justifyContent: 'center', alignItems: 'center', borderStyle: 'dotted',}}>
+          <View
+            style={{
+              height: 70,
+              width: 70,
+              borderColor: Colors.DASH_GREY,
+              borderWidth: 2,
+              borderRadius: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderStyle: 'dotted',
+            }}>
             <Image source={Clip} resizeMode="contain" />
           </View>
-          <Text style={{
-            marginTop: 6,
-            color: Colors.SECONDARY_GREY,
-            fontFamily: Font.AVENIR_MEDIUM,
-            paddingBottom: 5,
-            }}>Your image should be in JPEG or PNG format</Text>
-            <Text style={styles.username}>Product/Service Caption</Text>
+          <Text
+            style={{
+              marginTop: 6,
+              color: Colors.SECONDARY_GREY,
+              fontFamily: Font.AVENIR_MEDIUM,
+              paddingBottom: 5,
+            }}>
+            Your image should be in JPEG or PNG format
+          </Text>
+          <Text style={styles.username}>Product/Service Caption</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
+              <TextInput
                 placeholder="Placeholder text"
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
-                
               />
-              
             </View>
           </View>
           <Text style={styles.username}>Price</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
+              <TextInput
                 placeholder="if applicable"
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
-                
               />
-              
             </View>
           </View>
           <Text style={styles.username}>Discount(optional)</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
+              <TextInput
                 placeholder="10%"
                 placeholderTextColor={Colors.DEFAULT_GREY}
                 selectionColor={Colors.DEFAULT_GREY}
                 style={styles.inputText}
-                
               />
-              
             </View>
           </View>
-          <Text style={{
-            marginTop: 6,
-            color: Colors.PINK,
-            fontFamily: Font.AVENIR_MEDIUM,
-            paddingBottom: 5,
-            }}>click to add condition if any*</Text>
+          <Text
+            style={{
+              marginTop: 6,
+              color: Colors.PINK,
+              fontFamily: Font.AVENIR_MEDIUM,
+              paddingBottom: 5,
+            }}>
+            click to add condition if any*
+          </Text>
           <Text style={styles.username}>Business Type</Text>
-          <TouchableOpacity style={styles.dropdownSelector} onPress={() => {setIsClicked(!isClicked)}}>
-            <Text style={styles.inputText}>{ selectedCategory }</Text>
-            <MaterialIcons 
-                name={isClicked ? 'keyboard-arrow-right' : 'keyboard-arrow-down'}
-                size={22}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10}}
-                onPress={() => {setIsClicked(!isClicked)}}
-              />
+          <TouchableOpacity
+            style={styles.dropdownSelector}
+            onPress={() => {
+              setIsClicked(!isClicked);
+            }}>
+            <Text style={styles.inputText}>{selectedCategory}</Text>
+            <MaterialIcons
+              name={isClicked ? 'keyboard-arrow-right' : 'keyboard-arrow-down'}
+              size={22}
+              color={Colors.DEFAULT_GREY}
+              style={{marginRight: 10}}
+              onPress={() => {
+                setIsClicked(!isClicked);
+              }}
+            />
           </TouchableOpacity>
-          {isClicked ? <View style={styles.dropdownArea}>
-            
-              <FlatList data={data} renderItem={({item,index})=>{
-                return(
-                  <TouchableOpacity style={styles.categoryItem} onPress={()=>{setSelectedCategory(item.category); setIsClicked(false)}}>
+          {isClicked ? (
+            <View style={styles.dropdownArea}>
+              <FlatList
+                data={data}
+                renderItem={({item, index}) => {
+                  return (
+                    <TouchableOpacity
+                      style={styles.categoryItem}
+                      onPress={() => {
+                        setSelectedCategory(item.category);
+                        setIsClicked(false);
+                      }}>
                       <Text style={styles.categoryList}>{item.category}</Text>
-                  </TouchableOpacity>
-                )
-              }}/>
-        
-          </View> : null}
-          
-            
-          
-
-          
-          
-          
-        
-         
+                    </TouchableOpacity>
+                  );
+                }}
+              />
+            </View>
+          ) : null}
         </View>
-        
-        
-        
-
       </ScrollView>
       <View style={styles.buttonView}>
-      <CustomButton text="Upload" onPress={()=>navigation.navigate('BusinessProfile')} type="PRIMARY"/>
+        <CustomButton
+          text="Upload"
+          onPress={() => navigation.navigate('BusinessProfile')}
+          type="PRIMARY"
+        />
       </View>
     </SafeAreaView>
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 20,
-    
   },
   ratingTitle: {
     fontFamily: Font.AVENIR_BLACK,
@@ -160,7 +175,7 @@ const styles = StyleSheet.create({
   dropdownSelector: {
     width: '100%',
     height: 50,
-    borderRadius:10,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: Colors.DEFAULT_GREY,
     alignSelf: 'center',
@@ -173,10 +188,10 @@ const styles = StyleSheet.create({
   buttonView: {
     marginBottom: 40,
   },
-  
+
   dropdownArea: {
     width: '98%',
-    
+
     height: 80,
     borderRadius: 10,
     marginTop: 10,
@@ -184,7 +199,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     alignSelf: 'center',
   },
-  searchInput:{
+  searchInput: {
     width: '95%',
     height: 40,
     borderRadius: 10,
@@ -199,12 +214,10 @@ const styles = StyleSheet.create({
     height: 35,
     alignSelf: 'center',
     justifyContent: 'center',
-
   },
   categoryList: {
     paddingHorizontal: 15,
     fontFamily: Font.AVENIR_MEDIUM,
-
   },
   nav: {
     flexDirection: 'row',
@@ -216,26 +229,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontFamily: Font.AVENIR_MEDIUM,
     fontSize: 14,
-    lineHeight: 19
+    lineHeight: 19,
   },
   Notifications: {
     flexDirection: 'row',
     lineHeight: 19,
     justifyContent: 'flex-end',
   },
-  
+
   header: {
     paddingTop: 18,
     alignItems: 'center',
-    
-
   },
   footer: {
     flex: 10,
     backgroundColor: '#fff',
     paddingVertical: 10,
     marginTop: 5,
-    
   },
   text_header: {
     color: Colors.BOLD_BLACK,
@@ -249,10 +259,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 16,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 5,
+    marginTop: 16,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 5,
   },
   action: {
     flexDirection: 'row',
@@ -261,7 +271,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 5,
     marginHorizontal: 5,
-    
   },
   forgotPassword: {
     fontFamily: Font.AVENIR_BLACK,
@@ -279,10 +288,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,
@@ -290,7 +297,7 @@ const styles = StyleSheet.create({
   inputText: {
     fontFamily: Font.AVENIR_MEDIUM,
   },
-  
+
   button: {
     alignItem: 'center',
     marginTop: 50,
@@ -316,7 +323,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

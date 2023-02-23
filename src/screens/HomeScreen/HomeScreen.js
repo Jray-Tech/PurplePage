@@ -1,4 +1,16 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState} from 'react';
 import tab from '../../../assets/images/tab.png';
 import profile from '../../../assets/images/profile1.png';
@@ -14,7 +26,8 @@ import Group12 from '../../../assets/images/Group12.png';
 import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import {Colors, Font} from "../../constants"
+import Colors from '../../constants/colors';
+import Font from '../../constants/Font';
 
 const HomeScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -22,186 +35,194 @@ const HomeScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () => {
-    console.warn("Log in")
-  }
+    console.warn('Log in');
+  };
 
   const forgotPasswordPressed = () => {
-    console.warn("Forgot Password")
-  }
-    return (
-      <SafeAreaView style={styles.container}>
+    console.warn('Forgot Password');
+  };
+  return (
+    <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <View style={styles.nav}>
           <View style={styles.profileStyle}>
-          <Image source={profile} style={[styles.profile]} resizeMode="contain" />
-          <Text style={styles.profileText}> Purplepages01</Text>
+            <Image
+              source={profile}
+              style={[styles.profile]}
+              resizeMode="contain"
+            />
+            <Text style={styles.profileText}> Purplepages01</Text>
           </View>
-          <TouchableOpacity onPress={()=>navigation.navigate('NotifyScreen')}>
-          <Image source={notify} style={[styles.nofity]} resizeMode="contain" />
+          <TouchableOpacity onPress={() => navigation.navigate('NotifyScreen')}>
+            <Image
+              source={notify}
+              style={[styles.nofity]}
+              resizeMode="contain"
+            />
           </TouchableOpacity>
         </View>
         <View style={styles.header}>
-          
-        
-        
           <Text style={styles.text_header}>All Categories</Text>
-          <View style={styles.text_header} >
-          <Image source={tab} style={[styles.profiletab]} resizeMode="contain" />
+          <View style={styles.text_header}>
+            <Image
+              source={tab}
+              style={[styles.profiletab]}
+              resizeMode="contain"
+            />
           </View>
           <View style={styles.searchContainer}>
-          <View style={styles.inputContainer}>
-            <View style={styles.inputSubContainer}>
-              <Feather 
-                name={'search'}
-                size={22}
-                color={Colors.HEADER_BLACK}
-                style={{marginRight: 10}}
-                onPress={()=>navigation.navigate('FilterScreen')}
-              />
-            
-              <TextInput 
-                placeholder="Search"
-                placeholderTextColor={Colors.HEADER_BLACK}
-                selectionColor={Colors.HEADER_BLACK}
-                style={styles.inputText}
-                
-              />
-              
+            <View style={styles.inputContainer}>
+              <View style={styles.inputSubContainer}>
+                <Feather
+                  name={'search'}
+                  size={22}
+                  color={Colors.HEADER_BLACK}
+                  style={{marginRight: 10}}
+                  onPress={() => navigation.navigate('FilterScreen')}
+                />
+
+                <TextInput
+                  placeholder="Search"
+                  placeholderTextColor={Colors.HEADER_BLACK}
+                  selectionColor={Colors.HEADER_BLACK}
+                  style={styles.inputText}
+                />
+              </View>
             </View>
-            
+            <Image source={Vector} style={styles.vector} resizeMode="contain" />
           </View>
-          <Image source={Vector} style={styles.vector} resizeMode="contain" />
-          </View>
-          
+
           <View style={styles.filterContainer}>
             <View style={styles.filterSubContainer}>
-              <Text style={styles.filter} onPress={''}>Newest to Oldest  </Text>
-              <Image source={Vector2} style={styles.vector} resizeMode="contain" />
+              <Text style={styles.filter} onPress={''}>
+                Newest to Oldest{' '}
+              </Text>
+              <Image
+                source={Vector2}
+                style={styles.vector}
+                resizeMode="contain"
+              />
             </View>
           </View>
           <View style={styles.body}>
-            <Pressable onPress={()=>navigation.navigate('BusinessInfoScreen')}>
-            <Image source={PurpleCloset} style={styles.images} />
+            <Pressable
+              onPress={() => navigation.navigate('BusinessInfoScreen')}>
+              <Image source={PurpleCloset} style={styles.images} />
             </Pressable>
-            <Pressable onPress={()=>navigation.navigate('BusinessInfoScreen')}>
-            <Text style={styles.bussinessName}>Purple Closet</Text>
+            <Pressable
+              onPress={() => navigation.navigate('BusinessInfoScreen')}>
+              <Text style={styles.bussinessName}>Purple Closet</Text>
             </Pressable>
-            <Pressable onPress={()=>navigation.navigate('ListBusinessScreen')}>
-            <Text style={styles.bussinessCategory}>Fashion</Text>
+            <Pressable
+              onPress={() => navigation.navigate('ListBusinessScreen')}>
+              <Text style={styles.bussinessCategory}>Fashion</Text>
             </Pressable>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star-o'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              
+              <View style={styles.rank}>
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star-o'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
               </View>
               <View style={styles.actionContent}>
                 <Feather
-                name={'bookmark'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 20}}
-              />
-              <Feather
-                name={'share-2'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 2}}
-              />
-              </View>
+                  name={'bookmark'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 20}}
+                />
+                <Feather
+                  name={'share-2'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 2}}
+                />
               </View>
             </View>
+          </View>
 
-            <View style={styles.body}>
+          <View style={styles.body}>
             <Image source={CharliesBagelGarden} style={styles.images} />
             <Text style={styles.bussinessName}>Charlies Bagel Garden</Text>
             <Text style={styles.bussinessCategory}>Food & Drinks</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star-o'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              
+              <View style={styles.rank}>
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star-o'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
               </View>
               <View style={styles.actionContent}>
                 <Feather
-                name={'bookmark'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 20}}
-              />
-              <Feather
-                name={'share-2'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 2}}
-              />
-              </View>
+                  name={'bookmark'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 20}}
+                />
+                <Feather
+                  name={'share-2'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 2}}
+                />
               </View>
             </View>
-          
-
-         
+          </View>
         </View>
-        
-        
       </ScrollView>
       <View style={styles.footer}>
         <Image source={Group12} style={styles.vector} resizeMode="contain" />
@@ -210,9 +231,9 @@ const HomeScreen = ({navigation}) => {
         <Image source={Vector5} style={styles.vector} resizeMode="contain" />
         <Image source={Vector6} style={styles.vector} resizeMode="contain" />
       </View>
-      </SafeAreaView>
-    )
-}
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -242,7 +263,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 32,
     height: 32,
@@ -286,10 +307,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
@@ -305,17 +326,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   vector: {
-
     width: 18,
     paddingTop: 10,
     paddingBottom: 40,
-
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
-    
   },
 
   filter: {
@@ -323,13 +340,12 @@ const styles = StyleSheet.create({
     color: Colors.BOLD_BLACK,
     fontSize: 15,
     paddingTop: 16,
-    
   },
   filterContainer: {
     alignItems: 'flex-end',
   },
   filterSubContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   icons: {
     flexDirection: 'row',
@@ -337,10 +353,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

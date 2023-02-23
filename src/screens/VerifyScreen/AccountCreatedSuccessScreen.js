@@ -1,22 +1,19 @@
-import { View, Text, Button, StyleSheet, Image } from 'react-native'
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Confirmation from '../../../assets/images/Confirmation.png';
 import {CustomButton, CustomVerify} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants";
-
+import {Colors, Font} from '../../constants';
 
 const AccountCreatedSuccessScreen = ({navigation}) => {
   setTimeout(() => {
-    navigation.replace('ChooseInterestScreen')
+    navigation.replace('ChooseInterestScreen');
   }, 3000);
   return (
-    <CustomVerify text="Your purple pages account has been successfully created"/>
-    
-  )
-}
+    <CustomVerify text="Your purple pages account has been successfully created" />
+  );
+};
 
 const styles = StyleSheet.create({
-  
   verifyText: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -42,8 +39,6 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingBottom: 30,
   },
-  
 });
-
 
 export default AccountCreatedSuccessScreen;

@@ -1,22 +1,17 @@
-import { View, Text, Button, StyleSheet, Image } from 'react-native'
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Confirmation from '../../../assets/images/Confirmation.png';
 import {CustomButton, CustomVerify} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants";
-
+import {Colors, Font} from '../../constants';
 
 const PaymentSuccessScreen = ({navigation}) => {
   setTimeout(() => {
-    navigation.replace('BusinessProfile')
+    navigation.replace('BusinessProfile');
   }, 3000);
-  return (
-    <CustomVerify text="Payment Successful!"/>
-    
-  )
-}
+  return <CustomVerify text="Payment Successful!" />;
+};
 
 const styles = StyleSheet.create({
-  
   verifyText: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -42,8 +37,6 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingBottom: 30,
   },
-  
 });
-
 
 export default PaymentSuccessScreen;

@@ -1,4 +1,13 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+} from 'react-native';
 import React, {useState} from 'react';
 import Logo from '../../../assets/images/Logo.png';
 import Rectangle_1 from '../../../assets/images/Rectangle_1.png';
@@ -11,7 +20,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import CustomInput from '../../components/CustomInput';
 import {CustomButton, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {Colors, Font} from '../../constants';
 
 const SignInScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -19,76 +28,96 @@ const SignInScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () => {
-    console.warn("Log in")
-  }
+    console.warn('Log in');
+  };
 
   const forgotPasswordPressed = () => {
-    console.warn("Forgot Password")
-  }
-    return (
-      <View style={styles.container}>
-        <Nav onPress={()=> navigation.goBack()}/>
-        <View style={styles.header}>
-          <Image source={Logo} style={[styles.logo]} resizeMode="contain" />
+    console.warn('Forgot Password');
+  };
+  return (
+    <View style={styles.container}>
+      <Nav onPress={() => navigation.goBack()} />
+      <View style={styles.header}>
+        <Image source={Logo} style={[styles.logo]} resizeMode="contain" />
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.text_header}>Sign In</Text>
+        <Text style={styles.text_footer}>
+          Enter your login details or continue with your social account
+        </Text>
+        <Text style={styles.username}>Email</Text>
+        <View style={styles.inputContainer}>
+          <View style={styles.inputSubContainer}>
+            <TextInput
+              placeholder="Email"
+              placeholderTextColor={Colors.DEFAULT_GREY}
+              selectionColor={Colors.DEFAULT_GREY}
+              style={styles.inputText}
+            />
+          </View>
         </View>
-        <View style={styles.footer}>
-          <Text style={styles.text_header}>Sign In</Text>
-          <Text style={styles.text_footer}>Enter your login details or continue with your social account</Text>
-          <Text style={styles.username}>Email</Text>
-          <View style={styles.inputContainer}>
-            <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                placeholder="Email"
-                placeholderTextColor={Colors.DEFAULT_GREY}
-                selectionColor={Colors.DEFAULT_GREY}
-                style={styles.inputText}
-                
-              />
-              
-            </View>
+        <Text style={styles.username}>Password</Text>
+        <View style={styles.inputContainer}>
+          <View style={styles.inputSubContainer}>
+            <TextInput
+              secureTextEntry={isPasswordShow ? false : true}
+              placeholder="Password"
+              placeholderTextColor={Colors.DEFAULT_GREY}
+              selectionColor={Colors.DEFAULT_GREY}
+              style={styles.inputText}
+              onChangeText={text => setPassword(text)}
+            />
+            <Feather
+              name={isPasswordShow ? 'eye' : 'eye-off'}
+              size={22}
+              color={Colors.DEFAULT_GREY}
+              style={{marginRight: 10}}
+              onPress={() => setIsPasswordShow(!isPasswordShow)}
+            />
           </View>
-          <Text style={styles.username}>Password</Text>
-          <View style={styles.inputContainer}>
-            <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                secureTextEntry={isPasswordShow ? false : true}
-                placeholder="Password"
-                placeholderTextColor={Colors.DEFAULT_GREY}
-                selectionColor={Colors.DEFAULT_GREY}
-                style={styles.inputText}
-                onChangeText={text => setPassword(text)}
-              />
-              <Feather 
-                name={isPasswordShow ? 'eye' : 'eye-off'}
-                size={22}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10}}
-                onPress={() => setIsPasswordShow(!isPasswordShow)}
-              />
-            </View>
-          </View>
-          <View style={styles.forgotPasswordContainer}>
-          <Text style={styles.forgotPassword} onPress={()=>navigation.navigate('ForgotPasswordScreen')}>Forgot Password?</Text>
-          </View>
-          <CustomButton text="Log In" onPress={()=>navigation.navigate('SignInVerifyScreen')} type="PRIMARY"/>
+        </View>
+        <View style={styles.forgotPasswordContainer}>
+          <Text
+            style={styles.forgotPassword}
+            onPress={() => navigation.navigate('ForgotPasswordScreen')}>
+            Forgot Password?
+          </Text>
+        </View>
+        <CustomButton
+          text="Log In"
+          onPress={() => navigation.navigate('SignInVerifyScreen')}
+          type="PRIMARY"
+        />
         <View style={styles.action}>
-          <Image source={Rectangle_1} style={[styles.logo, ]} resizeMode="contain" />
+          <Image
+            source={Rectangle_1}
+            style={[styles.logo]}
+            resizeMode="contain"
+          />
           <Text style={styles.action_text}>Or Sign in with</Text>
-          <Image source={Rectangle_2} style={[styles.logo, ]} resizeMode="contain" />
+          <Image
+            source={Rectangle_2}
+            style={[styles.logo]}
+            resizeMode="contain"
+          />
         </View>
-         <View style={[styles.icons, {paddingHorizontal: 10}]}>
-          <Image source={Google} style={[styles.action_text, {marginRight: 30} ]} resizeMode="contain" />
-          <Image source={Facebook} style={[styles.action_text, {marginRight: 30}]} resizeMode="contain" />
+        <View style={[styles.icons, {paddingHorizontal: 10}]}>
+          <Image
+            source={Google}
+            style={[styles.action_text, {marginRight: 30}]}
+            resizeMode="contain"
+          />
+          <Image
+            source={Facebook}
+            style={[styles.action_text, {marginRight: 30}]}
+            resizeMode="contain"
+          />
           <Image source={Twitter} style={[styles.logo]} resizeMode="contain" />
         </View>
-        </View>
-        
-        
       </View>
-    )
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -96,12 +125,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
   },
-  
+
   header: {
     flex: 1,
     paddingTop: 18,
     alignItems: 'center',
-
   },
   footer: {
     flex: 10,
@@ -121,10 +149,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 10,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 10,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   action: {
     flexDirection: 'row',
@@ -133,7 +161,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 5,
     marginHorizontal: 5,
-    
   },
   forgotPassword: {
     fontFamily: Font.AVENIR_BLACK,
@@ -151,15 +178,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,
   },
-  
+
   button: {
     alignItem: 'center',
     marginTop: 50,
@@ -185,7 +210,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

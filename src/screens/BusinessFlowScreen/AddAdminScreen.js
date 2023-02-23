@@ -1,4 +1,16 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import tab from '../../../assets/images/tab.png';
 import profile from '../../../assets/images/profile1.png';
@@ -7,126 +19,160 @@ import Alternate from '../../../assets/images/alternate.png';
 import Active from '../../../assets/images/active.png';
 import BusinessProfile from '../../../assets/images/profileImage.png';
 import Feather from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomBottomTab, Nav, HomeNav, CustomBorder, Spacer} from '../../components/CustomComponents';
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  HomeNav,
+  CustomBorder,
+  Spacer,
+} from '../../components/CustomComponents';
 
-import {Colors, Font} from "../../constants";
+import {Colors, Font} from '../../constants';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 const AddAdminScreen = ({navigation}) => {
-
-    const BottomSheetRef = useRef(null);
-    const [showBottomSheet, setShowBottomSheet] = useState(false);
+  const BottomSheetRef = useRef(null);
+  const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
 
   // callbacks
-  const handleSheetChange = useCallback((index) => {
-    console.log(index)
-  }, [])
+  const handleSheetChange = useCallback(index => {
+    console.log(index);
+  }, []);
 
-    
-    return (
-      <View style={styles.container}>
-        { showBottomSheet && <BottomSheet
-        ref={BottomSheetRef}
-        snapPoints={snapPoints}
-        onChange={handleSheetChange}
-        containerStyle={{
-          zIndex: 1,
-           borderWidth: 1, 
-           shadowColor: 'black',
-          shadowOffset: { width: 0, height: 5 },
-          shadowOpacity: 0.1,
-          shadowRadius: 5,
-          elevation: 5,
-          opacity: 1,
-        }}
-      >
-        <View style={styles.customButtonContainer}>
-          
-          
-          <View style={{paddingLeft: 10, paddingTop: 2, justifyContent: 'center'}}>
-          <Text style={styles.bottomSheetText}>Are you sure you want to add @purplepeaches as your admin?</Text>
-          
+  return (
+    <View style={styles.container}>
+      {showBottomSheet && (
+        <BottomSheet
+          ref={BottomSheetRef}
+          snapPoints={snapPoints}
+          onChange={handleSheetChange}
+          containerStyle={{
+            zIndex: 1,
+            borderWidth: 1,
+            shadowColor: 'black',
+            shadowOffset: {width: 0, height: 5},
+            shadowOpacity: 0.1,
+            shadowRadius: 5,
+            elevation: 5,
+            opacity: 1,
+          }}>
+          <View style={styles.customButtonContainer}>
+            <View
+              style={{
+                paddingLeft: 10,
+                paddingTop: 2,
+                justifyContent: 'center',
+              }}>
+              <Text style={styles.bottomSheetText}>
+                Are you sure you want to add @purplepeaches as your admin?
+              </Text>
+            </View>
           </View>
-          
-          
-        </View>
 
-        <View style={{flexDirection: 'row',  paddingTop: 24}}>
-          
-          
-          <View style={{paddingLeft: 10, borderColor: Colors.DEFAULT_GREY, borderTopWidth: 1, borderBottomWidth: 1, borderRightWidth: 1, width:'50%', height: 57, justifyContent: 'center'}}>
-          <Pressable onPress={() => navigation.navigate('AdminScreen')}>
-          <Text style={styles.bottomSheetTextYes}>Yes</Text>
-          </Pressable>
+          <View style={{flexDirection: 'row', paddingTop: 24}}>
+            <View
+              style={{
+                paddingLeft: 10,
+                borderColor: Colors.DEFAULT_GREY,
+                borderTopWidth: 1,
+                borderBottomWidth: 1,
+                borderRightWidth: 1,
+                width: '50%',
+                height: 57,
+                justifyContent: 'center',
+              }}>
+              <Pressable onPress={() => navigation.navigate('AdminScreen')}>
+                <Text style={styles.bottomSheetTextYes}>Yes</Text>
+              </Pressable>
+            </View>
+
+            <View
+              style={{
+                paddingLeft: 10,
+                borderColor: Colors.DEFAULT_GREY,
+                borderTopWidth: 1,
+                borderBottomWidth: 1,
+                width: '50%',
+                height: 57,
+                justifyContent: 'center',
+              }}>
+              <Pressable onPress={() => setShowBottomSheet(!showBottomSheet)}>
+                <Text style={styles.bottomSheetTextNo}>No</Text>
+              </Pressable>
+            </View>
           </View>
-          
-          <View style={{paddingLeft: 10, borderColor: Colors.DEFAULT_GREY, borderTopWidth: 1, borderBottomWidth: 1, width:'50%', height: 57, justifyContent: 'center'}}>
-          <Pressable onPress={() => setShowBottomSheet(!showBottomSheet)}>
-          <Text style={styles.bottomSheetTextNo}>No</Text>
-          </Pressable>
-        </View>
-        </View>
+        </BottomSheet>
+      )}
+      <View
+        style={[
+          styles.container,
+          {
+            backgroundColor: showBottomSheet
+              ? Colors.SHEET_OPEN
+              : Colors.DEFAULT_WHITE,
+            opacity: showBottomSheet ? 0.6 : 1,
+          },
+        ]}>
+        <HomeNav text="Add Admin" onPress={() => navigation.goBack()} />
 
-        
-        
-      </BottomSheet> }
-      <View style={[styles.container, {backgroundColor: showBottomSheet ? Colors.SHEET_OPEN : Colors.DEFAULT_WHITE, opacity: showBottomSheet ? 0.6 : 1}]}>
-        
-      
-        
-          <HomeNav text="Add Admin" onPress={()=> navigation.goBack()}/>
-         
-         
-       
-        <View style={{ paddingHorizontal: 20, paddingTop: 20}}>
-            <Text style={styles.username}>Admin username</Text>
+        <View style={{paddingHorizontal: 20, paddingTop: 20}}>
+          <Text style={styles.username}>Admin username</Text>
           <View style={styles.inputContainer}>
             <View style={styles.inputSubContainer}>
-              
-              <TextInput 
-                
+              <TextInput
                 placeholder="Search for a user to assign role"
                 placeholderTextColor={Colors.SECONDARY_GREY}
                 selectionColor={Colors.SECONDARY_GREY}
                 style={styles.inputText}
                 onChangeText={text => setPassword(text)}
               />
-              
             </View>
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>With admin access, this user can do the following:</Text>
-              
-            </View>
-            <View>
-              <Text style={styles.linkTop}>Content</Text>
-              <Text style={styles.links}>Create, manage or delete posts, blogs and other things on your business account</Text>
-            </View>
-            <View>
-              <Text style={styles.linkTop}>Reviews and Replies</Text>
-              <Text style={styles.links}>Can respond to reviews and comment on blog posts</Text>
-            </View>
-            <View>
-              <Text style={styles.linkTop}>Ads & Promos</Text>
-              <Text style={styles.links}>Can create, manage and delete ads and promos for the business</Text>
-            </View>
-            <View>
-              <Text style={styles.linkTop}>Insight</Text>
-              <Text style={styles.links}>Can see and download insights about the business</Text>
-            </View>
-            
-            
-            
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={styles.links}>
+              With admin access, this user can do the following:
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.linkTop}>Content</Text>
+            <Text style={styles.links}>
+              Create, manage or delete posts, blogs and other things on your
+              business account
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.linkTop}>Reviews and Replies</Text>
+            <Text style={styles.links}>
+              Can respond to reviews and comment on blog posts
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.linkTop}>Ads & Promos</Text>
+            <Text style={styles.links}>
+              Can create, manage and delete ads and promos for the business
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.linkTop}>Insight</Text>
+            <Text style={styles.links}>
+              Can see and download insights about the business
+            </Text>
+          </View>
         </View>
-      <Spacer size={45}/>
-      <View style={styles.buttonView}>
-      <CustomButton text="Give access" onPress={() => setShowBottomSheet(!showBottomSheet)} type="PRIMARY"/>
+        <Spacer size={45} />
+        <View style={styles.buttonView}>
+          <CustomButton
+            text="Give access"
+            onPress={() => setShowBottomSheet(!showBottomSheet)}
+            type="PRIMARY"
+          />
+        </View>
       </View>
     </View>
-    </View>
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -171,7 +217,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
     paddingLeft: 2,
   },
-  customButtonProfile : {
+  customButtonProfile: {
     width: 36,
     height: 36,
   },
@@ -181,7 +227,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 30,
     flexDirection: 'row',
-    
   },
   links: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -190,7 +235,6 @@ const styles = StyleSheet.create({
     width: 360,
     lineHeight: 20,
     paddingBottom: 8,
-
   },
   buttonView: {
     marginBottom: 40,
@@ -216,7 +260,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 80,
     height: 80,
@@ -233,7 +277,6 @@ const styles = StyleSheet.create({
   profileStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    
   },
   profileImageContainer: {
     width: 80,
@@ -291,10 +334,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
@@ -310,17 +353,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   vector: {
-
     width: 18,
     paddingTop: 10,
     paddingBottom: 40,
-
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
-    
   },
 
   filter: {
@@ -328,13 +367,12 @@ const styles = StyleSheet.create({
     color: Colors.BOLD_BLACK,
     fontSize: 15,
     paddingTop: 16,
-    
   },
   filterContainer: {
     alignItems: 'flex-end',
   },
   filterSubContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   icons: {
     flexDirection: 'row',
@@ -342,10 +380,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,
@@ -388,7 +424,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

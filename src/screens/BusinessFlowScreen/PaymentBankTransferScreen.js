@@ -1,20 +1,37 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, FlatList, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  FlatList,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState} from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomBottomTab, Nav, HomeNav, CustomBorder, Spacer} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  HomeNav,
+  CustomBorder,
+  Spacer,
+} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Visa from '../../../assets/images/visa.png';
 import Mastercard from '../../../assets/images/mastercard.png';
 import Flutterwave from '../../../assets/images/flutterwave.png';
 import Paystack from '../../../assets/images/paystack.png';
 import Verve from '../../../assets/images/verve.png';
-
-
-
 
 const PaymentBankTransferScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
@@ -25,76 +42,85 @@ const PaymentBankTransferScreen = ({navigation}) => {
     {location: 'Jumia', image: '0ne'},
     {location: 'Shopify', image: 't0ne'},
   ];
-  const [myData, setMyData]=useState(location)
+  const [myData, setMyData] = useState(location);
   const [password, setPassword] = useState('');
-  const [selectedLocation, setSelectedLocation] = useState('Lagos')
-    return (
-      <View style={styles.container}>
-      
-        
-          <HomeNav text="Payment" onPress={()=> navigation.goBack()}/>
-        
-        <View style={styles.header}>
-            <View style={styles.body}>
-            <Text style={styles.duration}>
-                Monthly Premium plan 1 Month
-            </Text>
-            <Text style={styles.result}>
-                Edit
-            </Text>
-            </View>
-            <View style={styles.body}>
-            <Text style={styles.price}>
-                Total:
-            </Text>
-            <Text style={styles.total}>
-                ₦14,000.00
-            </Text>
-            </View>
-            <View style={{paddingHorizontal: 20, marginVertical:32}}>
-                <Text style={styles.total}>Select payment method</Text>
-            </View>
-            <View style={{paddingHorizontal: 20, }}>
-            <Pressable onPress={()=>navigation.navigate('PaymentCardScreen')}>
-            <View style={{flexDirection:'row', justifyContent:'space-between',  borderColor: Colors.BORDER_COLOR, borderRadius: 10, borderWidth: 1, height: 72, alignItems: 'center', paddingHorizontal: 10, }}>
-            <Image source={Paystack} resizeMode="contain"/>
-            <View style={{flexDirection:'row', }}>
+  const [selectedLocation, setSelectedLocation] = useState('Lagos');
+  return (
+    <View style={styles.container}>
+      <HomeNav text="Payment" onPress={() => navigation.goBack()} />
+
+      <View style={styles.header}>
+        <View style={styles.body}>
+          <Text style={styles.duration}>Monthly Premium plan 1 Month</Text>
+          <Text style={styles.result}>Edit</Text>
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.price}>Total:</Text>
+          <Text style={styles.total}>₦14,000.00</Text>
+        </View>
+        <View style={{paddingHorizontal: 20, marginVertical: 32}}>
+          <Text style={styles.total}>Select payment method</Text>
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <Pressable onPress={() => navigation.navigate('PaymentCardScreen')}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                borderColor: Colors.BORDER_COLOR,
+                borderRadius: 10,
+                borderWidth: 1,
+                height: 72,
+                alignItems: 'center',
+                paddingHorizontal: 10,
+              }}>
+              <Image source={Paystack} resizeMode="contain" />
+              <View style={{flexDirection: 'row'}}>
                 <View style={{paddingRight: 6}}>
-                <Image source={Verve} resizeMode="contain"/>
+                  <Image source={Verve} resizeMode="contain" />
                 </View>
                 <View style={{paddingRight: 6}}>
-                <Image source={Mastercard} resizeMode="contain"/>
+                  <Image source={Mastercard} resizeMode="contain" />
                 </View>
-                <Image source={Visa} resizeMode="contain"/>
+                <Image source={Visa} resizeMode="contain" />
+              </View>
             </View>
-            </View>
-            </Pressable>
-            <Spacer size={24} />
-            <Pressable onPress={()=>navigation.navigate('PaymentCardScreen')}>
-            <View style={{flexDirection:'row', justifyContent:'space-between',  borderColor: Colors.BORDER_COLOR, borderRadius: 10, borderWidth: 1, height: 72, alignItems: 'center', paddingHorizontal: 10,}}>
-            <Image source={Flutterwave} resizeMode="contain"/>
-            <View style={{flexDirection:'row', }}>
+          </Pressable>
+          <Spacer size={24} />
+          <Pressable onPress={() => navigation.navigate('PaymentCardScreen')}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                borderColor: Colors.BORDER_COLOR,
+                borderRadius: 10,
+                borderWidth: 1,
+                height: 72,
+                alignItems: 'center',
+                paddingHorizontal: 10,
+              }}>
+              <Image source={Flutterwave} resizeMode="contain" />
+              <View style={{flexDirection: 'row'}}>
                 <View style={{paddingRight: 6}}>
-                <Image source={Verve} resizeMode="contain"/>
+                  <Image source={Verve} resizeMode="contain" />
                 </View>
                 <View style={{paddingRight: 6}}>
-                <Image source={Mastercard} resizeMode="contain"/>
+                  <Image source={Mastercard} resizeMode="contain" />
                 </View>
-                <Image source={Visa} resizeMode="contain"/>
+                <Image source={Visa} resizeMode="contain" />
+              </View>
             </View>
-            </View>
-            </Pressable>
-    </View>    
+          </Pressable>
+        </View>
+      </View>
     </View>
-    </View>
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.DEFAULT_WHITE,
-    
   },
   headerBlogText: {
     color: Colors.HEADER_BLACK,
@@ -110,36 +136,34 @@ const styles = StyleSheet.create({
   },
   pubDate: {
     paddingRight: 20,
-    paddingTop: 20
+    paddingTop: 20,
   },
   buttonView: {
     marginBottom: 40,
     paddingHorizontal: 20,
   },
-   total: {
+  total: {
     color: Colors.HEADER_BLACK,
     fontFamily: Font.AVENIR_BLACK,
     fontSize: 14,
-    
-
   },
   rank: {
     flexDirection: 'row',
   },
   InsightsHeader: {
-    flexDirection: 'row', 
-    paddingHorizontal: 20, 
+    flexDirection: 'row',
+    paddingHorizontal: 20,
     justifyContent: 'space-between',
   },
   InsightsBody: {
-    color: Colors.LIGHT_MODE_GREY, 
-    fontFamily: Font.AVENIR_REGULAR, 
+    color: Colors.LIGHT_MODE_GREY,
+    fontFamily: Font.AVENIR_REGULAR,
     lineHeight: 19.6,
   },
   InsightsResult: {
-    color: Colors.LIGHT_MODE_GREY, 
-    fontFamily: Font.AVENIR_MEDIUM, 
-    lineHeight: 19.6
+    color: Colors.LIGHT_MODE_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    lineHeight: 19.6,
   },
   nav: {
     paddingHorizontal: 20,
@@ -156,7 +180,7 @@ const styles = StyleSheet.create({
   },
   dropdownArea: {
     width: '98%',
-    
+
     height: 80,
     borderRadius: 10,
     marginTop: 10,
@@ -165,8 +189,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   body: {
-   paddingHorizontal: 20,
-   flexDirection: 'row',
+    paddingHorizontal: 20,
+    flexDirection: 'row',
   },
   duration: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -198,30 +222,29 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
     height: 4,
   },
-  
+
   action: {
     flexDirection: 'row',
     //marginTop: 10,
     justifyContent: 'space-between',
     marginTop: 5,
   },
-  
+
   result: {
     color: Colors.PINK,
     fontFamily: Font.AVENIR_MEDIUM,
     fontSize: 14,
-    position: 'absolute', 
+    position: 'absolute',
     marginHorizontal: 219,
-
   },
   filterContainer: {
     alignItems: 'flex-end',
@@ -230,17 +253,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
   },
-  
+
   icons: {
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,
@@ -294,7 +315,7 @@ const styles = StyleSheet.create({
   inputSubContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 });
 

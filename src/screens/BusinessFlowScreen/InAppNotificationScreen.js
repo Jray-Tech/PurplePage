@@ -1,115 +1,157 @@
-import { Text, View, Button, Switch, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView, Pressable } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  Switch,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import React, {useState, useCallback, useMemo, useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {Colors, Font} from "../../constants";
-import {CustomButton, CustomBottomTab, Nav, HomeNav, CustomBorder, Spacer} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  HomeNav,
+  CustomBorder,
+  Spacer,
+} from '../../components/CustomComponents';
 
 const InAppNotificationScreen = ({navigation}) => {
-    const [isEnabled, setIsEnabled] = useState(true);
-    const [text, setText] = useState('Press the Switch:')
+  const [isEnabled, setIsEnabled] = useState(true);
+  const [text, setText] = useState('Press the Switch:');
 
-    const toggleSwitch = () => {
-        if (isEnabled) {
-            setText('Inactive')
-        } else {
-            setText('Active')
-        }
-        setIsEnabled(previousState => !previousState)
+  const toggleSwitch = () => {
+    if (isEnabled) {
+      setText('Inactive');
+    } else {
+      setText('Active');
     }
+    setIsEnabled(previousState => !previousState);
+  };
 
-    return (
-      <View style={styles.container}>
-        
-      
-        
-      
-        <HomeNav text="In-app Notifications" onPress={()=> navigation.goBack()}/>
-        <View style={{ paddingHorizontal: 20, paddingTop: 38}}>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>New subscriber</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Comments on blogpost</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>New Reviews</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Blogpost likes</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Blogpost Shares</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Product likes</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Product Shares</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text style={styles.links}>Ads & Promo goes live</Text>
-              <Switch 
-                trackColor={{false: Colors.DEFAULT_GREY, true: Colors.PROGRESS_GREY}}
-                thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY }
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-            
-            
-            
+  return (
+    <View style={styles.container}>
+      <HomeNav
+        text="In-app Notifications"
+        onPress={() => navigation.goBack()}
+      />
+      <View style={{paddingHorizontal: 20, paddingTop: 38}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>New subscriber</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
         </View>
-        <Spacer size={320}/>
-     <View style={styles.buttonView}>
-      <CustomButton text="Sign out" onPress={()=>navigation.navigate('PaymentSuccessScreen')} type="SIGNOUT"/>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Comments on blogpost</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>New Reviews</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Blogpost likes</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Blogpost Shares</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Product likes</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Product Shares</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.links}>Ads & Promo goes live</Text>
+          <Switch
+            trackColor={{
+              false: Colors.DEFAULT_GREY,
+              true: Colors.PROGRESS_GREY,
+            }}
+            thumbColor={isEnabled ? Colors.PINK : Colors.THUMB_GREY}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
       </View>
-      
+      <Spacer size={320} />
+      <View style={styles.buttonView}>
+        <CustomButton
+          text="Sign out"
+          onPress={() => navigation.navigate('PaymentSuccessScreen')}
+          type="SIGNOUT"
+        />
+      </View>
     </View>
-    
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -142,7 +184,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
     paddingLeft: 2,
   },
-  customButtonProfile : {
+  customButtonProfile: {
     width: 36,
     height: 36,
   },
@@ -152,7 +194,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingTop: 30,
     flexDirection: 'row',
-    
   },
   links: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -160,7 +201,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 24,
     paddingBottom: 20,
-
   },
   delete: {
     fontFamily: Font.AVENIR_MEDIUM,
@@ -168,7 +208,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 24,
     paddingBottom: 24,
-
   },
   footer: {
     backgroundColor: Colors.DEFAULT_WHITE,
@@ -182,7 +221,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 80,
     height: 80,
@@ -199,7 +238,6 @@ const styles = StyleSheet.create({
   profileStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    
   },
   profileImageContainer: {
     width: 80,
@@ -257,10 +295,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
@@ -276,17 +314,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   vector: {
-
     width: 18,
     paddingTop: 10,
     paddingBottom: 40,
-
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
-    
   },
 
   filter: {
@@ -294,13 +328,12 @@ const styles = StyleSheet.create({
     color: Colors.BOLD_BLACK,
     fontSize: 15,
     paddingTop: 16,
-    
   },
   filterContainer: {
     alignItems: 'flex-end',
   },
   filterSubContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   icons: {
     flexDirection: 'row',
@@ -308,10 +341,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

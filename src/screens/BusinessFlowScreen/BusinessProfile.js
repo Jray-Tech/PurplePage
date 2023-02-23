@@ -1,105 +1,119 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import React, {useState} from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomBottomTab, Nav, CustomBusinessTab} from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants"
+import {
+  CustomButton,
+  CustomBottomTab,
+  Nav,
+  CustomBusinessTab,
+} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
 import Edit from '../../../assets/images/edit.png';
-
-
 
 const BusinessProfile = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
-  
-    return (
-      <View style={styles.container}>
-      
-        <View style={styles.nav}>
-          <Nav onPress={()=> navigation.goBack()}/>
-        </View>
-        <View style={styles.header}>
 
-            <View style={styles.body}>
-            <Image source={PurpleCloset} style={styles.images} />
-            <TouchableOpacity onPress={()=>navigation.navigate('FilterScreen')}>
+  return (
+    <View style={styles.container}>
+      <View style={styles.nav}>
+        <Nav onPress={() => navigation.goBack()} />
+      </View>
+      <View style={styles.header}>
+        <View style={styles.body}>
+          <Image source={PurpleCloset} style={styles.images} />
+          <TouchableOpacity onPress={() => navigation.navigate('FilterScreen')}>
             <View style={styles.action}>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text style={[styles.bussinessName, {paddingRight: 24}]}>Purple Closet</Text>
-            <Image source={Edit} resizeMode="contain" />
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Text style={[styles.bussinessName, {paddingRight: 24}]}>
+                  Purple Closet
+                </Text>
+                <Image source={Edit} resizeMode="contain" />
+              </View>
+              <View
+                style={{
+                  backgroundColor: isSubscribed
+                    ? Colors.DEFAULT_PURPLE
+                    : Colors.DEFAULT_GREY,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  paddingVertical: 5,
+                  paddingHorizontal: 10,
+                  borderRadius: 5,
+                }}>
+                <Text
+                  style={{
+                    color: isSubscribed
+                      ? Colors.DEFAULT_WHITE
+                      : Colors.BOLD_BLACK,
+                    paddingHorizontal: 5,
+                    fontFamily: Font.AVENIR_MEDIUM,
+                  }}>
+                  {isSubscribed ? 'Promote Page' : 'Promoted'}
+                </Text>
+              </View>
             </View>
-            <View style={{
-              backgroundColor: isSubscribed ? Colors.DEFAULT_PURPLE : Colors.DEFAULT_GREY,
-              flexDirection:'row',
-              alignItems: 'center',
-              paddingVertical: 5,
-              paddingHorizontal: 10,
-              borderRadius: 5,
-            }}>
-
-            <Text style={{
-              color:isSubscribed ? Colors.DEFAULT_WHITE : Colors.BOLD_BLACK,
-              paddingHorizontal: 5,
-              fontFamily: Font.AVENIR_MEDIUM,
-            }}>{isSubscribed ? 'Promote Page' : 'Promoted'}</Text>
-          
-            </View>    
-          
-            
-            </View>
-            </TouchableOpacity>
-            <Text style={styles.bussinessCategory}>Fashion</Text>
-            <Text style={styles.bussinessLocation}>1.24k Subscribers</Text>
-            <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
-            <View style={styles.action}>
+          </TouchableOpacity>
+          <Text style={styles.bussinessCategory}>Fashion</Text>
+          <Text style={styles.bussinessLocation}>1.24k Subscribers</Text>
+          <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
+          <View style={styles.action}>
             <View style={styles.rank}>
-            <FontAwesome
+              <FontAwesome
                 name={'star'}
                 size={16}
                 color={Colors.RANK}
                 style={{marginRight: 2}}
-            />
-            <FontAwesome
+              />
+              <FontAwesome
                 name={'star'}
                 size={16}
                 color={Colors.RANK}
                 style={{marginRight: 2}}
-            />
-            <FontAwesome
+              />
+              <FontAwesome
                 name={'star'}
                 size={16}
                 color={Colors.RANK}
                 style={{marginRight: 2}}
-            />
-            <FontAwesome
+              />
+              <FontAwesome
                 name={'star'}
                 size={16}
                 color={Colors.RANK}
                 style={{marginRight: 2}}
-            />
-            <FontAwesome
+              />
+              <FontAwesome
                 name={'star-o'}
                 size={16}
                 color={Colors.DEFAULT_GREY}
                 style={{marginRight: 2}}
-            />
+              />
             </View>
-            
-            </View>
+          </View>
         </View>
         <CustomBusinessTab />
-        
-        </View>
-        
+      </View>
     </View>
-    )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    
   },
   rank: {
     flexDirection: 'row',
@@ -119,7 +133,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 32,
     height: 32,
@@ -137,7 +151,6 @@ const styles = StyleSheet.create({
     color: Colors.HEADER_BLACK,
   },
   body: {
-   
     paddingHorizontal: 20,
   },
   images: {
@@ -163,16 +176,16 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
     height: 4,
   },
-  
+
   action: {
     flexDirection: 'row',
     //marginTop: 10,
@@ -189,7 +202,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
   },
@@ -203,7 +215,6 @@ const styles = StyleSheet.create({
     color: Colors.CATEGORY_GREY,
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 14,
-
   },
   filterContainer: {
     alignItems: 'flex-end',
@@ -212,17 +223,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
   },
-  
+
   icons: {
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

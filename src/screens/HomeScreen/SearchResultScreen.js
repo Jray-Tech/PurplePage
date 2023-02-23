@@ -1,4 +1,15 @@
-import { Text, View, Button, StyleSheet, TouchableOpacity, Platform, Image, TextInput, SafeAreaView, ScrollView } from 'react-native'
+import {
+  Text,
+  View,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  Image,
+  TextInput,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import React, {useState} from 'react';
 
 import PurpleCloset from '../../../assets/images/purplecloset.png';
@@ -7,10 +18,10 @@ import Vector2 from '../../../assets/images/Vector2.png';
 import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import MaterialIcons  from 'react-native-vector-icons/MaterialIcons';
-import {Colors, Font} from "../../constants"
-import { color } from 'react-native-reanimated';
-import { Nav } from '../../components/CustomComponents';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {Colors, Font} from '../../constants';
+import {color} from 'react-native-reanimated';
+import {Nav} from '../../components/CustomComponents';
 
 const SearchResultScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -18,293 +29,287 @@ const SearchResultScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () => {
-    console.warn("Log in")
-  }
+    console.warn('Log in');
+  };
 
   const forgotPasswordPressed = () => {
-    console.warn("Forgot Password")
-  }
-    return (
-      <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        <Nav onPress={()=> navigation.goBack()}/>
+    console.warn('Forgot Password');
+  };
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}>
+        <Nav onPress={() => navigation.goBack()} />
         <View style={styles.header}>
-
           <View style={styles.searchContainer}>
-          <View style={styles.inputContainer}>
-            <View style={styles.inputSubContainer}>
-              <Feather 
-                name={'search'}
-                size={22}
-                color={Colors.HEADER_BLACK}
-                style={{marginRight: 10}}
-              />
-            <View style={{flex: 1, flexDirection: 'row', justifyContent
-                :'space-between', alignItems: 'center'}}>
-              <TextInput 
-                placeholder="Travel"
-                placeholderTextColor={Colors.HEADER_BLACK}
-                selectionColor={Colors.HEADER_BLACK}
-                style={styles.inputText}
-                
-              />
-              <MaterialIcons
-                name={'cancel'}
-                size={22}
-                color={Colors.DEFAULT_GREY}
-                style={{marginRight: 10, }}
-                onPress={() => navigation.navigate('FilterScreen')}
-              />
+            <View style={styles.inputContainer}>
+              <View style={styles.inputSubContainer}>
+                <Feather
+                  name={'search'}
+                  size={22}
+                  color={Colors.HEADER_BLACK}
+                  style={{marginRight: 10}}
+                />
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
+                  <TextInput
+                    placeholder="Travel"
+                    placeholderTextColor={Colors.HEADER_BLACK}
+                    selectionColor={Colors.HEADER_BLACK}
+                    style={styles.inputText}
+                  />
+                  <MaterialIcons
+                    name={'cancel'}
+                    size={22}
+                    color={Colors.DEFAULT_GREY}
+                    style={{marginRight: 10}}
+                    onPress={() => navigation.navigate('FilterScreen')}
+                  />
+                </View>
+              </View>
             </View>
-              
-            </View>
-            
+            <Image source={Vector} style={styles.vector} resizeMode="contain" />
           </View>
-          <Image source={Vector} style={styles.vector} resizeMode="contain" />
-          </View>
-          
-          
-            <View style={styles.filterSubContainer}>
-              <Text style={styles.filter} onPress={''}>365 <Text style={styles.result}>Results</Text> </Text>
-              
-            </View>
 
-            <View style={styles.body}>
+          <View style={styles.filterSubContainer}>
+            <Text style={styles.filter} onPress={''}>
+              365 <Text style={styles.result}>Results</Text>{' '}
+            </Text>
+          </View>
+
+          <View style={styles.body}>
             <Image source={PurpleCloset} style={styles.images} />
-            <TouchableOpacity onPress={()=>navigation.navigate('BusinessInfoScreen')}>
-            <Text style={styles.bussinessName}>Purple Closet</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('BusinessInfoScreen')}>
+              <Text style={styles.bussinessName}>Purple Closet</Text>
             </TouchableOpacity>
             <Text style={styles.bussinessCategory}>Fashion</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star-o'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              
+              <View style={styles.rank}>
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star-o'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
               </View>
               <View style={styles.actionContent}>
                 <Feather
-                name={'bookmark'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 20}}
-              />
-              <Feather
-                name={'share-2'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 2}}
-              />
-              </View>
+                  name={'bookmark'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 20}}
+                />
+                <Feather
+                  name={'share-2'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 2}}
+                />
               </View>
             </View>
+          </View>
 
-            <View style={styles.body}>
+          <View style={styles.body}>
             <Image source={CharliesBagelGarden} style={styles.images} />
             <Text style={styles.bussinessName}>Charlies Bagel Garden</Text>
             <Text style={styles.bussinessCategory}>Food & Drinks</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star-o'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              
+              <View style={styles.rank}>
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star-o'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
               </View>
               <View style={styles.actionContent}>
                 <Feather
-                name={'bookmark'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 20}}
-              />
-              <Feather
-                name={'share-2'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 2}}
-              />
-              </View>
+                  name={'bookmark'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 20}}
+                />
+                <Feather
+                  name={'share-2'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 2}}
+                />
               </View>
             </View>
-          
+          </View>
+
           <View style={styles.body}>
             <Image source={PurpleCloset} style={styles.images} />
             <Text style={styles.bussinessName}>Purple Closet</Text>
             <Text style={styles.bussinessCategory}>Fashion</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star-o'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              
+              <View style={styles.rank}>
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star-o'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
               </View>
               <View style={styles.actionContent}>
                 <Feather
-                name={'bookmark'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 20}}
-              />
-              <Feather
-                name={'share-2'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 2}}
-              />
-              </View>
+                  name={'bookmark'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 20}}
+                />
+                <Feather
+                  name={'share-2'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 2}}
+                />
               </View>
             </View>
+          </View>
 
-            <View style={styles.body}>
+          <View style={styles.body}>
             <Image source={CharliesBagelGarden} style={styles.images} />
             <Text style={styles.bussinessName}>Charlies Bagel Garden</Text>
             <Text style={styles.bussinessCategory}>Food & Drinks</Text>
             <Text style={styles.bussinessLocation}>Abule-egba, Lagos</Text>
             <View style={styles.action}>
-            <View style={styles.rank}>
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              <FontAwesome
-                name={'star-o'}
-                size={16}
-                color={Colors.RANK}
-                style={{marginRight: 2}}
-              />
-              
+              <View style={styles.rank}>
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
+                <FontAwesome
+                  name={'star-o'}
+                  size={16}
+                  color={Colors.RANK}
+                  style={{marginRight: 2}}
+                />
               </View>
               <View style={styles.actionContent}>
                 <Feather
-                name={'bookmark'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 20}}
-              />
-              <Feather
-                name={'share-2'}
-                size={18}
-                color={Colors.CATEGORY_PURPLE}
-                style={{marginRight: 2}}
-              />
-              </View>
+                  name={'bookmark'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 20}}
+                />
+                <Feather
+                  name={'share-2'}
+                  size={18}
+                  color={Colors.CATEGORY_PURPLE}
+                  style={{marginRight: 2}}
+                />
               </View>
             </View>
-          
-
-         
+          </View>
         </View>
-        
-        
       </ScrollView>
-      
-      </SafeAreaView>
-    )
-}
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -334,7 +339,7 @@ const styles = StyleSheet.create({
     shadowOffset: 1,
     elevation: 3,
   },
-  
+
   profile: {
     width: 32,
     height: 32,
@@ -377,10 +382,10 @@ const styles = StyleSheet.create({
     fontFamily: Font.AVENIR_MEDIUM,
   },
   username: {
-   marginTop: 15,
-   color: Colors.SECONDARY_GREY,
-   fontFamily: Font.AVENIR_MEDIUM,
-   paddingBottom: 10,
+    marginTop: 15,
+    color: Colors.SECONDARY_GREY,
+    fontFamily: Font.AVENIR_MEDIUM,
+    paddingBottom: 10,
   },
   tab: {
     width: 90,
@@ -401,7 +406,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 
-  
   forgotPasswordContainer: {
     alignItems: 'flex-end',
   },
@@ -415,7 +419,6 @@ const styles = StyleSheet.create({
     color: Colors.CATEGORY_GREY,
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 14,
-
   },
   filterContainer: {
     alignItems: 'flex-end',
@@ -424,17 +427,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
   },
-  
+
   icons: {
     flexDirection: 'row',
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 5,
-    
-    
   },
-  action_text:{
+  action_text: {
     paddingLeft: 5,
     paddingRight: 5,
     fontFamily: Font.AVENIR_MEDIUM,

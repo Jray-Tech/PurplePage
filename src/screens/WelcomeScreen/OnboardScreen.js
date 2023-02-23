@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import { CustomButton } from '../../components/CustomComponents';
-import {Colors, Font} from "../../constants";
+import {CustomButton} from '../../components/CustomComponents';
+import {Colors, Font} from '../../constants';
 import * as Animateble from 'react-native-animatable';
 
 const {width, height} = Dimensions.get('window');
@@ -33,23 +33,30 @@ const slides = [
   },
 ];
 
-
-
 const Slide = ({item}) => {
   return (
-    
-    <View style={{alignItems: 'center', position: 'relative', left: 40, marginTop: 10}}>
+    <View
+      style={{
+        alignItems: 'center',
+        position: 'relative',
+        left: 40,
+        marginTop: 10,
+      }}>
       <Image
         source={item?.image}
-        style={{height: '75%', width, resizeMode: 'contain', alignSelf:'center', paddingLeft: 50}}
+        style={{
+          height: '75%',
+          width,
+          resizeMode: 'contain',
+          alignSelf: 'center',
+          paddingLeft: 50,
+        }}
       />
-      
     </View>
   );
 };
 
 const OnboardingScreen = ({navigation}) => {
-    
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
   const ref = React.useRef();
   const updateCurrentSlideIndex = e => {
@@ -73,7 +80,6 @@ const OnboardingScreen = ({navigation}) => {
     ref?.current.scrollToOffset({offset});
     setCurrentSlideIndex(lastSlideIndex);
   };
-  
 
   const Footer = () => {
     return (
@@ -106,12 +112,23 @@ const OnboardingScreen = ({navigation}) => {
           ))}
         </View>
 
-        
-
         {/* Render buttons */}
         <Animateble.View animation="fadeInUpBig">
-        <CustomButton text="Get Started" onPress={()=> navigation.navigate('SignUpScreen')} type="PRIMARY"/>
-        <Text style={styles.grey}>Have an account? <Text style={styles.pink} text="Create an account" onPress={()=> navigation.navigate('SignInScreen')} type="WHITE">Sign in</Text></Text>
+          <CustomButton
+            text="Get Started"
+            onPress={() => navigation.navigate('SignUpScreen')}
+            type="PRIMARY"
+          />
+          <Text style={styles.grey}>
+            Have an account?{' '}
+            <Text
+              style={styles.pink}
+              text="Create an account"
+              onPress={() => navigation.navigate('SignInScreen')}
+              type="WHITE">
+              Sign in
+            </Text>
+          </Text>
         </Animateble.View>
       </View>
     );
@@ -120,22 +137,20 @@ const OnboardingScreen = ({navigation}) => {
   const Header = () => {
     return (
       <View style={styles.header}>
-        <Text style={styles.titleText}>Your One-Stop Digital Marketing Solution</Text>
-        
-        </View>
-
-        
-
-       
-          
-        
-      
+        <Text style={styles.titleText}>
+          Your One-Stop Digital Marketing Solution
+        </Text>
+      </View>
     );
   };
 
   return (
-    <SafeAreaView style={{backgroundColor:Colors.DEFAULT_WHITE, flex:1}}>
-      <View style={{ flexDirection: 'column', backgroundColor: Colors.DEFAULT_WHITE}}>
+    <SafeAreaView style={{backgroundColor: Colors.DEFAULT_WHITE, flex: 1}}>
+      <View
+        style={{
+          flexDirection: 'column',
+          backgroundColor: Colors.DEFAULT_WHITE,
+        }}>
         <Header />
         <FlatList
           ref={ref}
@@ -157,19 +172,18 @@ const OnboardingScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-    header: {
-        
-        backgroundColor: Colors.DEFAULT_WHITE,
-        paddingHorizontal: 20,
-    },
-    titleText: {
-       color: Colors.BUTTON_PURPLE,
-       fontFamily: Font.AVENIR_BLACK,
-       fontSize: 30,
-       paddingTop: 35,
-       paddingBottom: 10,
-       //fontWeight: 'bold', 
-    },
+  header: {
+    backgroundColor: Colors.DEFAULT_WHITE,
+    paddingHorizontal: 20,
+  },
+  titleText: {
+    color: Colors.BUTTON_PURPLE,
+    fontFamily: Font.AVENIR_BLACK,
+    fontSize: 30,
+    paddingTop: 35,
+    paddingBottom: 10,
+    //fontWeight: 'bold',
+  },
   subtitle: {
     color: COLORS.white,
     fontSize: 13,
@@ -179,18 +193,18 @@ const styles = StyleSheet.create({
     lineHeight: 23,
   },
   grey: {
-        color: Colors.CATEGORY_GREY,
-        alignItems:'center',
-        textAlign: 'center',
-        marginBottom: 40,
-        fontFamily: Font.AVENIR_REGULAR,
-    },
-    pink: {
-        color: Colors.DEFAULT_PURPLE,
-        alignItems:'center',
-        textAlign: 'center',
-        fontFamily: Font.AVENIR_MEDIUM,
-    },
+    color: Colors.CATEGORY_GREY,
+    alignItems: 'center',
+    textAlign: 'center',
+    marginBottom: 40,
+    fontFamily: Font.AVENIR_REGULAR,
+  },
+  pink: {
+    color: Colors.DEFAULT_PURPLE,
+    alignItems: 'center',
+    textAlign: 'center',
+    fontFamily: Font.AVENIR_MEDIUM,
+  },
   title: {
     color: COLORS.white,
     fontSize: 22,
