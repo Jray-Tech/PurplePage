@@ -3,7 +3,7 @@ import React from 'react';
 import {CustomButton, CustomVerify} from '../../components/CustomComponents';
 import Font from '../../constants/Font';
 
-const BusinessListedScreen = ({navigation}) => {
+export const BusinessListedScreen = ({navigation}) => {
   setTimeout(() => {
     navigation.replace('MoreAndBusinnessCreatedScreen');
   }, 3000);
@@ -37,5 +37,3 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
 });
-
-export default BusinessListedScreen;

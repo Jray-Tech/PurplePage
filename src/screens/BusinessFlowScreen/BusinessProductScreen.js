@@ -19,6 +19,8 @@ import Ellipse3 from '../../../assets/images/Ellipse3.png';
 import Ellipse4 from '../../../assets/images/Ellipse4.png';
 import Ellipse5 from '../../../assets/images/Ellipse5.png';
 import {Nav, Spacer} from '../../components/CustomComponents';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
 export const BusinessProductScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
