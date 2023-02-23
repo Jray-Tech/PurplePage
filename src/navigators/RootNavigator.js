@@ -5,8 +5,25 @@ import {
 } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import {OnboardingScreen, WelcomeScreen} from '../screens/WelcomeScreen';
-import {ChooseInterestScreen, SignUpScreen} from '../screens/AuthScreen';
-import {SignInVerifyScreen} from '../screens/VerifyScreen';
+import {
+  ChooseInterestScreen,
+  ForgotPasswordScreen,
+  SetNewPasswordScreen,
+  SignInScreen,
+  SignUpScreen,
+} from '../screens/AuthScreen';
+import {
+  AccountCreatedSuccessScreen,
+  ResetSuccessScreen,
+  SignInVerifyScreen,
+  VerificationScreen,
+  VerifyForgotPasswordScreen,
+} from '../screens/VerifyScreen';
+import {NotifyScreen} from '../screens/HomeScreen/NofityScreen';
+import {SearchResultScreen} from '../screens/HomeScreen/SearchResultScreen';
+import {FilterScreen} from '../screens/HomeScreen/FilterScreen';
+import {BusinessInfoScreen} from '../screens/HomeScreen/BusinessInfoScreen';
+import {ReviewScreen} from '../screens/HomeScreen/ReviewScreen';
 // import {OnboardingScreen, WelcomeScreen} from '../screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
@@ -31,37 +48,37 @@ const RootNavigator = () => {
         name="ChooseInterestScreen"
         component={ChooseInterestScreen}
       />
-
+      <Stack.Screen name="SignInScreen" component={SignInScreen} />
+      <Stack.Screen
+        name="ForgotPasswordScreen"
+        component={ForgotPasswordScreen}
+      />
+      <Stack.Screen
+        name="VerifyForgotPasswordScreen"
+        component={VerifyForgotPasswordScreen}
+      />
+      <Stack.Screen
+        name="SetNewPasswordScreen"
+        component={SetNewPasswordScreen}
+      />
+      <Stack.Screen name="ResetSuccessScreen" component={ResetSuccessScreen} />
+      <Stack.Screen name="VerificationScreen" component={VerificationScreen} />
+      <Stack.Screen
+        name="AccountCreatedSuccessScreen"
+        component={AccountCreatedSuccessScreen}
+      />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="NotifyScreen" component={NotifyScreen} />
+      <Stack.Screen name="SearchResultScreen" component={SearchResultScreen} />
+      <Stack.Screen name="FilterScreen" component={FilterScreen} />
+      <Stack.Screen name="BusinessInfoScreen" component={BusinessInfoScreen} />
+      <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
     </Stack.Navigator>
   );
 };
 
 export default RootNavigator;
 
-//         <Stack.Screen name="SignInScreen" component={SignInScreen}/>
-//         <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen}/>
-//         <Stack.Screen name="VerifyForgotPasswordScreen" component={VerifyForgotPasswordScreen}/>
-//         <Stack.Screen name="SetNewPasswordScreen" component={SetNewPasswordScreen}/>
-//         <Stack.Screen name="ResetSuccessScreen" component={ResetSuccessScreen}/>
-//         <Stack.Screen name="VerificationScreen" component={VerificationScreen}/>
-//         <Stack.Screen name="AccountCreatedSuccessScreen" component={AccountCreatedSuccessScreen}/>
-//         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
-//         <Stack.Screen name="NotifyScreen" component={NotifyScreen}/>
-//         <Stack.Screen name="SearchResultScreen" component={SearchResultScreen}/>
-//         <Stack.Screen name="FilterScreen" component={FilterScreen}/>
-//         <Stack.Screen name="BusinessInfoScreen" component={BusinessInfoScreen}/>
-//         <Stack.Screen name="ReviewScreen" component={ReviewScreen}/>
-//         <Stack.Screen name="BusinessProduct" component={BusinessProduct}/>
-//         <Stack.Screen name="ListBusinessScreen" component={ListBusinessScreen}/>
-//         <Stack.Screen name="BusinessListedScreen" component={BusinessListedScreen}/>
-//         <Stack.Screen name="MoreAndBusinnessCreatedScreen" component={MoreAndBusinnessCreatedScreen}/>
-//         <Stack.Screen name="BusinessProfile" component={BusinessProfile}/>
-//         <Stack.Screen name="AddProductScreen" component={AddProductScreen}/>
-//         <Stack.Screen name="PostScreen" component={PostScreen}/>
-//         <Stack.Screen name="BlogInsightScreen" component={BlogInsightScreen}/>
-//         <Stack.Screen name="PostAdsScreen" component={PostAdsScreen}/>
-//         <Stack.Screen name="PaymentBankTransferScreen" component={PaymentBankTransferScreen}/>
 //         <Stack.Screen name="PaymentCardScreen" component={PaymentCardScreen}/>
 //         <Stack.Screen name="PaymentSuccessScreen" component={PaymentSuccessScreen}/>
 //         <Stack.Screen name="BusinessProductScreen" component={BusinessProductScreen}/>

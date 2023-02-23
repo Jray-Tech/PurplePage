@@ -9,8 +9,6 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import Notification from '../../../assets/images/notification.png';
-import {Colors, Font} from '../../constants';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import NotifyIcon from '../../../assets/images/notifyIcon.png';
 import {
@@ -18,8 +16,10 @@ import {
   CustomBorder,
   HomeNav,
 } from '../../components/CustomComponents';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
-const NotifyScreen = ({navigation}) => {
+export const NotifyScreen = ({navigation}) => {
   const [isNotification, setIsNotification] = useState(false);
   if (isNotification) {
     return (
@@ -221,5 +221,3 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
-
-export default NotifyScreen;

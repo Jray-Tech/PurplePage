@@ -14,16 +14,15 @@ import React, {useState} from 'react';
 
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import Vector from '../../../assets/images/Vector.png';
-import Vector2 from '../../../assets/images/Vector2.png';
 import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {Colors, Font} from '../../constants';
-import {color} from 'react-native-reanimated';
 import {Nav} from '../../components/CustomComponents';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
-const SearchResultScreen = ({navigation}) => {
+export const SearchResultScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -481,5 +480,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default SearchResultScreen;

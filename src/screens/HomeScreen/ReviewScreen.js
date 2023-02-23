@@ -9,18 +9,17 @@ import {
   TextInput,
 } from 'react-native';
 import React, {useState} from 'react';
-import Notification from '../../../assets/images/notification.png';
-import {Colors, Font} from '../../constants';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Upload from '../../../assets/images/upload.png';
 import {
   CustomButton,
   CustomBorder,
   HomeNav,
 } from '../../components/CustomComponents';
+import Font from '../../constants/Font';
+import Colors from '../../constants/Colors';
 
-const ReviewScreen = ({navigation}) => {
+export const ReviewScreen = ({navigation}) => {
   const [isRate, setIsRate] = useState([false, false, false, false, false]);
   const [isNotification, setIsNotification] = useState(false);
   const [starStates, setStarStates] = useState([
@@ -273,5 +272,3 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 });
-
-export default ReviewScreen;

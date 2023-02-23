@@ -19,10 +19,11 @@ import {
   CustomBottomTab,
   Nav,
 } from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
 import Subscribed from '../../../assets/images/Subcribed.png';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
-const BusinessInfoScreen = ({navigation}) => {
+export const BusinessInfoScreen = ({navigation}) => {
   const [isSubscribed, setIsSubscribed] = useState(true);
 
   return (
@@ -273,5 +274,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default BusinessInfoScreen;
