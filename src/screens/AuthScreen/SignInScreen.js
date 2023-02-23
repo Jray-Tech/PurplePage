@@ -15,12 +15,10 @@ import Rectangle_2 from '../../../assets/images/Rectangle_2.png';
 import Google from '../../../assets/images/google.png';
 import Facebook from '../../../assets/images/facebook.png';
 import Twitter from '../../../assets/images/twitter.png';
-import * as Animatable from 'react-native-animatable';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import CustomInput from '../../components/CustomInput';
 import {CustomButton, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
 const SignInScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);

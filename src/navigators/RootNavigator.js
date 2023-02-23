@@ -4,6 +4,9 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
+import {OnboardingScreen, WelcomeScreen} from '../screens/WelcomeScreen';
+import {ChooseInterestScreen, SignUpScreen} from '../screens/AuthScreen';
+import {SignInVerifyScreen} from '../screens/VerifyScreen';
 // import {OnboardingScreen, WelcomeScreen} from '../screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
@@ -20,20 +23,22 @@ const RootNavigator = () => {
         headerShown: false,
         headerShadowVisible: false,
       }}>
-      <Stack.Screen name="OnboardingScreen" component={HomeScreen} />
+      <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+      <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
+      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="SignInVerifyScreen" component={SignInVerifyScreen} />
+      <Stack.Screen
+        name="ChooseInterestScreen"
+        component={ChooseInterestScreen}
+      />
+
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
     </Stack.Navigator>
   );
 };
 
 export default RootNavigator;
 
-// <Stack.Navigator headerMode="none">
-//   <Stack.Screen name="SplashScreen" component={SplashScreen} />
-//   {/* <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
-//   {/* <Stack.Screen name="OnboardingScreen" component={OnboardingScreen}/>
-//         <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
-//         <Stack.Screen name="SignInVerifyScreen" component={SignInVerifyScreen}/>
-//         <Stack.Screen name="ChooseInterestScreen" component={ChooseInterestScreen}/>
 //         <Stack.Screen name="SignInScreen" component={SignInScreen}/>
 //         <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen}/>
 //         <Stack.Screen name="VerifyForgotPasswordScreen" component={VerifyForgotPasswordScreen}/>

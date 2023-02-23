@@ -1,15 +1,8 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  StatusBar,
-  TextInput,
-  Touchable,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, StyleSheet, StatusBar, TextInput} from 'react-native';
 import React, {useRef, useState} from 'react';
-import {Colors, Font} from '../../constants';
 import {Nav} from '../../components/CustomComponents';
+import Font from '../../constants/Font';
+import Colors from '../../constants/Colors';
 
 const VerifyForgotPasswordScreen = ({navigation}) => {
   const firstInput = useRef();

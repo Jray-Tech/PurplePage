@@ -17,15 +17,13 @@ import Rectangle_2 from '../../../assets/images/Rectangle_2.png';
 import Google from '../../../assets/images/google.png';
 import Facebook from '../../../assets/images/facebook.png';
 import Twitter from '../../../assets/images/twitter.png';
-import * as Animatable from 'react-native-animatable';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import CustomInput from '../../components/CustomInput';
 import {CustomButton} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
 import CheckBox from '@react-native-community/checkbox';
 import * as yup from 'yup';
 import {Formik} from 'formik';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
 const registrationSchema = yup.object().shape({
   username: yup.string().required('Username is required'),

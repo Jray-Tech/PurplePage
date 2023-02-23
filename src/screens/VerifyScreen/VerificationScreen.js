@@ -8,8 +8,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useRef, useState} from 'react';
-import {Colors, Font} from '../../constants';
 import {Nav} from '../../components/CustomComponents';
+import Font from '../../constants/Font';
+import Colors from '../../constants/Colors';
 
 const VerificationScreen = ({navigation}) => {
   const firstInput = useRef();

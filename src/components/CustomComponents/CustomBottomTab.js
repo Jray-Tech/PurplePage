@@ -9,7 +9,6 @@ import {
 import React from 'react';
 import PurpleCloset from '../../../assets/images/purplecloset.png';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Colors, Font} from '../../constants';
 import {CustomButton, CustomBorder} from '.';
 import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -17,6 +16,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Marketplace1 from '../../../assets/images/Marketplace1.png';
 import Marketplace2 from '../../../assets/images/Marketplace2.png';
 import Marketplace3 from '../../../assets/images/Marketplace3.png';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
 const CustomBottomTab = ({navigation}) => {
   const Tab = createMaterialTopTabNavigator();

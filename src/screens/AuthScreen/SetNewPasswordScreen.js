@@ -9,19 +9,11 @@ import {
   TextInput,
 } from 'react-native';
 import React, {useState} from 'react';
-import Logo from '../../../assets/images/Logo.png';
-import Rectangle_1 from '../../../assets/images/Rectangle_1.png';
-import Rectangle_2 from '../../../assets/images/Rectangle_2.png';
-import Google from '../../../assets/images/google.png';
-import Facebook from '../../../assets/images/facebook.png';
-import Twitter from '../../../assets/images/twitter.png';
-import * as Animatable from 'react-native-animatable';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import CustomInput from '../../components/CustomInput';
 import {CustomButton, Nav} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
 const SetNewPasswordScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);

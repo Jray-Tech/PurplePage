@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Confirmation from '../../../assets/images/Confirmation.png';
-import {Colors, Font} from '../../constants';
+import Font from '../../constants/Font';
 
 const CustomVerify = ({text}) => {
   return (

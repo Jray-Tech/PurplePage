@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import {Colors, Font} from '../../constants';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Font from '../../constants/Font';
 
 const HomeNav = ({onPress, text}) => {
   return (

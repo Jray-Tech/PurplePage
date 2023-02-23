@@ -11,8 +11,10 @@ import {
   Dimensions,
 } from 'react-native';
 import {CustomButton} from '../../components/CustomComponents';
-import {Colors, Font} from '../../constants';
+
 import * as Animateble from 'react-native-animatable';
+import Colors from '../../constants/Colors';
+import Font from '../../constants/Font';
 
 const {width, height} = Dimensions.get('window');
 

@@ -26,7 +26,7 @@ import Group12 from '../../../assets/images/Group12.png';
 import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import Colors from '../../constants/colors';
+import Colors from '../../constants/Colors';
 import Font from '../../constants/Font';
 
 const HomeScreen = ({navigation}) => {

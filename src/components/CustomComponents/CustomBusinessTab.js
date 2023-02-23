@@ -9,9 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import React from 'react';
-import PurpleCloset from '../../../assets/images/purplecloset.png';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Colors, Font} from '../../constants';
 import {CustomButton, CustomBorder} from '.';
 import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -26,6 +24,8 @@ import Bookmark from '../../../assets/images/Bookmark.png';
 import Share from '../../../assets/images/Share.png';
 import Insights from '../../../assets/images/Insights.png';
 import Profile from '../../../assets/images/businessProfile.png';
+import Font from '../../constants/Font';
+import Colors from '../../constants/Colors';
 
 const CustomBusinessTab = ({navigation}) => {
   const Tab = createMaterialTopTabNavigator();

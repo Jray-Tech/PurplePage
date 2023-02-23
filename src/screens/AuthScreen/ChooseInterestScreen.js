@@ -1,9 +1,9 @@
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import React, {useState} from 'react';
-import {Colors, Font} from '../../constants';
-import * as Animateble from 'react-native-animatable';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {CustomButton} from '../../components/CustomComponents';
+import Font from '../../constants/Font';
+import Colors from '../../constants/Colors';
 
 const ChooseInterestScreen = ({navigation}) => {
   const [selectedInterests, setSelectedInterests] = useState({

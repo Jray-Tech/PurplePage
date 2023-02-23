@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
-import {Colors, Font} from '../../constants';
+import Colors from '../../constants/Colors';
 
 const CustomBorder = ({onPress, text, type}) => {
   return <View style={styles.CustomBorder}></View>;
