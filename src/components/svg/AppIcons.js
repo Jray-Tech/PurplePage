@@ -62,3 +62,19 @@ export function BlogScreenIcon({active = false}) {
     </Svg>
   );
 }
+
+export function SortIcon(props) {
+  return (
+    <Svg
+      width={14}
+      height={12}
+      viewBox="0 0 14 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <Path
+        d="M9.666 3.333H7L10.333 0l3.333 3.333H11v8H9.666v-8zM.333 8.667h2.666v-8h1.334v8H7L3.666 12 .333 8.667z"
+        fill="#831CA5"
+      />
+    </Svg>
+  );
+}
