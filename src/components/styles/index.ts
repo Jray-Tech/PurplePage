@@ -22,4 +22,11 @@ export const globalStyles = StyleSheet.create({
     color: colors.CATEGORY_GREY,
     fontWeight: '400',
   },
+  textPrimary: {
+    fontFamily: Font.AVENIR_REGULAR,
+    fontSize: 14,
+    color: colors.LIGHT_MODE_GREY,
+    fontWeight: '400',
+    lineHeight: 20,
+  },
 });

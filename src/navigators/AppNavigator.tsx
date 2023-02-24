@@ -29,6 +29,7 @@ import {EmailNotificationScreen} from '../screens/BusinessFlowScreen/EmailNotifi
 import {PricingScreen} from '../screens/BusinessFlowScreen/PricingScreen';
 import {ConnectToSocialScreen} from '../screens/BusinessFlowScreen/ConnectToSocialScreen';
 import BottomTabNavigator from './BottomTabNavigator';
+import BlogDetailsScreen from '../screens/Blog/BlogDetailsScreen';
 
 const App = createNativeStackNavigator();
 
@@ -41,7 +42,7 @@ const AppStack = () => {
       }}>
       {/* <App.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
       <App.Screen name="Main" component={BottomTabNavigator} />
-      {/* <App.Screen name="HomeScreen" component={HomeScreen} /> */}
+      <App.Screen name="BlogDetails" component={BlogDetailsScreen} />
       <App.Screen name="NotifyScreen" component={NotifyScreen} />
       <App.Screen name="SearchResultScreen" component={SearchResultScreen} />
       <App.Screen name="FilterScreen" component={FilterScreen} />

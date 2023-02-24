@@ -78,3 +78,20 @@ export function SortIcon(props) {
     </Svg>
   );
 }
+
+export function LeftIcon(props) {
+  return (
+    <Svg
+      width={8}
+      height={14}
+      viewBox="0 0 8 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M2.828 7l4.95 4.95-1.414 1.414L0 7 6.364.636 7.778 2.05 2.828 7z"
+        fill="#14011B"
+      />
+    </Svg>
+  );
+}

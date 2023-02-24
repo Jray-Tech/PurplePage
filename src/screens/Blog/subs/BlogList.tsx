@@ -1,33 +1,40 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {globalStyles} from '../../../components/styles';
 import {Spacer} from '../../../components/CustomComponents';
 import Colors from '../../../constants/Colors';
 import Font from '../../../constants/Font';
+import {useNavigation} from '@react-navigation/native';
 
 const BlogList = () => {
+  const {navigate} = useNavigation<any>();
   return (
-    <View style={styles.container}>
-      <Spacer />
-      <Text style={globalStyles.textHeader}>
-        Lorem ipsum dolor sit amet consectetur. Cursus quisque.
-      </Text>
-      <Spacer size={4} />
-      <Text style={globalStyles.textPrimaryGrey}>
-        Lorem ipsum dolor sit amet consectetur. Cursus quisque.
-      </Text>
-      <Spacer size={10} />
-      <Text style={styles.littleBottomText}>
-        By
-        <Text
-          style={{...styles.littleBottomText, color: Colors.DEFAULT_PURPLE}}>
-          {' '}
-          Purple Closet{' '}
+    <TouchableOpacity onPress={() => navigate('BlogDetails')}>
+      <View style={styles.container}>
+        <Spacer />
+        <Text style={globalStyles.textHeader}>
+          Lorem ipsum dolor sit amet consectetur. Cursus quisque.
         </Text>
-        | December 21, 2022
-      </Text>
-      <Spacer size={12} />
-    </View>
+        <Spacer size={4} />
+        <Text style={globalStyles.textPrimaryGrey}>
+          Lorem ipsum dolor sit amet consectetur. Cursus quisque.
+        </Text>
+        <Spacer size={10} />
+        <Text style={styles.littleBottomText}>
+          By
+          <Text
+            style={{
+              ...styles.littleBottomText,
+              color: Colors.DEFAULT_PURPLE,
+            }}>
+            {' '}
+            Purple Closet{' '}
+          </Text>
+          | December 21, 2022
+        </Text>
+        <Spacer size={12} />
+      </View>
+    </TouchableOpacity>
   );
 };
 
