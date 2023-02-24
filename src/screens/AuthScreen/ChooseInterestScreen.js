@@ -59,10 +59,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Fashion
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Fashion
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -94,10 +94,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Travel
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Travel
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -127,10 +127,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Sport
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Sport
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -161,10 +161,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests['Branding & Marketing']
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests['Branding & Marketing']
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -200,10 +200,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Finance
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Finance
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -236,10 +236,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests['Food & Drinks']
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests['Food & Drinks']
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -274,10 +274,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Agriculture
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Agriculture
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -310,10 +310,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Manufacturing
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Manufacturing
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -347,10 +347,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Entertainment
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Entertainment
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -385,10 +385,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Technology
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Technology
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -421,10 +421,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Pharmaceuticals
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Pharmaceuticals
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -459,10 +459,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Logistics
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Logistics
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -495,10 +495,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests.Education
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests.Education
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -531,10 +531,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests['Real Estate']
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests['Real Estate']
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -569,10 +569,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests['Hospitality']
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests['Hospitality']
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -607,10 +607,10 @@ const ChooseInterestScreen = ({navigation}) => {
               {
                 backgroundColor: selectedInterests['Electronic & Gadgets']
                   ? Colors.DEFAULT_WHITE
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderColor: selectedInterests['Electronic & Gadgets']
                   ? Colors.PINK
-                  : Colors.DEFAULT_GREY,
+                  : Colors.PROGRESS_GREY,
                 borderWidth: 1,
               },
             ]}>
@@ -703,7 +703,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   grey: {
-    color: Colors.DEFAULT_GREY,
+    color: Colors.PROGRESS_GREY,
     marginTop: 5,
     alignItems: 'center',
     textAlign: 'center',

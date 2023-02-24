@@ -29,8 +29,9 @@ const registrationSchema = yup.object().shape({
   username: yup.string().required('Username is required'),
   phone: yup
     .string()
-    .matches(/(01)(\d){8}\b/, 'Enter a valid phone number')
-    .required('Phone number is required'),
+    // .matches(/(01)(\d){8}\b/, 'Enter a valid phone number')
+    .required('Phone number is required')
+    .min(11, 'Enter a valid phone number'),
   email: yup
     .string()
     .email('Please Enter Valid Email')

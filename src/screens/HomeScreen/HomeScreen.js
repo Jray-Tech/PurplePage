@@ -224,13 +224,13 @@ const HomeScreen = ({navigation}) => {
           </View>
         </View>
       </ScrollView>
-      <View style={styles.footer}>
+      {/* <View style={styles.footer}>
         <Image source={Group12} style={styles.vector} resizeMode="contain" />
         <Image source={Vector3} style={styles.vector} resizeMode="contain" />
         <Image source={Vector4} style={styles.vector} resizeMode="contain" />
         <Image source={Vector5} style={styles.vector} resizeMode="contain" />
         <Image source={Vector6} style={styles.vector} resizeMode="contain" />
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };

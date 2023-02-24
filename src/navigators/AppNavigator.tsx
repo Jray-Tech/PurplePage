@@ -1,24 +1,6 @@
-import * as React from 'react';
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
+import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import {OnboardingScreen, WelcomeScreen} from '../screens/WelcomeScreen';
-import {
-  ChooseInterestScreen,
-  ForgotPasswordScreen,
-  SetNewPasswordScreen,
-  SignInScreen,
-  SignUpScreen,
-} from '../screens/AuthScreen';
-import {
-  AccountCreatedSuccessScreen,
-  ResetSuccessScreen,
-  SignInVerifyScreen,
-  VerificationScreen,
-  VerifyForgotPasswordScreen,
-} from '../screens/VerifyScreen';
 import {NotifyScreen} from '../screens/HomeScreen/NofityScreen';
 import {SearchResultScreen} from '../screens/HomeScreen/SearchResultScreen';
 import {FilterScreen} from '../screens/HomeScreen/FilterScreen';
@@ -46,112 +28,83 @@ import {InAppNotificationScreen} from '../screens/BusinessFlowScreen/InAppNotifi
 import {EmailNotificationScreen} from '../screens/BusinessFlowScreen/EmailNotificationScreen';
 import {PricingScreen} from '../screens/BusinessFlowScreen/PricingScreen';
 import {ConnectToSocialScreen} from '../screens/BusinessFlowScreen/ConnectToSocialScreen';
+import BottomTabNavigator from './BottomTabNavigator';
 
-const Stack = createNativeStackNavigator();
+const App = createNativeStackNavigator();
 
-const RootNavigator = () => {
-  //   const auth = React.useContext(AuthContext);
-  const auth = {
-    token: '123344445',
-  };
-
+const AppStack = () => {
   return (
-    <Stack.Navigator
+    <App.Navigator
       screenOptions={{
         headerShown: false,
         headerShadowVisible: false,
       }}>
-      <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-      <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
-      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-      <Stack.Screen name="SignInVerifyScreen" component={SignInVerifyScreen} />
-      <Stack.Screen
-        name="ChooseInterestScreen"
-        component={ChooseInterestScreen}
-      />
-      <Stack.Screen name="SignInScreen" component={SignInScreen} />
-      <Stack.Screen
-        name="ForgotPasswordScreen"
-        component={ForgotPasswordScreen}
-      />
-      <Stack.Screen
-        name="VerifyForgotPasswordScreen"
-        component={VerifyForgotPasswordScreen}
-      />
-      <Stack.Screen
-        name="SetNewPasswordScreen"
-        component={SetNewPasswordScreen}
-      />
-      <Stack.Screen name="ResetSuccessScreen" component={ResetSuccessScreen} />
-      <Stack.Screen name="VerificationScreen" component={VerificationScreen} />
-      <Stack.Screen
-        name="AccountCreatedSuccessScreen"
-        component={AccountCreatedSuccessScreen}
-      />
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="NotifyScreen" component={NotifyScreen} />
-      <Stack.Screen name="SearchResultScreen" component={SearchResultScreen} />
-      <Stack.Screen name="FilterScreen" component={FilterScreen} />
-      <Stack.Screen name="BusinessInfoScreen" component={BusinessInfoScreen} />
-      <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
-      <Stack.Screen name="BusinessProduct" component={BusinessProduct} />
-      <Stack.Screen name="ListBusinessScreen" component={ListBusinessScreen} />
-      <Stack.Screen
+      {/* <App.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
+      <App.Screen name="Main" component={BottomTabNavigator} />
+      {/* <App.Screen name="HomeScreen" component={HomeScreen} /> */}
+      <App.Screen name="NotifyScreen" component={NotifyScreen} />
+      <App.Screen name="SearchResultScreen" component={SearchResultScreen} />
+      <App.Screen name="FilterScreen" component={FilterScreen} />
+      <App.Screen name="BusinessInfoScreen" component={BusinessInfoScreen} />
+      <App.Screen name="ReviewScreen" component={ReviewScreen} />
+      <App.Screen name="BusinessProduct" component={BusinessProduct} />
+      <App.Screen name="ListBusinessScreen" component={ListBusinessScreen} />
+      <App.Screen
         name="BusinessListedScreen"
         component={BusinessListedScreen}
       />
-      <Stack.Screen
+      <App.Screen
         name="MoreAndBusinnessCreatedScreen"
         component={MoreAndBusinnessCreatedScreen}
       />
-      <Stack.Screen name="BusinessProfile" component={BusinessProfile} />
-      <Stack.Screen name="AddProductScreen" component={AddProductScreen} />
-      <Stack.Screen name="PostScreen" component={PostScreen} />
-      <Stack.Screen name="BlogInsightScreen" component={BlogInsightScreen} />
-      <Stack.Screen name="PostAdsScreen" component={PostAdsScreen} />
-      <Stack.Screen
+      <App.Screen name="BusinessProfile" component={BusinessProfile} />
+      <App.Screen name="AddProductScreen" component={AddProductScreen} />
+      <App.Screen name="PostScreen" component={PostScreen} />
+      <App.Screen name="BlogInsightScreen" component={BlogInsightScreen} />
+      <App.Screen name="PostAdsScreen" component={PostAdsScreen} />
+      <App.Screen
         name="PaymentBankTransferScreen"
         component={PaymentBankTransferScreen}
       />
-      <Stack.Screen name="PaymentCardScreen" component={PaymentCardScreen} />
-      <Stack.Screen
+      <App.Screen name="PaymentCardScreen" component={PaymentCardScreen} />
+      <App.Screen
         name="PaymentSuccessScreen"
         component={PaymentSuccessScreen}
       />
-      <Stack.Screen
+      <App.Screen
         name="BusinessProductScreen"
         component={BusinessProductScreen}
       />
-      <Stack.Screen
+      <App.Screen
         name="AccountSettingScreen"
         component={AccountSettingScreen}
       />
-      <Stack.Screen name="AddAdminScreen" component={AddAdminScreen} />
-      <Stack.Screen name="AdminScreen" component={AdminScreen} />
-      <Stack.Screen
+      <App.Screen name="AddAdminScreen" component={AddAdminScreen} />
+      <App.Screen name="AdminScreen" component={AdminScreen} />
+      <App.Screen
         name="NotificationSettingScreen"
         component={NotificationSettingScreen}
       />
-      <Stack.Screen
+      <App.Screen
         name="AdsAndPromotionScreen"
         component={AdsAndPromotionScreen}
       />
-      <Stack.Screen
+      <App.Screen
         name="InAppNotificationScreen"
         component={InAppNotificationScreen}
       />
-      <Stack.Screen
+      <App.Screen
         name="EmailNotificationScreen"
         component={EmailNotificationScreen}
       />
-      <Stack.Screen name="PricingScreen" component={PricingScreen} />
-      <Stack.Screen
+      <App.Screen name="PricingScreen" component={PricingScreen} />
+      <App.Screen
         name="ConnectToSocialScreen"
         component={ConnectToSocialScreen}
       />
-      <Stack.Screen name="PostAnAdScreen" component={PostAdsScreen} />
-    </Stack.Navigator>
+      <App.Screen name="PostAnAdScreen" component={PostAdsScreen} />
+    </App.Navigator>
   );
 };
 
-export default RootNavigator;
+export default AppStack;

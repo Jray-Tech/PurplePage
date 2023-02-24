@@ -78,9 +78,7 @@ export default function App() {
   }, []);
   return (
     <WithSplashScreen isAppReady={isAppReady}>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
+      <RootNavigator />
     </WithSplashScreen>
   );
 }
