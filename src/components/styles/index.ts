@@ -8,6 +8,14 @@ export const globalStyles = StyleSheet.create({
     fontSize: 12,
     color: colors.BOLD_BLACK,
   },
+  textMainHeader: {
+    fontFamily: Font.AVENIR_REGULAR,
+    fontSize: 18,
+    color: colors.BOLD_BLACK,
+    fontWeight: '700',
+    textTransform: 'capitalize',
+  },
+
   textHeader: {
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 16,
@@ -22,6 +30,7 @@ export const globalStyles = StyleSheet.create({
     color: colors.CATEGORY_GREY,
     fontWeight: '400',
   },
+
   textPrimary: {
     fontFamily: Font.AVENIR_REGULAR,
     fontSize: 14,

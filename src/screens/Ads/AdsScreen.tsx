@@ -12,10 +12,7 @@ import {
   Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
 import Colors from '../../constants/Colors';
-import Font from '../../constants/Font';
 import SearchFilter from '../../components/Headers/SearchFilter';
 import {Spacer} from '../../components/CustomComponents';
 import {globalStyles} from '../../components/styles';
