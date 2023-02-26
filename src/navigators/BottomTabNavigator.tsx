@@ -9,9 +9,14 @@ import {
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {useEffect, useRef} from 'react';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import {BlogScreenIcon, HomeScreenIcon} from '../components/svg/AppIcons';
+import {
+  AdsScreenIcon,
+  BlogScreenIcon,
+  HomeScreenIcon,
+} from '../components/svg/AppIcons';
 import colors from '../constants/Colors';
 import BlogScreen from '../screens/Blog/BlogScreen';
+import AdsScreen from '../screens/Ads/AdsScreen';
 
 const screenOptions = {
   headerShown: false,
@@ -36,9 +41,9 @@ const TabArr = [
     component: BlogScreen,
   },
   {
-    route: 'HomeScreen2',
-    icon: HomeScreenIcon,
-    component: HomeScreen,
+    route: 'AdsScreen',
+    icon: AdsScreenIcon,
+    component: AdsScreen,
   },
 ];
 const Tab = createBottomTabNavigator();
@@ -61,7 +66,7 @@ const TabButton = (props: any) => {
         <View style={styles.container}>
           {route == 'HomeScreen' && <HomeScreenIcon active={focused} />}
           {route == 'BlogScreen' && <BlogScreenIcon active={focused} />}
-          {route == 'HomeScreen2' && <HomeScreenIcon active={focused} />}
+          {route == 'AdsScreen' && <AdsScreenIcon active={focused} />}
         </View>
         {focused ? (
           <View
