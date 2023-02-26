@@ -1,13 +1,8 @@
 import {
   Text,
   View,
-  Button,
   StyleSheet,
-  TouchableOpacity,
-  Platform,
   Image,
-  TextInput,
-  SafeAreaView,
   ScrollView,
   Pressable,
 } from 'react-native';
@@ -26,7 +21,6 @@ import Group12 from '../../../assets/images/Group12.png';
 import CharliesBagelGarden from '../../../assets/images/CharliesBagelGarden.png';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import Entypo from 'react-native-vector-icons/Entypo';
 import Colors from '../../constants/Colors';
 import Font from '../../constants/Font';
 import BottomSheet from '@gorhom/bottom-sheet';
@@ -35,7 +29,6 @@ export const MoreAndBusinnessCreatedScreen = ({navigation}) => {
   const BottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const snapPoints = useMemo(() => ['40%'], []);
-
   // callbacks
   const handleSheetChange = useCallback(index => {
     console.log(index);
@@ -259,13 +252,13 @@ export const MoreAndBusinnessCreatedScreen = ({navigation}) => {
             </View>
           </View>
         </ScrollView>
-        <View style={styles.footer}>
+        {/* <View style={styles.footer}>
           <Image source={Group12} style={styles.vector} resizeMode="contain" />
           <Image source={Vector3} style={styles.vector} resizeMode="contain" />
           <Image source={Vector4} style={styles.vector} resizeMode="contain" />
           <Image source={Vector5} style={styles.vector} resizeMode="contain" />
           <Image source={Vector6} style={styles.vector} resizeMode="contain" />
-        </View>
+        </View> */}
       </View>
     </View>
   );

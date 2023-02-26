@@ -57,10 +57,7 @@ const AppStack = () => {
         name="BusinessListedScreen"
         component={BusinessListedScreen}
       />
-      <App.Screen
-        name="MoreAndBusinnessCreatedScreen"
-        component={MoreAndBusinnessCreatedScreen}
-      />
+
       <App.Screen name="BusinessProfile" component={BusinessProfile} />
       <App.Screen name="AddProductScreen" component={AddProductScreen} />
       <App.Screen name="PostScreen" component={PostScreen} />

@@ -13,12 +13,14 @@ import {
   AdsScreenIcon,
   BlogScreenIcon,
   HomeScreenIcon,
+  MoreScreenIcon,
   WishlistIcon,
 } from '../components/svg/AppIcons';
 import colors from '../constants/Colors';
 import BlogScreen from '../screens/Blog/BlogScreen';
 import AdsScreen from '../screens/Ads/AdsScreen';
 import WishlistScreen from '../screens/WishList/WishlistScreen';
+import {MoreAndBusinnessCreatedScreen} from '../screens/BusinessFlowScreen/MoreAndBusinessCreatedScreen';
 
 const screenOptions = {
   headerShown: false,
@@ -52,6 +54,11 @@ const TabArr = [
     icon: WishlistIcon,
     component: WishlistScreen,
   },
+  {
+    route: 'MoreScreen',
+    icon: MoreScreenIcon,
+    component: MoreAndBusinnessCreatedScreen,
+  },
 ];
 const Tab = createBottomTabNavigator();
 
@@ -75,6 +82,7 @@ const TabButton = (props: any) => {
           {route == 'BlogScreen' && <BlogScreenIcon active={focused} />}
           {route == 'AdsScreen' && <AdsScreenIcon active={focused} />}
           {route == 'WishListScreen' && <WishlistIcon active={focused} />}
+          {route == 'MoreScreen' && <MoreScreenIcon active={focused} />}
         </View>
         {focused ? (
           <View
