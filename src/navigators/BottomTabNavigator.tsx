@@ -1,7 +1,5 @@
 import {
   StyleSheet,
-  Text,
-  TouchableOpacity,
   View,
   TouchableWithoutFeedback,
   Platform,
@@ -20,7 +18,7 @@ import colors from '../constants/Colors';
 import BlogScreen from '../screens/Blog/BlogScreen';
 import AdsScreen from '../screens/Ads/AdsScreen';
 import WishlistScreen from '../screens/WishList/WishlistScreen';
-import {MoreAndBusinnessCreatedScreen} from '../screens/BusinessFlowScreen/MoreAndBusinessCreatedScreen';
+import MoreAndBusinessScreen from '../screens/more/MoreAndBusinessScreen';
 
 const screenOptions = {
   headerShown: false,
@@ -29,8 +27,6 @@ const screenOptions = {
   tabBarStyle: {
     paddingTop: Platform.OS == 'ios' ? 10 : 0,
     backgroundColor: 'white',
-
-    // shadowRadius: 8,
   },
 };
 const TabArr = [
@@ -57,7 +53,7 @@ const TabArr = [
   {
     route: 'MoreScreen',
     icon: MoreScreenIcon,
-    component: MoreAndBusinnessCreatedScreen,
+    component: MoreAndBusinessScreen,
   },
 ];
 const Tab = createBottomTabNavigator();

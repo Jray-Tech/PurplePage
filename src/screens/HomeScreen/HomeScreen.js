@@ -1,12 +1,9 @@
 import {
   Text,
   View,
-  Button,
   StyleSheet,
   TouchableOpacity,
-  Platform,
   Image,
-  TextInput,
   SafeAreaView,
   ScrollView,
   Pressable,
@@ -28,6 +25,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import Colors from '../../constants/Colors';
 import Font from '../../constants/Font';
+import SearchFilter from '../../components/Headers/SearchFilter';
 
 const HomeScreen = ({navigation}) => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -70,28 +68,7 @@ const HomeScreen = ({navigation}) => {
               resizeMode="contain"
             />
           </View>
-          <View style={styles.searchContainer}>
-            <View style={styles.inputContainer}>
-              <View style={styles.inputSubContainer}>
-                <Feather
-                  name={'search'}
-                  size={22}
-                  color={Colors.HEADER_BLACK}
-                  style={{marginRight: 10}}
-                  onPress={() => navigation.navigate('FilterScreen')}
-                />
-
-                <TextInput
-                  placeholder="Search"
-                  placeholderTextColor={Colors.HEADER_BLACK}
-                  selectionColor={Colors.HEADER_BLACK}
-                  style={styles.inputText}
-                />
-              </View>
-            </View>
-            <Image source={Vector} style={styles.vector} resizeMode="contain" />
-          </View>
-
+          <SearchFilter />
           <View style={styles.filterContainer}>
             <View style={styles.filterSubContainer}>
               <Text style={styles.filter} onPress={''}>

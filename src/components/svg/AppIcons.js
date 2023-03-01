@@ -255,3 +255,20 @@ export function BookMarkIcon(props) {
     </Svg>
   );
 }
+
+export function ArrowRight(props) {
+  return (
+    <Svg
+      width={8}
+      height={14}
+      viewBox="0 0 8 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M5.173 7L.223 2.05 1.637.636 8 7l-6.364 6.364L.223 11.95 5.173 7z"
+        fill="#14011B"
+      />
+    </Svg>
+  );
+}

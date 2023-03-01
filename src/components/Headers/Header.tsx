@@ -1,17 +1,38 @@
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {LeftIcon} from '../svg/AppIcons';
+import {globalStyles} from '../styles';
+import Colors from '../../constants/Colors';
 
-const Header = ({color}: {color?: string}) => {
+const Header = ({title}: {title?: string}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.goBack()}>
-      <LeftIcon />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingVertical: 6,
+        }}>
+        <LeftIcon />
+        <View
+          style={{
+            flex: 1,
+          }}>
+          <Text
+            style={{
+              ...globalStyles.textPrimary,
+              color: Colors.SECONDARY_GREY,
+              textAlign: 'center',
+            }}
+            numberOfLines={1}>
+            {title}
+          </Text>
+        </View>
+      </View>
     </TouchableOpacity>
   );
 };
 
 export default Header;
-
-const styles = StyleSheet.create({});

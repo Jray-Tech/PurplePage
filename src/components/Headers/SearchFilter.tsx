@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import Font from '../../constants/Font';
@@ -29,11 +29,13 @@ const SearchFilter = () => {
           />
         </View>
       </View>
-      <Image
-        source={require('../../../assets/images/Vector.png')}
-        style={styles.vector}
-        resizeMode="contain"
-      />
+      <Pressable onPress={() => navigate('FilterScreen')}>
+        <Image
+          source={require('../../../assets/images/Vector.png')}
+          style={styles.vector}
+          resizeMode="contain"
+        />
+      </Pressable>
     </View>
   );
 };
