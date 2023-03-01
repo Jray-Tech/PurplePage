@@ -8,7 +8,7 @@ import ProfileHeader from '../../../components/Profile/ProfileHeader';
 import ProfileButtons from '../../../components/Profile/ProfileButtons';
 
 const buttons = [
-  {screen: '', title: 'Account Settings '},
+  {screen: 'AccountSettingScreen', title: 'Account Settings '},
   {screen: '', title: 'Subscriptions '},
   {screen: '', title: 'Display Settings '},
   {screen: '', title: 'FAQs '},

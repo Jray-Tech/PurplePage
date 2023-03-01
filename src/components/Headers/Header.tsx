@@ -5,7 +5,13 @@ import {LeftIcon} from '../svg/AppIcons';
 import {globalStyles} from '../styles';
 import Colors from '../../constants/Colors';
 
-const Header = ({title}: {title?: string}) => {
+const Header = ({
+  title,
+  usePadding = false,
+}: {
+  title?: string;
+  usePadding?: boolean;
+}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -13,7 +19,8 @@ const Header = ({title}: {title?: string}) => {
         style={{
           flexDirection: 'row',
           alignItems: 'center',
-          paddingVertical: 6,
+          paddingVertical: usePadding ? 24 : 0,
+          paddingHorizontal: usePadding ? 24 : 0,
         }}>
         <LeftIcon />
         <View

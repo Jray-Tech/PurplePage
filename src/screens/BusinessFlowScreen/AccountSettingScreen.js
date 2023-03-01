@@ -23,7 +23,15 @@ import {
   CustomBorder,
   Spacer,
 } from '../../components/CustomComponents';
+import Header from '../../components/Headers/Header';
+import {AppButton} from '../../components/buttons/AppButton';
+import ProfileButtons from '../../components/Profile/ProfileButtons';
+import {globalStyles} from '../../components/styles';
 
+const buttons = [
+  {screen: '', title: 'Change Password '},
+  {screen: '', title: 'Notification Settings '},
+];
 export const AccountSettingScreen = ({navigation}) => {
   const BottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
@@ -36,40 +44,29 @@ export const AccountSettingScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <HomeNav text="Account Settings" onPress={() => navigation.goBack()} />
-      <View style={{paddingHorizontal: 20, paddingTop: 50}}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={styles.links}>Admins</Text>
-          <Feather
-            name={'chevron-right'}
-            size={25}
-            color={Colors.HEADER_BLACK}
-            style={{marginLeft: 17, marginTop: 2}}
-            onPress={() => navigation.navigate('AddAdminScreen')}
-          />
+      <Header title="Account Settings" usePadding={true} />
+      <Spacer size={32} />
+      <View style={{paddingHorizontal: 24, paddingBottom: 24}}>
+        <View style={{flexDirection: 'row'}}>
+          <AppButton onPress={() => console.log('hey mannnnn')}>
+            Create Business
+          </AppButton>
+          <View style={{flex: 1}} />
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={styles.links}>Notification Settings</Text>
-          <Feather
-            name={'chevron-right'}
-            size={25}
-            color={Colors.HEADER_BLACK}
-            style={{marginLeft: 17, marginTop: 2}}
-            onPress={() => navigation.navigate('NotificationSettingScreen')}
-          />
-        </View>
-
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={styles.delete}>Delete profile</Text>
-        </View>
-      </View>
-      <Spacer size={280} />
-      <View style={styles.buttonView}>
-        <CustomButton
-          text="Sign out"
-          onPress={() => navigation.navigate('PaymentSuccessScreen')}
-          type="SIGNOUT"
-        />
+        <Spacer size={32} />
+        {buttons.map((button, index) => (
+          <>
+            <ProfileButtons screen={button.screen} title={button.title} />
+            <Spacer size={24} />
+          </>
+        ))}
+        <Text
+          style={{
+            ...globalStyles.textPrimary,
+            color: Colors.DEFAULT_RED,
+          }}>
+          Delete Profile
+        </Text>
       </View>
     </View>
   );
