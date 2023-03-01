@@ -30,6 +30,12 @@ export const globalStyles = StyleSheet.create({
     color: colors.CATEGORY_GREY,
     fontWeight: '400',
   },
+  regularDarkText: {
+    fontFamily: Font.AVENIR_REGULAR,
+    fontSize: 14,
+    color: colors.SECONDARY_GREY,
+    fontWeight: '400',
+  },
 
   textPrimary: {
     fontFamily: Font.AVENIR_REGULAR,

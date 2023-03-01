@@ -29,6 +29,7 @@ import {ConnectToSocialScreen} from '../screens/BusinessFlowScreen/ConnectToSoci
 import BottomTabNavigator from './BottomTabNavigator';
 import BlogDetailsScreen from '../screens/Blog/BlogDetailsScreen';
 import AdsDetailScreen from '../screens/Ads/AdsDetails';
+import SubscriptionsScreen from '../screens/more/SubscriptionsScreen';
 
 const App = createNativeStackNavigator();
 
@@ -102,6 +103,7 @@ const AppStack = () => {
         component={ConnectToSocialScreen}
       />
       <App.Screen name="PostAnAdScreen" component={PostAdsScreen} />
+      <App.Screen name="Subscriptions" component={SubscriptionsScreen} />
     </App.Navigator>
   );
 };

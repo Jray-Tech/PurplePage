@@ -272,3 +272,36 @@ export function ArrowRight(props) {
     </Svg>
   );
 }
+
+export function NotificationBell(props) {
+  if (props.active) {
+    return (
+      <Svg
+        width={18}
+        height={22}
+        viewBox="0 0 18 22"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}>
+        <Path
+          d="M2 16h14V9.031C16 5.148 12.866 2 9 2S2 5.148 2 9.031V16zM9 0c4.97 0 9 4.043 9 9.031V18H0V9.031C0 4.043 4.03 0 9 0zM6.5 19h5a2.5 2.5 0 01-5 0z"
+          fill="#C42AF7"
+        />
+      </Svg>
+    );
+  }
+  return (
+    <Svg
+      width={22}
+      height={23}
+      viewBox="0 0 22 23"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M17.586 19H3a.5.5 0 01-.4-.8l.4-.533V9c0-1.33.324-2.584.899-3.687L.393 1.808 1.808.393l19.799 19.8-1.415 1.414L17.586 19zM5.408 6.822A5.985 5.985 0 005 9v8h10.586L5.408 6.822zM19 14.786l-2-2V9a6 6 0 00-8.99-5.203L6.56 2.345A8 8 0 0119 9v5.786zM8.5 20h5a2.5 2.5 0 01-5 0z"
+        fill="#828282"
+      />
+    </Svg>
+  );
+}

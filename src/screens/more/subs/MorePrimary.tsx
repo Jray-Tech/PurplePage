@@ -9,7 +9,7 @@ import ProfileButtons from '../../../components/Profile/ProfileButtons';
 
 const buttons = [
   {screen: 'AccountSettingScreen', title: 'Account Settings '},
-  {screen: '', title: 'Subscriptions '},
+  {screen: 'Subscriptions', title: 'Subscriptions '},
   {screen: '', title: 'Display Settings '},
   {screen: '', title: 'FAQs '},
   {screen: '', title: 'About '},
