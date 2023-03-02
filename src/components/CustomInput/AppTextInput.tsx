@@ -67,7 +67,7 @@ const AppTextInput: React.FC<PropsType> = ({
         keyboardType={ktype}
         onChangeText={onTextChange}
         underlineColorAndroid="transparent"
-        maxLength={maxLength || 10}
+        maxLength={maxLength || 100}
         onFocus={() => {
           setFocused(true);
         }}
