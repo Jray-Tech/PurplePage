@@ -305,3 +305,20 @@ export function NotificationBell(props) {
     </Svg>
   );
 }
+
+export function DownArrow(props) {
+  return (
+    <Svg
+      width={9}
+      height={6}
+      viewBox="0 0 9 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M1.348.333l2.937 2.932L7.223.333l.902.903-3.84 3.84-3.84-3.84.903-.903z"
+        fill="#111B2B"
+      />
+    </Svg>
+  );
+}

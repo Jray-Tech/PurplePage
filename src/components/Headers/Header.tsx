@@ -14,7 +14,7 @@ const Header = ({
 }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.goBack()}>
+    <View>
       <View
         style={{
           flexDirection: 'row',
@@ -22,7 +22,9 @@ const Header = ({
           paddingVertical: usePadding ? 24 : 0,
           paddingHorizontal: usePadding ? 24 : 0,
         }}>
-        <LeftIcon />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <LeftIcon />
+        </TouchableOpacity>
         <View
           style={{
             flex: 1,
@@ -38,7 +40,7 @@ const Header = ({
           </Text>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 

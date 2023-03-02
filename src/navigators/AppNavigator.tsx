@@ -30,6 +30,9 @@ import BottomTabNavigator from './BottomTabNavigator';
 import BlogDetailsScreen from '../screens/Blog/BlogDetailsScreen';
 import AdsDetailScreen from '../screens/Ads/AdsDetails';
 import SubscriptionsScreen from '../screens/more/SubscriptionsScreen';
+import FAQScreen from '../screens/more/FAQScreen';
+import AboutScreen from '../screens/more/About';
+import LetsTalkScreen from '../screens/more/LetsTalkScreen';
 
 const App = createNativeStackNavigator();
 
@@ -104,6 +107,9 @@ const AppStack = () => {
       />
       <App.Screen name="PostAnAdScreen" component={PostAdsScreen} />
       <App.Screen name="Subscriptions" component={SubscriptionsScreen} />
+      <App.Screen name="FAQ" component={FAQScreen} />
+      <App.Screen name="About" component={AboutScreen} />
+      <App.Screen name="LetsTalk" component={LetsTalkScreen} />
     </App.Navigator>
   );
 };

@@ -11,9 +11,9 @@ const buttons = [
   {screen: 'AccountSettingScreen', title: 'Account Settings '},
   {screen: 'Subscriptions', title: 'Subscriptions '},
   {screen: '', title: 'Display Settings '},
-  {screen: '', title: 'FAQs '},
-  {screen: '', title: 'About '},
-  {screen: '', title: 'Let’s talk '},
+  {screen: 'FAQ', title: 'FAQs '},
+  {screen: 'About', title: 'About '},
+  {screen: 'LetsTalk', title: 'Let’s talk '},
 ];
 const MorePrimary = () => {
   return (
@@ -22,10 +22,10 @@ const MorePrimary = () => {
 
       <Spacer size={40} />
       {buttons.map((button, index) => (
-        <>
+        <View key={index.toString()}>
           <ProfileButtons screen={button.screen} title={button.title} />
           <Spacer size={24} />
-        </>
+        </View>
       ))}
     </View>
   );
